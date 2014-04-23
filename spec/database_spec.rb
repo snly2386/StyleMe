@@ -8,6 +8,7 @@ describe RabbitDice::Databases::InMemory do
 
     expect(game.players).to include('Alice', 'Bob', 'Carl')
     expect(game.winner).to be_nil
+    expect(game.dice_cup).to be_a RabbitDice::DiceCup
 
     expect(game.turns.count).to eq 1
     expect(game.turns.first.player).to match /^Alice|Bob|Carl$/
@@ -21,6 +22,7 @@ describe RabbitDice::Databases::InMemory do
     # I'm repeating myself, but that's ok if it's one test. maybe
     expect(game.players).to include('Dan', 'Earl', 'Fred')
     expect(game.winner).to be_nil
+    expect(game.dice_cup).to be_a RabbitDice::DiceCup
 
     expect(game.turns.count).to eq 1
     expect(game.turns.first.player).to match /^Dan|Earl|Fred$/

@@ -7,7 +7,7 @@ module RabbitDice
       end
 
       def create_game(attrs)
-        game = Game.new(:players => attrs[:players])
+        game = Game.new(:players => attrs[:players], :dice_cup => DiceCup.new)
         @games[game.id] = game
 
         starting_player = game.players.sample
