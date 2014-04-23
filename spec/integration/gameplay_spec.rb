@@ -40,4 +40,16 @@ describe 'Gameplay' do
     expect(game.score_for 'Bob').to eq(0)
     expect(game.score_for 'Carl').to eq(0)
   end
+
+  it "does not score when the player rolls three blasts" do
+    # First give them some points
+    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+    RabbitDice::PlayMove.run(:game_id => game.id, :move => 'roll_dice')
+    expect(game.score_for 'Alice').to eq(3)
+
+    # Now really give it to 'em!
+    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('blast')
+    RabbitDice::PlayMove.run(:game_id => game.id, :move => 'roll_dice')
+    expect(game.score_for 'Alice').to eq(0)
+  end
 end

@@ -17,6 +17,10 @@ module RabbitDice
       @results.map {|die| die.score }.reduce(0, :+)
     end
 
+    def wounds
+      @results.map {|die| die.wound }.reduce(0, :+)
+    end
+
     private
 
     def roll_die(color)

@@ -4,8 +4,8 @@ module RabbitDice
 
     def initialize(attrs={})
       super(attrs)
-      @score = 1 if @type == 'meat'
-      @wound = 1 if @type == 'blast'
+      @score = (@type == 'meat') ? 1 : 0
+      @wound = (@type == 'blast') ? 1 : 0
     end
 
   end
