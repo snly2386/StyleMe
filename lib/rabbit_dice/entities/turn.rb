@@ -6,5 +6,10 @@ module RabbitDice
       @rolls = []
       super(attrs)
     end
+
+    def score
+      # A score is the number of meat rolled
+      @rolls.map {|roll| roll.score }.reduce(0, :+)
+    end
   end
 end

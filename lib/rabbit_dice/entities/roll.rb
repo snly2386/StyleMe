@@ -5,12 +5,23 @@ module RabbitDice
     def initialize(attrs={})
       @dice = attrs[:dice]
       @results = @dice.map do |dice_color|
-        type = dice_results[dice_color].sample
+        # For testing, we need to ensure the result is always meat.
+        # To make this easier, we wrap this in a method
+        type = roll_die(dice_color)
         Die.new :type => type, :color => dice_color
       end
     end
 
+    def score
+      # Count up the number of meats!
+      @results.map {|die| die.score }.reduce(0, :+)
+    end
+
     private
+
+    def roll_die(color)
+      dice_results[color].sample
+    end
 
     def dice_results
       {
