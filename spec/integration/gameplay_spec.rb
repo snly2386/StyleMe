@@ -57,4 +57,17 @@ describe 'Gameplay' do
     game = play_move('roll_dice')
     expect(game.score_for 'Alice').to eq(0)
   end
+
+  it "creates the next player's turn when the current player rolls three blasts" do
+    # First give them some points
+    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+    game = play_move('roll_dice')
+    expect(game.score_for 'Alice').to eq(3)
+
+    # Now really give it to 'em!
+    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('blast')
+    game = play_move('roll_dice')
+    expect(game.turns.count).to eq(2)
+    expect(game.turns.last.player).to eq 'Bob'
+  end
 end
