@@ -84,4 +84,17 @@ describe 'Gameplay' do
     expect(game.score_for 'Alice').to eq(3)
     expect(game.turns.first.score).to eq(3)
   end
+
+  it "declares a winner once someone gets 13 meat" do
+    # To make things interesting, let's pass the turn to Carl
+    2.times { play_move('stop') }
+
+    # Win that game
+    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+    # 3meat x 4 = 12meat
+    4.times { play_move('roll_dice') }
+    # 12 + 3 = 15
+    game = play_move('roll_dice')
+    expect(game.winner).to eq 'Carl'
+  end
 end

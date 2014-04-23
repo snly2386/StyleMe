@@ -17,6 +17,10 @@ module RabbitDice
         game.end_turn
       end
 
+      if game.score_for(game.current_player) >= 13
+        game.winner = game.current_player
+      end
+
       success :game => game
     end
   end
