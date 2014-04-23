@@ -5,11 +5,15 @@ module RabbitDice
       return failure :invalid_game_id if game.nil?
       return failure :invalid_move unless params[:move].match /^roll_dice|stop$/
 
-      current_turn = game.turns.last
-      roll = game.dice_cup.roll
-      current_turn.rolls.push(roll)
+      if params[:move] == 'roll_dice'
+        current_turn = game.turns.last
+        roll = game.dice_cup.roll
+        current_turn.rolls.push(roll)
 
-      if current_turn.over?
+        if current_turn.over?
+          game.end_turn
+        end
+      elsif params[:move] == 'stop'
         game.end_turn
       end
 

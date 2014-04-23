@@ -68,4 +68,20 @@ describe 'Gameplay' do
       expect(game.turns.last.player).to eq 'Bob'
     end
   end
+
+  it "ends the turn if the current player chooses to do so" do
+    # First give them some points
+    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+    game = play_move('roll_dice')
+    expect(game.score_for 'Alice').to eq(3)
+
+    # Now end the turn
+    game = play_move('stop')
+    expect(game.turns.count).to eq(2)
+    expect(game.turns.last.player).to eq 'Bob'
+
+    # Double check score
+    expect(game.score_for 'Alice').to eq(3)
+    expect(game.turns.first.score).to eq(3)
+  end
 end
