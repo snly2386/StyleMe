@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe RabbitDice::Database::InMemory do
+describe RabbitDice::Databases::InMemory do
   let(:db) { RabbitDice.db }
 
-  it "gets game" do
+  it "create a game" do
     game = db.create_game :players => ['Alice', 'Bob', 'Carl']
 
     expect(game.players).to include('Alice', 'Bob', 'Carl')
@@ -11,8 +11,8 @@ describe RabbitDice::Database::InMemory do
 
     expect(game.turns.count).to eq 1
     expect(game.turns.first.player).to match /^Alice|Bob|Carl$/
-    expect(game.turns.first.rolls).to eq 0
+    expect(game.turns.first.rolls.count).to eq 0
   end
 
-  it "creates a game"
+  it "gets a game"
 end
