@@ -26,6 +26,12 @@ describe RabbitDice::PlayMove do
       expect(result.success?).to eq false
       expect(result.error).to eq :invalid_move
     end
+
+    it "doesn't allow a move if the game is over" do
+      game.winner = 'someone'
+      expect(result.success?).to eq false
+      expect(result.error).to eq :game_over
+    end
   end
 
   describe 'Rolling' do
