@@ -46,28 +46,26 @@ describe 'Gameplay' do
     expect(game.score_for 'Carl').to eq(0)
   end
 
-  it "does not score when the player rolls three blasts" do
-    # First give them some points
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
-    game = play_move('roll_dice')
-    expect(game.score_for 'Alice').to eq(3)
+  describe 'Overblasting' do
 
-    # Now really give it to 'em!
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('blast')
-    game = play_move('roll_dice')
-    expect(game.score_for 'Alice').to eq(0)
-  end
+    before do
+      # First give them some points
+      RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+      game = play_move('roll_dice')
+      expect(game.score_for 'Alice').to eq(3)
 
-  it "creates the next player's turn when the current player rolls three blasts" do
-    # First give them some points
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
-    game = play_move('roll_dice')
-    expect(game.score_for 'Alice').to eq(3)
+      # Now really give it to 'em!
+      RabbitDice::Roll.any_instance.stub(:roll_die).and_return('blast')
+      game = play_move('roll_dice')
+    end
 
-    # Now really give it to 'em!
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('blast')
-    game = play_move('roll_dice')
-    expect(game.turns.count).to eq(2)
-    expect(game.turns.last.player).to eq 'Bob'
+    it "does not score when the player rolls three blasts" do
+      expect(game.score_for 'Alice').to eq(0)
+    end
+
+    it "creates the next player's turn when the current player rolls three blasts" do
+      expect(game.turns.count).to eq(2)
+      expect(game.turns.last.player).to eq 'Bob'
+    end
   end
 end
