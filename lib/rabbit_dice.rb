@@ -17,3 +17,9 @@ module RabbitDice
     @__db_instance ||= Databases::InMemory.new
   end
 end
+
+class Array
+  def sum_attr(attribute)
+    self.map {|elem| elem.send(attribute) }.reduce(0, :+)
+  end
+end

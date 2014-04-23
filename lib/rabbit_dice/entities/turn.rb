@@ -12,12 +12,12 @@ module RabbitDice
       if wound_count >= 3
         0
       else
-        @rolls.map {|roll| roll.score }.reduce(0, :+)
+        @rolls.sum_attr(:score)
       end
     end
 
     def wound_count
-      @rolls.map {|roll| roll.wounds }.reduce(0, :+)
+      @rolls.sum_attr(:wounds)
     end
   end
 end

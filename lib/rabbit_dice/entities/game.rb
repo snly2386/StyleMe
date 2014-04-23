@@ -10,10 +10,7 @@ module RabbitDice
     end
 
     def score_for(player)
-      turns = @turns.select {|turn| turn.player == player}
-
-      # This converts each turn into a number, then sums up those numbers
-      turns.map {|turn| turn.score }.reduce(0, :+)
+      @turns.select {|turn| turn.player == player}.sum_attr(:score)
     end
   end
 end

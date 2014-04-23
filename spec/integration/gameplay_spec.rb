@@ -3,6 +3,10 @@ require 'spec_helper'
 describe 'Gameplay' do
   let(:game) { RabbitDice.db.create_game :players => ['Alice', 'Bob', 'Carl'] }
 
+  def play_move(move)
+    RabbitDice::PlayMove.run(:game_id => game.id, :move => move)
+  end
+
   before do
     game.turns.first.player = 'Alice'
   end
@@ -13,9 +17,9 @@ describe 'Gameplay' do
     RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
 
     expect(game.dice_cup.dice_count).to eq 13
-    RabbitDice::PlayMove.run(:game_id => game.id, :move => 'roll_dice')
+    play_move('roll_dice')
     expect(game.dice_cup.dice_count).to eq 10
-    RabbitDice::PlayMove.run(:game_id => game.id, :move => 'roll_dice')
+    play_move('roll_dice')
     expect(game.dice_cup.dice_count).to eq 7
   end
 
@@ -23,7 +27,7 @@ describe 'Gameplay' do
     RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
 
     expect(game.dice_cup.dice_count).to eq 13
-    RabbitDice::PlayMove.run(:game_id => game.id, :move => 'roll_dice')
+    play_move('roll_dice')
     expect(game.dice_cup.dice_count).to eq 10
 
     roll = game.turns.last.rolls.last
@@ -34,8 +38,8 @@ describe 'Gameplay' do
   it "calculates score" do
     RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
 
-    RabbitDice::PlayMove.run(:game_id => game.id, :move => 'roll_dice')
-    RabbitDice::PlayMove.run(:game_id => game.id, :move => 'roll_dice')
+    play_move('roll_dice')
+    play_move('roll_dice')
     expect(game.score_for 'Alice').to eq(6)
     expect(game.score_for 'Bob').to eq(0)
     expect(game.score_for 'Carl').to eq(0)
@@ -44,12 +48,12 @@ describe 'Gameplay' do
   it "does not score when the player rolls three blasts" do
     # First give them some points
     RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
-    RabbitDice::PlayMove.run(:game_id => game.id, :move => 'roll_dice')
+    play_move('roll_dice')
     expect(game.score_for 'Alice').to eq(3)
 
     # Now really give it to 'em!
     RabbitDice::Roll.any_instance.stub(:roll_die).and_return('blast')
-    RabbitDice::PlayMove.run(:game_id => game.id, :move => 'roll_dice')
+    play_move('roll_dice')
     expect(game.score_for 'Alice').to eq(0)
   end
 end

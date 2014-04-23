@@ -14,11 +14,11 @@ module RabbitDice
 
     def score
       # Count up the number of meats!
-      @results.map {|die| die.score }.reduce(0, :+)
+      @results.sum_attr(:score)
     end
 
     def wounds
-      @results.map {|die| die.wound }.reduce(0, :+)
+      @results.sum_attr(:wound)
     end
 
     private
