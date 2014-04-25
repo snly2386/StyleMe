@@ -2,6 +2,10 @@ module RabbitDice
   class DiceCup < Entity
 
     def initialize(attrs={})
+      self.refill
+    end
+
+    def refill
       @dice = []
       6.times { @dice.push 'green' }
       4.times { @dice.push 'yellow' }
@@ -11,6 +15,10 @@ module RabbitDice
     # Since we are an object, we want to restrict access to our data
     def dice_count
       @dice.count
+    end
+
+    def empty?
+      @dice.count == 0
     end
 
     def roll(previous_roll)

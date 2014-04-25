@@ -14,6 +14,8 @@ module RabbitDice
     end
 
     def end_turn
+      dice_cup.refill
+
       current_player_index = @players.index(current_player)
       next_player = @players[(current_player_index + 1) % @players.length]
 

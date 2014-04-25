@@ -107,7 +107,21 @@ describe 'Gameplay' do
     expect(game.winner).to eq 'Carl'
   end
 
-  it "ends the turn when there are no more dice left to draw"
+  it "ends the turn when there are no more dice left to draw" do
+    rig_dice('meat')
+    # 3meat x 4 = 12meat
+    4.times { play_move('roll_dice') }
+    expect(game.current_player).to eq 'Alice'
+    expect(game.dice_cup.dice_count).to eq 1
+
+    # Avoid three blasts to avoid (wrongly) ending the turn by death
+    # Wrongly because there should only be one die rolled
+    rig_dice('blast', 'blast', 'paws')
+    turn = game.turns.last
+    game = play_move('roll_dice')
+    expect(game.current_player).to eq 'Bob'
+    expect(game.dice_cup.dice_count).to eq 13
+  end
 
   it "subtracts less dice from the cup when there are paws (runners)" do
     rig_dice('paws')
