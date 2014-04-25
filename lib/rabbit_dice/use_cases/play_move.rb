@@ -9,7 +9,9 @@ module RabbitDice
 
       if params[:move] == 'roll_dice'
         current_turn = game.turns.last
-        roll = game.dice_cup.roll
+        previous_roll = current_turn.rolls.last
+
+        roll = game.dice_cup.roll(previous_roll)
         current_turn.rolls.push(roll)
 
         if current_turn.over?

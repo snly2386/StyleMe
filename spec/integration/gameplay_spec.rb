@@ -8,6 +8,10 @@ describe 'Gameplay' do
     result.game
   end
 
+  def count_die_color(dice_cup, die_color)
+    dice_cup.instance_variable_get(:@dice).select {|color| color == die_color }.count
+  end
+
   before do
     game.turns.first.player = 'Alice'
   end
@@ -96,5 +100,25 @@ describe 'Gameplay' do
     # 12 + 3 = 15
     game = play_move('roll_dice')
     expect(game.winner).to eq 'Carl'
+  end
+
+  it "ends the turn when there are no more dice left to draw"
+
+  it "subtracts less dice from the cup when there are paws (runners)" do
+    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('paws')
+    game = play_move('roll_dice')
+
+    expect(game.dice_cup.dice_count).to eq 10
+
+    game = play_move('roll_dice')
+    # Since all three dice were runners, we shouldn't need to draw more dice
+    expect(game.dice_cup.dice_count).to eq 10
+
+    # Modify the last roll results to contain 2 paws instead of 3
+    die = game.turns.last.rolls.last.results.last
+    die.type = 'meat'
+
+    game = play_move('roll_dice')
+    expect(game.dice_cup.dice_count).to eq 9
   end
 end

@@ -13,7 +13,10 @@ module RabbitDice
       @dice.count
     end
 
-    def roll
+    def roll(previous_roll)
+      if previous_roll
+        previous_roll.results.each {|die| @dice.push(die.color) if die.type == 'paws' }
+      end
       @dice.sort_by! { rand(@dice.count) }
       Roll.new :dice => 3.times.map { @dice.pop }
     end
