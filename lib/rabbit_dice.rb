@@ -10,6 +10,7 @@ require_relative 'rabbit_dice/entities/roll.rb'
 require_relative 'rabbit_dice/entities/turn.rb'
 
 require_relative 'rabbit_dice/use_case.rb'
+require_relative 'rabbit_dice/use_cases/create_game.rb'
 require_relative 'rabbit_dice/use_cases/play_move.rb'
 
 module RabbitDice
