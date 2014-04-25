@@ -3,6 +3,10 @@ require 'spec_helper'
 describe 'Gameplay' do
   let(:game) { RabbitDice.db.create_game :players => ['Alice', 'Bob', 'Carl'] }
 
+  def rig_dice(*dice_results)
+    RabbitDice::Roll.any_instance.stub(:roll_die).and_return(*dice_results)
+  end
+
   def play_move(move)
     result = RabbitDice::PlayMove.run(:game_id => game.id, :move => move)
     result.game
@@ -19,7 +23,7 @@ describe 'Gameplay' do
   it "removes dice from the dice cup after multiple plays" do
     # In order for the dice count to reduce by 3 every time,
     # we need to ensure there are no paws (runners)
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+    rig_dice('meat')
 
     expect(game.dice_cup.dice_count).to eq 13
     game = play_move('roll_dice')
@@ -29,7 +33,7 @@ describe 'Gameplay' do
   end
 
   it "creates a roll with the correct dice" do
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+    rig_dice('meat')
 
     expect(game.dice_cup.dice_count).to eq 13
     game = play_move('roll_dice')
@@ -41,7 +45,7 @@ describe 'Gameplay' do
   end
 
   it "calculates score" do
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+    rig_dice('meat')
 
     play_move('roll_dice')
     game = play_move('roll_dice')
@@ -54,12 +58,12 @@ describe 'Gameplay' do
 
     before do
       # First give them some points
-      RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+      rig_dice('meat')
       game = play_move('roll_dice')
       expect(game.score_for 'Alice').to eq(3)
 
       # Now really give it to 'em!
-      RabbitDice::Roll.any_instance.stub(:roll_die).and_return('blast')
+      rig_dice('blast')
       game = play_move('roll_dice')
     end
 
@@ -75,14 +79,15 @@ describe 'Gameplay' do
 
   it "ends the turn if the current player chooses to do so" do
     # First give them some points
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+    rig_dice('meat')
     game = play_move('roll_dice')
+    expect(game.current_player).to eq 'Alice'
     expect(game.score_for 'Alice').to eq(3)
 
     # Now end the turn
     game = play_move('stop')
     expect(game.turns.count).to eq(2)
-    expect(game.turns.last.player).to eq 'Bob'
+    expect(game.current_player).to eq 'Bob'
 
     # Double check score
     expect(game.score_for 'Alice').to eq(3)
@@ -94,7 +99,7 @@ describe 'Gameplay' do
     2.times { play_move('stop') }
 
     # Win that game
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('meat')
+    rig_dice('meat')
     # 3meat x 4 = 12meat
     4.times { play_move('roll_dice') }
     # 12 + 3 = 15
@@ -105,7 +110,7 @@ describe 'Gameplay' do
   it "ends the turn when there are no more dice left to draw"
 
   it "subtracts less dice from the cup when there are paws (runners)" do
-    RabbitDice::Roll.any_instance.stub(:roll_die).and_return('paws')
+    rig_dice('paws')
     game = play_move('roll_dice')
 
     expect(game.dice_cup.dice_count).to eq 10
