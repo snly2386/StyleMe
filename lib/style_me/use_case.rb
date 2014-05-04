@@ -1,4 +1,4 @@
-module RabbitDice
+module StyleMe
   class UseCase
 
     def self.run(inputs)

@@ -1,5 +1,5 @@
-require 'rabbit_dice' # for some reason this works in rspec
-
+require 'style_me' # for some reason this works in rspec
+require 'pry-debugger'
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true

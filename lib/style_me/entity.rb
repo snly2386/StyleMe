@@ -1,4 +1,4 @@
-module RabbitDice
+module StyleMe
   class Entity
 
     # This is a pattern so you can do Game.new(:players => []) for example.
