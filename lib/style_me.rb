@@ -1,6 +1,7 @@
 require 'ostruct'
 
 require_relative 'style_me/databases/in_memory.rb'
+Gem.find_files("style_me/databases/*.rb").each { |path| require path }
 
 require_relative 'style_me/entity.rb'
 require_relative 'style_me/entities/closet.rb'

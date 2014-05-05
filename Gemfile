@@ -7,3 +7,7 @@ gem 'pry-debugger'
 gem 'aws-sdk'
 gem 'unirest'
 gem 'paperclip'
+gem 'sqlite3'
+gem 'activerecord', '~> 4.1.0'
+gem 'active_record_tasks', '~> 1.0.4'
+
