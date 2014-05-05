@@ -57,7 +57,13 @@ module StyleMe
   end
 
   def get_user_by_username(username)
-    user = User.where(:username =>username)
+    ar_user = User.where(:username =>username).first
+    StyleMe::User.new(ar_user.attributes)
+  end
+
+  def create_closet(attrs)
+    ar_closet = Closet.create(attrs)
+    StyleMe::Closet.new(ar_closet.attributes)
   end
 
   def get_closet(id)
@@ -68,7 +74,19 @@ module StyleMe
     # binding.pry
     ar_photo = Photo.create(attrs)
     StyleMe::Photo.new(ar_photo.attributes)
+  end
 
+  def get_photo(id)
+    photo = StyleMe::Photo.new(Photo.find(id).attributes)
+  end
+
+  def create_photobooth(attrs)
+    ar_photobooth = Photobooth.create(attrs)
+    StyleMe::Photobooth.new(ar_photobooth.attributes)
+  end
+
+  def get_photobooth(id)
+    photobooth = StyleMe::Photobooth.new(Photobooth.find(id).attributes)
   end
 
 

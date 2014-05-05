@@ -15,11 +15,13 @@ ActiveRecord::Schema.define(version: 20140505182444) do
 
   create_table "closets", force: true do |t|
     t.integer "photobooths_id"
+    t.integer "user_id"
   end
 
   create_table "photobooths", force: true do |t|
     t.integer "photo_id"
     t.integer "result_id"
+    t.integer "closet_id"
   end
 
   create_table "photos", force: true do |t|
@@ -27,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140505182444) do
     t.datetime "updated_at"
     t.string   "url"
     t.string   "file_name"
+    t.integer  "user_id"
   end
 
   create_table "results", force: true do |t|

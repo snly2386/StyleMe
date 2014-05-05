@@ -3,5 +3,5 @@ module StyleMe
     attr_accessor :id, :username, :name, :age, :about_me, :gender, :closet, :password
 
 
- end
+  end
 end

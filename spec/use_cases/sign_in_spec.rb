@@ -26,7 +26,6 @@ describe StyleMe::SignIn do
       result = subject.run(:username=> "billybob", :password => "12345")
       expect(result.success?).to eq true
       expect(result.user).to be_a StyleMe::User
-      expect(result.closet).to be_a StyleMe::Closet
     end
   end
 end
