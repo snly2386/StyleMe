@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+  root 'welcom#index'
+
+    resources :users, except: [:destroy] do
+      resources :photos, except: [:destroy, :edit, :update] do
+        resources :photobooths, except: [:edit, :update] do
+        end
+      end
+    end
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
