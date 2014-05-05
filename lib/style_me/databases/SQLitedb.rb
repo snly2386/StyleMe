@@ -16,7 +16,7 @@ module StyleMe
   # binding.pry
   def clear_everything
     User.destroy_all
-    Cloest.destroy_all
+    Closet.destroy_all
     Photobooth.destroy_all
     Photo.destroy_all
     Result.destroy_all
@@ -51,18 +51,27 @@ module StyleMe
   end
 
   def get_user(id)
-    StyleMe::User.new(User.find(id).attributes)
+    user = StyleMe::User.new(User.find(id).attributes)
+    # user.closet = ...
+    # user
   end
 
-  def all_users
-    users = User.all
-    returned_users = []
-    users.each do |x|
-      new_user = StyleMe::User.new(x.attributes)
-      returned_users << new_user
-    end
-    return returned_users
+  def get_user_by_username(username)
+    user = User.where(:username =>username)
   end
+
+  def get_closet(id)
+    closet = StyleMe::Closet.new(Closet.find(id).attributes)
+  end
+
+  def create_photo(attrs)
+    # binding.pry
+    ar_photo = Photo.create(attrs)
+    StyleMe::Photo.new(ar_photo.attributes)
+
+  end
+
+
 
     end
   end
