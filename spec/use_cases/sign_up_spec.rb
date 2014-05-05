@@ -24,6 +24,5 @@ describe StyleMe::SignUp do
   it "creates a user" do
     expect(@result.success?).to eq true
     expect(@result.user).to be_a StyleMe::User
-    expect(@result.closet).to be_a StyleMe::Closet
   end
 end

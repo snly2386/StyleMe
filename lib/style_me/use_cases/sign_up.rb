@@ -11,9 +11,9 @@ module StyleMe
       
       user = @db.create_user(:username => params[:username], :name => params[:name], :age => params[:age], :gender => params[:gender], :about_me => params[:about_me], :password => password )
 
-      closet = user.closet
+      
 
-      success :user => user, :closet => closet
+      success :user => user 
     end
   end
 end

@@ -14,9 +14,9 @@ module StyleMe
      return failure(:invalid_password) if password != user.password
 
 
-     closet = user.closet
+  
 
-     success :user => user, :closet => closet 
+     success :user => user
     end
   end
 end

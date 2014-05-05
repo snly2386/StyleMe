@@ -22,13 +22,15 @@ shared_examples 'a database' do
     expect(user.name).to eq('wen')
   end
 
-  xit "gets a closet" do
-     user = db.create_user(:username => "wendy", :name => "wen", :age=> 24, :gender => "female", :about_me => "beautiful", :password => "123")
-     closet = db.get_closet(user.closet.id)
-     expect(closet.user_id).to eq(user.id)
+  it "gets a closet" do
+    user = db.create_user(:username => "wendy", :name => "wen", :age=> 24, :gender => "female", :about_me => "beautiful", :password => "123")
+    closet = db.create_closet(:user_id => user.id)
+    closet_get = db.get_closet(closet.id)
+    # binding.pry
+    expect(closet.user_id).to eq(user.id)
   end
 
-  xit "gets user by username" do
+  it "gets user by username" do
     wendy = db.get_user_by_username("wendy")
     expect(wendy.username).to eq('wendy')
   end
@@ -41,24 +43,26 @@ shared_examples 'a database' do
 
   end
 
-  xit "gets a photo" do
+  it "gets a photo" do
     photo = db.create_photo(:user_id => @user.id, :url => "www.here")
     got_photo = db.get_photo(photo.id)
     expect(got_photo.url).to_not be_nil
   end
 
-  xit "creates a photobooth" do
+  it "creates a photobooth" do
     user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123")
     photo = db.create_photo(:user_id => user.id, :url => "www.here")
-    photobooth = db.create_photobooth(:closet_id => user.closet.id, :photo_id => photo.id)
+    closet = db.create_closet(:user_id => user.id)
+    photobooth = db.create_photobooth(:closet_id => closet.id, :photo_id => photo.id)
     expect(photobooth.id).to_not be_nil
-    expect(photobooth.closet_id).to eq(user.closet.id)
+    expect(photobooth.closet_id).to eq(closet.id)
   end
 
-  xit "gets a photobooth" do
+  it "gets a photobooth" do
     user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123")
     photo = db.create_photo(:user_id => user.id, :url => "www.here")
-    photobooth = db.create_photobooth(:closet_id => user.closet.id, :photo_id => photo.id)
+    closet = db.create_closet(:user_id => user.id)
+    photobooth = db.create_photobooth(:closet_id => closet.id, :photo_id => photo.id)
     got_photobooth = db.get_photobooth(photobooth.id)
     expect(got_photobooth.photo_id).to_not be_nil
   end

@@ -25,7 +25,7 @@ module StyleMe
          id = @user_id_counter += 1
          attrs[:id] = id
 
-        user = User.new(:id => id, :username => attrs[:username], :name => attrs[:name], :age => attrs[:age], :gender => attrs[:gender], :about_me => attrs[:about_me], :closet => create_closet(:user_id => id), :password => attrs[:password] )
+        user = User.new(:id => id, :username => attrs[:username], :name => attrs[:name], :age => attrs[:age], :gender => attrs[:gender], :about_me => attrs[:about_me], :password => attrs[:password] )
         @users[id] = user
       end
 
