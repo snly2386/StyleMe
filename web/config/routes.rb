@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'welcom#index'
+  root :to => 'welcome#index'
 
     resources :users, except: [:destroy] do
       resources :photos, except: [:destroy, :edit, :update] do
