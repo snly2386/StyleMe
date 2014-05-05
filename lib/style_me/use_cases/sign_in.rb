@@ -3,10 +3,10 @@ module StyleMe
     def run(params)
      @db = StyleMe.db
      user = @db.get_user_by_username(params[:username])
-     # binding.pry
+    
      username = params[:username]
 
-     return failure(:no_user_exists) if user.nil?
+     return failure(:no_user_exists) if user == nil
 
      return failure(:invalid_username) if username!= user.username
      

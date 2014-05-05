@@ -8,4 +8,9 @@ describe StyleMe::UploadPhoto do
     expect(result.error).to eq(:invalid_url)
   end
 
+  it "uploads a photo" do 
+    result = subject.run(:url => '/images')
+    expect(result.success?).to eq(true)
+    expect(result.photo).to be_a StyleMe::Photo
+  end
 end
