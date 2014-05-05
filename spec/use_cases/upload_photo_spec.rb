@@ -1,4 +1,5 @@
-require 'spec_helper'
+# require 'spec_helper'
+
 
 describe StyleMe::UploadPhoto do
 
@@ -18,3 +19,4 @@ describe StyleMe::UploadPhoto do
 
   end
 end
+
