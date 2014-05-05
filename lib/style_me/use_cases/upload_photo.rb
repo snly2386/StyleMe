@@ -34,7 +34,7 @@ module StyleMe
         #Retrieve photo with CAMFIND
         @token_response = Unirest::post "https://camfind.p.mashape.com/image_requests", 
         headers: { 
-          "X-Mashape-Authorization" => "TTAK2kZ0uKo8QLs46T5EgUA8ZInrYfuj"
+          "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
         },
         parameters: { 
           "image_request[locale]" => "en_US",
@@ -52,7 +52,7 @@ module StyleMe
       def make_request
           @response = Unirest::get("https://camfind.p.mashape.com/image_responses/" + @token_response.body['token'],
           headers: { 
-            "X-Mashape-Authorization" => "TTAK2kZ0uKo8QLs46T5EgUA8ZInrYfuj"
+            "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
           }
         )
       end
