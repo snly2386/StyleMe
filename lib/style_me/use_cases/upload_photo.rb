@@ -60,5 +60,5 @@
 #         photo = @db.create_photo(:url => params[:url])
 #         success :photo => photo
 #     end
-  end
-end
+#   end
+# end
