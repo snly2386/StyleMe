@@ -47,15 +47,21 @@
     </header>
 
     <div class = "homepage-center">
-    <div class = "logo">
+      <div class = "logo">
       <%=image_tag "logo.png", height: "180", width: "180"%>
-    </div>
-    <h1 class = "title">S t y l e  M e </h1>
-    <form method="post" enctype="multipart/form-data">
-    <div class="subtext"> upload a picture <input type="file" class="upload" name=""> </div>
-  </form>
+      </div>
+      <h1 class = "title">S t y l e  M e </h1>
 
-  </div>
+      <%= form_tag photobooths_path, :method => "post", multipart: true do %>
+      <div class="subtext">upload a picture <%= file_field_tag "image_file", class: 'upload' %></div>
+      <div class="subtag"><%= submit_tag 'match me', :class => 'submitphoto'%></div>
+      <% end %>
+
+      <!-- <form method="post" enctype="multipart/form-data" action="photobooths_path">
+      <div class="subtext"> upload a picture <input type="file" class="upload" name=""> </div>
+      </form> -->
+
+    </div>
 
 </div>
 

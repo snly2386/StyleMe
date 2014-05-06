@@ -2,13 +2,13 @@ Rails.application.routes.draw do
 
   root :to => 'welcome#index'
 
-    resources :users, except: [:destroy] do
-      resources :photos, except: [:destroy, :edit, :update] do
-        resources :photobooths, except: [:edit, :update] do
-        end
-      end
-    end
-
+  resources :users, except: [:destroy] do
+    # GET users/9/photobooths   -> INDEX
+    # GET users/9/photobooths/3 -> SHOW
+    resources :photobooths, only: [:index, :show]
+  end
+  
+  resources :photobooths, only: [:create, :destroy]
 
 
 
