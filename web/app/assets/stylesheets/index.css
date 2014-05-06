@@ -10,7 +10,7 @@ body{
   background-color: black
 }
 
-a {
+.list {
   text-decoration: none;
   color: #fff ;
 }
@@ -30,6 +30,22 @@ nav{
   float:left;
   left:-50%;
   position: relative;
+}
+
+.su{
+ text-decoration: none;
+ color: #fff;
+}
+
+ .upload{
+  top: 0;
+  right:0;
+  margin:0;
+  padding:0;
+  opacity:0;
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
 }
 
 li{
@@ -80,7 +96,9 @@ li:hover{
   border-style:outset;
   line-height: 1.5;
   width:23%;
-  margin: auto
+  margin: auto;
+  position: relative;
+  overflow: hidden;
 
 }
 
@@ -93,6 +111,159 @@ li:hover{
 .logo{
   margin: auto;
   width:14%;
+}
+
+h2 {
+  color: rgba(232, 217, 236, 0.35);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-right: 40px;
+}
+
+a {
+  color: #46485c;
+  text-decoration: none;
+}
+[draggable=true]{
+  cursor: move;
+}
+.login {
+  color:rgba(193, 182, 196, 0.86);
+  width: 312px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -184px 0px 0px -155px;
+/*  background: rgba(0,0,0,0.2);*/
+  padding: 20px 30px;
+  padding-right:0;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07);
+  background-color: rgba(104, 93, 99, 0.93);
+  display: none;
+  overflow: scroll;
+  -webkit-user-drag: element;
+}
+
+input[type="text"], input[type="password"] {
+  width: 250px;
+  padding: 25px 0px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  outline: none;
+  color:rgba(193, 182, 196, 0.86);
+}
+
+input[type="text"]:active{
+  background-color: #46485c;
+  background: transparent;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type="text"]:focus {
+  background-color: #46485c;
+  background: transparent;
+}
+
+label {
+  display: block;
+  position: absolute;
+  margin-top: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #46485c;
+  content: "";
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 3px solid #252730;
+  box-shadow: 0px 0px 0px 2px #46485c;
+}
+
+#remember:checked ~ label[for=remember] {
+  background: rgba(232, 217, 236, 0.66);
+  border: 3px solid #252730;
+  box-shadow: 0px 0px 0px 2px rgba(232, 217, 236, 0.66);
+}
+
+
+/*input[type="submit"]*/ 
+.signin {
+  background: rgba(232, 217, 236, 0.66);
+  border: 0;
+  width: 250px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+input[type="submit"]:hover {
+  background: rgba(151, 136, 155, 0.58);
+}
+
+.forgot {
+  margin-top: 30px;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+  color:rgba(193, 182, 196, 0.86);
+}
+.forgot:hover {
+  margin-top: 30px;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+  color: #6d7781;
+}
+
+.remember {
+  padding: 30px 0px;
+  font-size: 12px;
+  text-indent: 25px;
+  line-height: 15px;
+}
+
+::-webkit-input-placeholder {
+  color:rgba(193, 182, 196, 0.86);  
+}
+
+.close {
+  background: none;
+  border: none;
+  float:right;
+}
+
+.closeform{
+  padding-right:20px;
+}
+
+.submitphoto {
+  background: transparent;
+  height:20px; 
+  width:150px; 
+  margin: -20px -50px; 
+  position:relative;
+  top:50%; 
+  left:50%;
+  color:#fff;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 9px;
+}
+
+.subtag{
+/*  width:20%;
+  margin: auto;
+  padding-left: 200px;*/
+  padding-right: 50px;
 }
 
 

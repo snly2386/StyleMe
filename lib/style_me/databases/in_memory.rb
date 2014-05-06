@@ -12,11 +12,13 @@ module StyleMe
         @photobooths_id_counter = 300
         @photo_id_counter = 400
         @result_id_counter = 500
+        @session_id_counter = 600
         @users = {}
         @closets = {}
         @photobooths = {}
         @photos = {}
         @results = {}
+        @sessions = {}
 
       end
 
@@ -40,6 +42,10 @@ module StyleMe
       def get_user_by_username(username)
         user = @users.select{|x,y| y.username == username }
         user.values[0]
+      end
+
+      def create_session(user_id)
+        session = 
       end
 
       def create_closet(attrs)

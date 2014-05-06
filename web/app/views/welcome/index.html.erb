@@ -27,23 +27,47 @@
             <li class="divide"> | </li>
             <li>About</li>
             <li class="divide"> | </li>
-            <a href=""><li class ="sign_up">Sign Up</li></a>
+            <a href="" class="list"><li>Sign In</li></a>
             <li class="divide"> | </li>
-            <li>Sign In</li>
-
+            <!-- <a href="" class="su"><li>Sign Up</li></a>
+ -->
+           <li><%= link_to "Sign Up", '/users/new', :method => :get, class: 'su' %></li>
           </ul>
         </div>
       </nav>
     </header>
 
     <div class = "homepage-center">
-    <div class = "logo">
+      <div class = "logo">
       <%=image_tag "logo.png", height: "180", width: "180"%>
+      </div>
+      <h1 class = "title">S t y l e  M e </h1>
+
+      <%= form_tag photobooths_path, :method => "post", multipart: true do %>
+      <div class="subtext">upload a picture <%= file_field_tag "image_file", class: 'upload' %></div>
+      <div class="subtag"><%= submit_tag 'match me', :class => 'submitphoto'%></div>
+      <% end %>
+
+      <!-- <form method="post" enctype="multipart/form-data" action="photobooths_path">
+      <div class="subtext"> upload a picture <input type="file" class="upload" name=""> </div>
+      </form> -->
+
     </div>
-    <h1 class = "title">S t y l e  M e </h1>
-    <div class="subtext"> upload a picture </div>
-  </div>
 
 </div>
+
+<div class='login'>
+  <div class="closeform"><button type="button" class="close">x</button></div>
+  <h2>Sign in</h2>
+  <input name='username' placeholder='Username' type='text' style="backround-color: #46485c"/>
+  <input id='pw' name='password' placeholder='Password' type='password'/>
+      <div class='remember'>
+        <input checked='' id='remember' name='remember' type='checkbox'/>
+        <label for='remember'></label>Remember me
+      </div>
+    <input type='submit' value='Sign in' class="signin"/>
+    <!-- <a class='forgot' href='#'>Forgot your password?</a> -->
+</div>
+
 </body>
 </html>
