@@ -61,6 +61,15 @@ module StyleMe
     StyleMe::User.new(ar_user.attributes)
   end
 
+  def create_session(attrs)
+    ar_session = Session.create(attrs)
+    StyleMe::Session.new(ar_session.attributes)
+  end
+
+  def get_session(attrs)
+
+  end
+
   def create_closet(attrs)
     ar_closet = Closet.create(attrs)
     StyleMe::Closet.new(ar_closet.attributes)

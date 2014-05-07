@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
 
+gem 'amazon-ecs'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rspec'
+gem 'dotenv'
 gem 'pry-debugger'
 gem 'aws-sdk'
 gem 'unirest'

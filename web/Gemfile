@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 app_gemfile_path = File.expand_path('../../Gemfile', __FILE__)
 eval File.read(app_gemfile_path)
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-
+gem "amazon-ecs"
 gem "binding_of_caller"
 group :development do
   gem "better_errors"
