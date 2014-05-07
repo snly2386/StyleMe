@@ -44,8 +44,17 @@ module StyleMe
         user.values[0]
       end
 
-      def create_session(user_id)
-        # session =
+
+      def create_session(attrs)
+        id = @session_id_counter += 1
+        attrs[:id] = id
+        session = Session.new(:id => id, :user_id => attrs[:user_id])
+        @sessions[id] = session
+      end
+
+      def get_session
+        @sessions[id]
+
       end
 
       def create_closet(attrs)

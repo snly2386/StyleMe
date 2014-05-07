@@ -22,6 +22,19 @@ shared_examples 'a database' do
     expect(user.name).to eq('wen')
   end
 
+  it "creates a session" do 
+    user = db.create_user(:username => "wendy", :name => "wen", :age=> 24, :gender => "female", :about_me => "beautiful", :password => "123")
+    session = db.create_session(:user_id => user.id)
+    expect(session.id).to_not be_nil
+  end
+
+  it "gets a session" do 
+    user = db.create_user(:username => "wendy", :name => "wen", :age=> 24, :gender => "female", :about_me => "beautiful", :password => "123")
+    session = db.create_session(:user_id => user.id)
+    got_session = @db.get_session(user.id)
+    expect(got_session.id).to_not be_nil
+  end
+
   it "gets a closet" do
     user = db.create_user(:username => "wendy", :name => "wen", :age=> 24, :gender => "female", :about_me => "beautiful", :password => "123")
     closet = db.create_closet(:user_id => user.id)
