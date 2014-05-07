@@ -23,7 +23,7 @@ module StyleMe
       end
 
       def create_user(attrs)
-        
+
          id = @user_id_counter += 1
          attrs[:id] = id
 
@@ -45,11 +45,11 @@ module StyleMe
       end
 
       def create_session(user_id)
-        session = 
+        # session =
       end
 
       def create_closet(attrs)
-        id = @closets_id_counter += 1 
+        id = @closets_id_counter += 1
         attrs[:id] = id
         closet = Closet.new(:id => id, :user_id => attrs[:user_id])
         @closets[id] = closet

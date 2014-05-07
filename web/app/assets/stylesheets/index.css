@@ -6,6 +6,7 @@
   position:fixed;top:0;left:0;width:100%
   }
 
+
 body{
   background-color: black
 }
@@ -193,7 +194,7 @@ label {
 }
 
 
-/*input[type="submit"]*/ 
+/*input[type="submit"]*/
 .signin {
   background: rgba(232, 217, 236, 0.66);
   border: 0;
@@ -233,7 +234,7 @@ input[type="submit"]:hover {
 }
 
 ::-webkit-input-placeholder {
-  color:rgba(193, 182, 196, 0.86);  
+  color:rgba(193, 182, 196, 0.86);
 }
 
 .close {
@@ -248,11 +249,11 @@ input[type="submit"]:hover {
 
 .submitphoto {
   background: transparent;
-  height:20px; 
-  width:150px; 
-  margin: -20px -50px; 
+  height:20px;
+  width:150px;
+  margin: -20px -50px;
   position:relative;
-  top:50%; 
+  top:50%;
   left:50%;
   color:#fff;
   font-family: 'Raleway', sans-serif;

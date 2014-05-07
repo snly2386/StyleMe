@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
 
   root :to => 'welcome#index'
+  # get '/types'
 
   resources :users, except: [:destroy] do
     # GET users/9/photobooths   -> INDEX
     # GET users/9/photobooths/3 -> SHOW
     resources :photobooths, only: [:index, :show]
+    resources :closets, only: [:show]
+    resources :photos, only: [:new, :show]
   end
-  
-  resources :photobooths, only: [:create, :destroy]
 
+
+  resources :photobooths, only: [:create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

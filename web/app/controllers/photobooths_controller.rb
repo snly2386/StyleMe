@@ -6,7 +6,7 @@ class PhotoboothsController < ApplicationController
     @photo - result.photo
     if result.success?
       redirect_to "/users/#{@user.id}/photos/#{@photo.id}/photobooths"
-    else 
+    else
       @error = result.error
     end
   end
