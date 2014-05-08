@@ -15,11 +15,11 @@ module StyleMe
 
 
 
-     binding.pry
      session = @db.create_session(:id=> params[:id], :user_id => user.id)
 
 
      success :user => user, :session => session
+     # binding.pry
     end
   end
 end
