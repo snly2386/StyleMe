@@ -15,11 +15,16 @@ module StyleMe
   end
   # binding.pry
   def clear_everything
+    Session.destroy_all
     User.destroy_all
     Closet.destroy_all
     Photobooth.destroy_all
     Photo.destroy_all
     Result.destroy_all
+  end
+
+  class Session < ActiveRecord::Base
+    has_one :user
   end
 
   class User < ActiveRecord::Base
@@ -62,11 +67,18 @@ module StyleMe
   end
 
   def create_session(attrs)
+    # binding.pry
     ar_session = Session.create(attrs)
     StyleMe::Session.new(ar_session.attributes)
   end
 
-  def get_session(attrs)
+  def get_session_by_user_id(user_id)
+    ar_session = Session.where(:user_id => user_id).first
+    StyleMe::Session.new(ar_session.attributes)
+  end
+
+  def get_session(id)
+    session = StyleMe::Session.new(Session.find(id).attributes)
 
   end
 

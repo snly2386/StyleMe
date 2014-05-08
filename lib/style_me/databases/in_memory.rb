@@ -47,14 +47,21 @@ module StyleMe
 
       def create_session(attrs)
         id = @session_id_counter += 1
-        attrs[:id] = id
+        # binding.pry
+        # attrs[:id] = id
         session = Session.new(:id => id, :user_id => attrs[:user_id])
         @sessions[id] = session
       end
 
-      def get_session
+      def get_session(id)
         @sessions[id]
 
+        #returns { session_id => session}
+      end
+
+      def get_session_by_user_id(user_id)
+        session = @sessions.select{|x,y| y.user_id == user_id}
+        session.values[0]
       end
 
       def create_closet(attrs)
