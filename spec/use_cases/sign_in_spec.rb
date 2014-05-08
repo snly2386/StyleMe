@@ -24,7 +24,6 @@ describe StyleMe::SignIn do
 
     it "signs the user in and creates a session" do
       result = subject.run(:username=> "billybob", :password => "12345")
-      # binding.pry
       expect(result.success?).to eq true
       expect(result.user).to be_a StyleMe::User
       expect(result.session).to be_a StyleMe::Session

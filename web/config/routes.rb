@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   root :to => 'welcome#index'
-  # get '/types'
+  get "users/new" => 'users#new'
+
+
 
   resources :users, except: [:destroy] do
     # GET users/9/photobooths   -> INDEX
