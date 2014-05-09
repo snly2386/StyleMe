@@ -27,11 +27,9 @@
             <li class="divide"> | </li>
             <li>About</li>
             <li class="divide"> | </li>
-            <a href="" class="list"><li>Sign In</li></a>
+            <a href="" class="list"><li><%= link_to "Sign In", "#" %></li></a>
             <li class="divide"> | </li>
-            <!-- <a href="" class="su"><li>Sign Up</li></a>
- -->
-           <li><%= link_to "Sign Up", '/users/new', :method => :get, class: 'su' %></li>
+           <li><%= link_to "Sign Up", '/signup', :method => :get, class: 'su' %></li>
           </ul>
         </div>
       </nav>
