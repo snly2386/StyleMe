@@ -1,0 +1,17 @@
+<h1> THIS IS THE PHOTOBOOTHS SHOW PAGE </h1>
+
+<% if @description == nil %>
+  <h2> LOADING... </h2>
+  <div class="gif">
+    <%=image_tag("ball.gif", class: "ball")%>
+  </div>
+  <script type="text/javascript">
+    setTimeout(function(){
+      location.reload()
+      },30000)
+  </script>
+<% else %>
+  <h2> DESCRIPTION: <%=@description%> </h2>
+<%end%>
+
+

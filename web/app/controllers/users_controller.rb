@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :name, :age, :about_me, :gender, :closet, :password)

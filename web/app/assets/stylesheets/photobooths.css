@@ -1,0 +1,11 @@
+
+.gif{
+  width: 50%;
+  margin: 0 auto;
+  padding-right: 40px;
+}
+
+.ball {
+    display:block;
+    margin:auto;
+}

@@ -8,10 +8,15 @@ Rails.application.routes.draw do
     resources :photobooths, only: [:index, :show]
   end
   
+  # POST   photobooths   -> CREATE  - photobooths_path
+  # DELETE photobooths/3 -> DESTROY - photobooth_path(3)
   resources :photobooths, only: [:create, :destroy]
 
+  get "results/:id" => "photobooths#results"
 
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

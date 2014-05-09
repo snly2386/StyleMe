@@ -1,17 +1,21 @@
 require 'unirest'
+require 'dotenv'
+Dotenv.load
 
 module StyleMe
   class CreatePhotoBooth < UseCase
     def run(params)
 
+      puts "CAMFIND KEY:"
+      puts ENV["CAMFIND_KEY"]
       @db = StyleMe.db
       # url = params[:url]
-      @image_path = params[:image_file]
+      @image_path = params[:file_name]
       # url = upload_to_s3
       #-UPLOADED TO AMAZON S3 ------------------------------------
 
       #create photo with Amazon url and file path
-      photo = @db.create_photo(:image_file => params[:image_file])
+      photo = @db.create_photo(:file_name => params[:file_name].original_filename)
 
       #Retrieve photo with CAMFIND
       @token_response = Unirest::post "https://camfind.p.mashape.com/image_requests", 
@@ -28,7 +32,7 @@ module StyleMe
         "focus[x]" => "480",
         "focus[y]" => "640",
         # "image_request[image]" => File.new(url)
-        "image_request[image]" => File.new('/Users/chrispalmer/Desktop/#{params[:image_file]}')
+        "image_request[image]" => File.new('/Users/chrispalmer/Desktop/' + params[:file_name].original_filename)
       }
 
       # def make_request
@@ -38,9 +42,13 @@ module StyleMe
         }
       )
       # end
+      # Create empty photobooth
+      photobooth = @db.create_photobooth(:photo_id => photo.id, :closet_id => nil, :tags => nil, :content => nil, :images => nil)
+      MisterWorker.perform_in(15.seconds, @token_response.body['token'], photobooth.id)
+      description = @response.body["name"]
       
       # params[:url] = url
-      success :photo => photo, :results => @response, :image_file => params[:image_file]
+      success :results => @response, :file_name => params[:file_name].original_filename, :description => description, :photobooth => photobooth
     end
 
     # def upload_to_s3
