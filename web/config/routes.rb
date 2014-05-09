@@ -12,13 +12,6 @@ Rails.application.routes.draw do
     resources :closets, only: [:show]
     resources :photos, only: [:new, :show]
   end
-<<<<<<< HEAD
-=======
-  
-  # POST   photobooths   -> CREATE  - photobooths_path
-  # DELETE photobooths/3 -> DESTROY - photobooth_path(3)
-  resources :photobooths, only: [:create, :destroy]
->>>>>>> 1e1c8408b21e79c6feab6a7596b20261837e4865
 
   get "results/:id" => "photobooths#results"
 

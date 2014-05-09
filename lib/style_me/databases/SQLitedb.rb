@@ -6,7 +6,6 @@ require 'pry-debugger'
 module StyleMe
   module Databases
 
-<<<<<<< HEAD
   def initialize
     ActiveRecord::Base.establish_connection(
       :adapter => 'sqlite3',
