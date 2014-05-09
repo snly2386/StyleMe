@@ -42,7 +42,7 @@
       <h1 class = "title">S t y l e  M e </h1>
 
       <%= form_tag photobooths_path, :method => "post", multipart: true do %>
-      <div class="subtext">upload a picture <%= file_field_tag "image_file", class: 'upload' %></div>
+      <div class="subtext">upload a picture <%= file_field_tag "file_name", class: 'upload' %></div>
       <div class="subtag"><%= submit_tag 'match me', :class => 'submitphoto'%></div>
       <% end %>
 

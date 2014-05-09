@@ -1,9 +1,8 @@
 require 'amazon/ecs'
 require 'dotenv'
 
-# Dotenv.load(
-#   File.expand_path("../.env",  __FILE__)
-# )
+ Dotenv.load
+
 
 Amazon::Ecs.options = {
   :associate_tag => 'sty09-20',
@@ -11,7 +10,7 @@ Amazon::Ecs.options = {
   :AWS_secret_key => ENV['AWS_SECRET_ACCESS_KEY']
 }
 
-# res = Amazon::Ecs.item_search('ruby', :search_index => 'Apparel')
+res = Amazon::Ecs.item_search('', :search_index => 'Apparel', :response_group => "Images")
 # res.total_results
 
 
@@ -19,6 +18,6 @@ Amazon::Ecs.options = {
 #   item_attributes = item.get_element('ItemAttributes')
 #   item_attributes.get('Title')
 # end
-
+puts "ACCESS KEYS!"
 puts ENV['AWS_SECRET_ACCESS_KEY']
 puts ENV['AWS_ACCESS_KEY_ID']

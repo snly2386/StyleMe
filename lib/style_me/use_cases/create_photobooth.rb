@@ -1,9 +1,13 @@
 require 'unirest'
+require 'dotenv'
+Dotenv.load
 
 module StyleMe
   class CreatePhotoBooth < UseCase
     def run(params)
 
+      puts "CAMFIND KEY:"
+      puts ENV["CAMFIND_KEY"]
       @db = StyleMe.db
 
       # TODO:
@@ -35,32 +39,40 @@ module StyleMe
         }
       )
 
-      success :photo => photo, :results => @response, :photo_url => url, :user => user, :image_file => params[:image_file]
+      # end
+      # Create empty photobooth
+      photobooth = @db.create_photobooth(:photo_id => photo.id, :closet_id => nil, :tags => nil, :content => nil, :images => nil)
+      MisterWorker.perform_in(15.seconds, @token_response.body['token'], photobooth.id)
+      description = @response.body["name"]
+
+      # params[:url] = url
+      success :results => @response, :file_name => params[:file_name].original_filename, :description => description, :photobooth => photobooth
     end
 
-    def upload_to_s3(image_path)
-      get_photo = @db.get_photo(image_path)
-      user = @db.get_user(user_id)
+    # def upload_to_s3
+    #   return failure(:invalid_url) if url.empty?
+    #   get_photo = @db.get_photo(@image_path)
+    #   user = @db.get_user(params[:user_id])
+    #   #UPLOAD TO AMAZON S3--------------------------------------
+    #   AWS.config(
+    #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    #     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    #   )
 
-      #-UPLOAD TO AMAZON S3--------------------------------------
-      AWS.config(
-        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-      )
 
-      bucket_name = 'chriswendystyle'
-      # file_name = 'images.jpeg'
-      file_name = get_photo.file_name
+    #   bucket_name = 'chriswendystyle'
+    #   # file_name = 'images.jpeg'
+    #   file_name = get_photo.file_name
 
-      # Get an instance of the S3 interface.
-      s3 = AWS::S3.new
+    #   # Get an instance of the S3 interface.
+    #   s3 = AWS::S3.new
 
-      # Upload a file.
-      key = File.basename(file_name)
-      s3.buckets[bucket_name].objects[key].write(:file => file_name)
-      url = File.join("https://s3.amazonaws.com/chriswendystyle", key)
-      puts "Uploading file #{file_name} to bucket #{bucket_name}."
-      return url
-    end
+    #   # Upload a file.
+    #   key = File.basename(file_name)
+    #   s3.buckets[bucket_name].objects[key].write(:file => file_name)
+    #   url = File.join("https://s3.amazonaws.com/chriswendystyle", key)
+    #   puts "Uploading file #{file_name} to bucket #{bucket_name}."
+    #   return url
+    # end
   end
 end

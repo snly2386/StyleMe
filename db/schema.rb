@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506131638) do
+ActiveRecord::Schema.define(version: 20140509105945) do
 
   create_table "closets", force: true do |t|
     t.integer "photobooths_id"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20140506131638) do
     t.integer "photo_id"
     t.integer "result_id"
     t.integer "closet_id"
+    t.text    "tags"
+    t.text    "content"
+    t.text    "images"
   end
 
   create_table "photos", force: true do |t|

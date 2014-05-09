@@ -1,4 +1,6 @@
 require 'unirest'
+require 'dotenv'
+Dotenv.load
 @token_response = Unirest::post "https://camfind.p.mashape.com/image_requests", 
   headers: { 
     "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
