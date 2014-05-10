@@ -13,7 +13,7 @@ module StyleMe
       # TODO:
       # upload_to_s3(params[:image_file])
 
-      photo = @db.create_photo(:url => nil, :image_file => params[:image_file])
+      photo = @db.create_photo(:url => nil, :image_file => params[:image_file].original_filename)
 
       # Retrieve photo with CAMFIND
       @token_response = Unirest::post("https://camfind.p.mashape.com/image_requests",

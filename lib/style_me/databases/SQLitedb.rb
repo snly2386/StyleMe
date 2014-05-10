@@ -60,6 +60,7 @@ module StyleMe
           #Database Methods
           def create_user(attrs)
             ar_user = User.create(attrs)
+            # binding.pry
             StyleMe::User.new(ar_user.attributes)
           end
 

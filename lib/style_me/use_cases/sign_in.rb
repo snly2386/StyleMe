@@ -15,7 +15,7 @@ module StyleMe
 
 
 
-     session = @db.create_session(:id=> params[:id], :user_id => user.id)
+     session = @db.create_session(:user_id => user.id)
 
 
      success :user => user, :session => session

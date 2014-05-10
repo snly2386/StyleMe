@@ -1,10 +1,41 @@
+<form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post">
 
-<h1> Users#new</h1>
-
-
+  <link type="text/css" href="signup.css" rel="stylesheet">
 <div class="logon">
   <h2 class="reg">Sign Up</h2>
-  <input class ="regform"name="username" placeholder="Username" type="text"></input>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_tag '/users', :method => "post" %>
+
+      <%=  label_tag :username %>
+      <%= text_field_tag :username %>
+
+      <%=  label_tag :name %>
+      <%= text_field_tag :name %>
+
+      <%=  label_tag :gender %>
+      <%= text_field_tag :gender %>
+
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+
+      <%= label_tag :password_confirmation, "Confirmation" %>
+      <%= password_field_tag :password_confirmation %>
+
+      <%= submit_tag "Create my account", class: "btn-primary" %>
+  </div>
+</div>
+
+
+
+<!--   <input class ="regform"name="username" placeholder="Username" type="text"></input> -->
+
+
+<!--
   <input class ="regform" name="password" placeholder="Password" type="password"></input>
   <input id="regform"name="gender" placeholder="Gender" type="text"></input>
   <input id="regform"name="age" placeholder="Age" type="text"></input>
@@ -16,4 +47,4 @@
   <input class="animated" type="submit" value="Register"></input>
   <a class="forgot" href="#">Already have an account?</a>
 </div>
-
+ -->

@@ -14,4 +14,4 @@ gem 'activerecord', '~> 4.1.0'
 gem 'active_record_tasks', '~> 1.0.4'
 
 gem 'vcr'
-# gem 'sidekiq'
+gem 'bcrypt-ruby', '3.1.2'

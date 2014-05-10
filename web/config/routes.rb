@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  # devise_for :users
   root :to => 'welcome#index'
-  get "/signup" => 'users#new'
 
 
 
@@ -9,14 +9,12 @@ Rails.application.routes.draw do
     # GET users/9/photobooths   -> INDEX
     # GET users/9/photobooths/3 -> SHOW
     resources :photobooths, only: [:index, :show]
-    resources :closets, only: [:show]
-    resources :photos, only: [:new, :show]
   end
 
-  get "results/:id" => "photobooths#results"
 
   resources :photobooths, only: [:create, :destroy]
 
+  get "results/:id" => "photobooths#results"
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
