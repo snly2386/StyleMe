@@ -2,7 +2,7 @@ module StyleMe
   module Databases
     class InMemory
 
-      def initialize
+      def initialize(env= nil)
        clear_everything
       end
 
@@ -27,7 +27,7 @@ module StyleMe
          id = @user_id_counter += 1
          attrs[:id] = id
 
-        user = User.new(:id => id, :username => attrs[:username], :name => attrs[:name], :age => attrs[:age], :gender => attrs[:gender], :about_me => attrs[:about_me], :password => attrs[:password] )
+        user = User.new(:id => id, :username => attrs[:username], :name => attrs[:name], :age => attrs[:age], :gender => attrs[:gender], :about_me => attrs[:about_me], :password => attrs[:password], :password_digest => attrs[:password_digest])
         @users[id] = user
       end
 
