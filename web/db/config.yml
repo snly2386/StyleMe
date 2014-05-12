@@ -1,6 +1,6 @@
 development:
   adapter: sqlite3
-  database: StyleMe_dev
+  database: ../StyleMe_dev
   pool: 5
   timeout: 5000
 

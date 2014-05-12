@@ -5,9 +5,6 @@ Dotenv.load
 module StyleMe
   class CreatePhotoBooth < UseCase
     def run(params)
-
-      puts "CAMFIND KEY:"
-      puts ENV["CAMFIND_KEY"]
       @db = StyleMe.db
       # url = params[:url]
       @image_path = params[:file_name]
@@ -41,6 +38,7 @@ module StyleMe
           "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
         }
       )
+      
       # end
       # Create empty photobooth
       photobooth = @db.create_photobooth(:photo_id => photo.id, :closet_id => nil, :tags => nil, :content => nil, :images => nil)

@@ -69,7 +69,7 @@ module StyleMe
       def create_photo(attrs)
         id = @photo_id_counter += 1
         attrs[:id] = id
-        photo = Photo.new(:id => id, :url => attrs[:url])
+        photo = Photo.new(:id => id, :file_name => attrs[:file_name])
         @photos[photo.id] = photo
       end
 

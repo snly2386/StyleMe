@@ -1,0 +1,463 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://camfind.p.mashape.com/image_responses/kumc9wRdQRAO5lNzmFpe3g
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip
+      X-Mashape-Authorization:
+      - TTAK2kZ0uKo8QLs46T5EgUA8ZInrYfuj
+      User-Agent:
+      - unirest-ruby/1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 12 May 2014 14:59:30 GMT
+      Etag:
+      - '"ed011b974b7fa9112e36719edb28ad30"'
+      Server:
+      - nginx/0.8.54
+      Set-Cookie:
+      - _imagetag_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJWQxMjQ5MThhZTI4ZjkyY2YzNzg1MDNjOTBlN2JiNTRiBjsAVA%3D%3D--18ea98b1a17378f12d88cf5b35d19ae00dcff25b;
+        path=/; HttpOnly
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Mashape-Proxy-Response:
+      - 'false'
+      X-Mashape-Version:
+      - 3.1.11
+      X-Request-Id:
+      - 20a066fd-4d87-48c1-ba3d-2ae7588a903a
+      X-Runtime:
+      - '0.012958'
+      X-Ua-Compatible:
+      - chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA6tWKi5JLCktVrJSSs7PLchJLUlNUdJRykvMTQUKlefnpuap
+        FyukF6VWKiTlJFalFinVAgCY/aoCMwAAAA==
+    http_version: 
+  recorded_at: Mon, 12 May 2014 14:59:31 GMT
+- request:
+    method: get
+    uri: http://ecs.amazonaws.com/onca/xml?AWSAccessKeyId=AKIAJUPZNDMRU3QZQDBQ&AssociateTag=sty09-20&Keywords=women's%20grey%20blazer&Operation=ItemSearch&SearchIndex=Apparel&Signature=y3ppdXBhDbvyG1g25BukePvOh4AhBtHJVM%2BosvqyC5A=&Timestamp=2014-05-12T14:59:31Z
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - ecs.amazonaws.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 12 May 2014 14:59:31 GMT
+      Server:
+      - Server
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Nncoection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="Ruby"></Header></HTTPHeaders><RequestId>63f95962-135c-4fea-b6eb-0eff7d377584</RequestId><Arguments><Argument
+        Name="Operation" Value="ItemSearch"></Argument><Argument Name="Signature"
+        Value="y3ppdXBhDbvyG1g25BukePvOh4AhBtHJVM+osvqyC5A="></Argument><Argument
+        Name="AssociateTag" Value="sty09-20"></Argument><Argument Name="Keywords"
+        Value="women''s grey blazer"></Argument><Argument Name="AWSAccessKeyId" Value="AKIAJUPZNDMRU3QZQDBQ"></Argument><Argument
+        Name="Timestamp" Value="2014-05-12T14:59:31Z"></Argument><Argument Name="SearchIndex"
+        Value="Apparel"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument></Arguments><RequestProcessingTime>0.0877540000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Keywords>women''s
+        grey blazer</Keywords><ResponseGroup>Small</ResponseGroup><SearchIndex>Apparel</SearchIndex></ItemSearchRequest></Request><TotalResults>496</TotalResults><TotalPages>50</TotalPages><MoreSearchResultsUrl>http://www.amazon.com/gp/redirect.html?camp=2025&amp;creative=386001&amp;location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fsearch%3Fkeywords%3Dwomen%2527s%2Bgrey%2Bblazer%26url%3Dsearch-alias%253Dapparel&amp;linkCode=xm2&amp;tag=sty09-20&amp;SubscriptionId=AKIAJUPZNDMRU3QZQDBQ</MoreSearchResultsUrl><Item><ASIN>B00CXRN8CK</ASIN><ParentASIN>B00CXRN8CK</ParentASIN><DetailPageURL>http://www.amazon.com/NI9NE-Brand-Military-Jacket-A882GY/dp/B00CXRN8CK%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00CXRN8CK</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/NI9NE-Brand-Military-Jacket-A882GY/dp/tech-data/B00CXRN8CK%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00CXRN8CK</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00CXRN8CK%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00CXRN8CK</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00CXRN8CK%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00CXRN8CK</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00CXRN8CK%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00CXRN8CK</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00CXRN8CK%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00CXRN8CK</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00CXRN8CK%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00CXRN8CK</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00CXRN8CK%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00CXRN8CK</URL></ItemLink></ItemLinks><ItemAttributes><ProductGroup>Apparel</ProductGroup><Title>NI9NE
+        Brand Grey Military Style Jacket Item #A882GY</Title></ItemAttributes></Item><Item><ASIN>B00JH1NE42</ASIN><ParentASIN>B00JH1NE42</ParentASIN><DetailPageURL>http://www.amazon.com/Stanzino-Womens-Button-Sleeve-Charcoal/dp/B00JH1NE42%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00JH1NE42</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/Stanzino-Womens-Button-Sleeve-Charcoal/dp/tech-data/B00JH1NE42%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JH1NE42</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00JH1NE42%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JH1NE42</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00JH1NE42%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JH1NE42</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00JH1NE42%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JH1NE42</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00JH1NE42%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JH1NE42</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00JH1NE42%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JH1NE42</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00JH1NE42%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JH1NE42</URL></ItemLink></ItemLinks><ItemAttributes><ProductGroup>Apparel</ProductGroup><Title>Stanzino
+        Women''s One Button 3/4 Sleeve Charcoal Blazer</Title></ItemAttributes></Item><Item><ASIN>B00K3GF8G2</ASIN><ParentASIN>B00K3GF8G2</ParentASIN><DetailPageURL>http://www.amazon.com/Theory-Womens-Urban-Button-Blazer/dp/B00K3GF8G2%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00K3GF8G2</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/Theory-Womens-Urban-Button-Blazer/dp/tech-data/B00K3GF8G2%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00K3GF8G2</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00K3GF8G2%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00K3GF8G2</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00K3GF8G2%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00K3GF8G2</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00K3GF8G2%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00K3GF8G2</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00K3GF8G2%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00K3GF8G2</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00K3GF8G2%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00K3GF8G2</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00K3GF8G2%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00K3GF8G2</URL></ItemLink></ItemLinks><ItemAttributes><ProductGroup>Apparel</ProductGroup><Title>Theory
+        Women''s Gabe B 2 Urban Button Blazer</Title></ItemAttributes></Item><Item><ASIN>B00BYH9QM6</ASIN><ParentASIN>B00BYH9QM6</ParentASIN><DetailPageURL>http://www.amazon.com/J-TOMSON-61551-1PK-FBA-Womens-Boyfriend-Blazer/dp/B00BYH9QM6%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00BYH9QM6</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/J-TOMSON-61551-1PK-FBA-Womens-Boyfriend-Blazer/dp/tech-data/B00BYH9QM6%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00BYH9QM6</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00BYH9QM6%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00BYH9QM6</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00BYH9QM6%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00BYH9QM6</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00BYH9QM6%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00BYH9QM6</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00BYH9QM6%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00BYH9QM6</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00BYH9QM6%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00BYH9QM6</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00BYH9QM6%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00BYH9QM6</URL></ItemLink></ItemLinks><ItemAttributes><ProductGroup>Apparel</ProductGroup><Title>J.TOMSON
+        Womens Boyfriend Blazer</Title></ItemAttributes></Item><Item><ASIN>B00DETR6YM</ASIN><ParentASIN>B00DETR6YM</ParentASIN><DetailPageURL>http://www.amazon.com/J-TOMSON-Womens-Tailored-Boyfriend-Blazer/dp/B00DETR6YM%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00DETR6YM</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/J-TOMSON-Womens-Tailored-Boyfriend-Blazer/dp/tech-data/B00DETR6YM%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00DETR6YM</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00DETR6YM%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00DETR6YM</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00DETR6YM%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00DETR6YM</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00DETR6YM%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00DETR6YM</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00DETR6YM%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00DETR6YM</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00DETR6YM%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00DETR6YM</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00DETR6YM%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00DETR6YM</URL></ItemLink></ItemLinks><ItemAttributes><ProductGroup>Apparel</ProductGroup><Title>J.TOMSON
+        Womens Tailored Boyfriend Blazer</Title></ItemAttributes></Item><Item><ASIN>B00GYHXU0K</ASIN><ParentASIN>B00GYHXU0K</ParentASIN><DetailPageURL>http://www.amazon.com/LE3NO-Womens-Fitted-Boyfriend-Blazer/dp/B00GYHXU0K%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00GYHXU0K</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/LE3NO-Womens-Fitted-Boyfriend-Blazer/dp/tech-data/B00GYHXU0K%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GYHXU0K</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00GYHXU0K%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GYHXU0K</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00GYHXU0K%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GYHXU0K</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00GYHXU0K%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GYHXU0K</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00GYHXU0K%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GYHXU0K</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00GYHXU0K%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GYHXU0K</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00GYHXU0K%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GYHXU0K</URL></ItemLink></ItemLinks><ItemAttributes><ProductGroup>Apparel</ProductGroup><Title>LE3NO
+        Women''s Fitted Boyfriend Blazer</Title></ItemAttributes></Item><Item><ASIN>B00JADPZTY</ASIN><ParentASIN>B00JADPZTY</ParentASIN><DetailPageURL>http://www.amazon.com/Plus-Size-Tailored-Bi-Stretch-Blazer/dp/B00JADPZTY%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00JADPZTY</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/Plus-Size-Tailored-Bi-Stretch-Blazer/dp/tech-data/B00JADPZTY%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPZTY</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00JADPZTY%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPZTY</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00JADPZTY%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPZTY</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00JADPZTY%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPZTY</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00JADPZTY%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPZTY</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00JADPZTY%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPZTY</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00JADPZTY%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPZTY</URL></ItemLink></ItemLinks><ItemAttributes><Manufacturer>BCO</Manufacturer><ProductGroup>Apparel</ProductGroup><Title>Plus
+        Size Tall Tailored Bi-Stretch Blazer</Title></ItemAttributes></Item><Item><ASIN>B00GY9BWWG</ASIN><ParentASIN>B00GY9BWWG</ParentASIN><DetailPageURL>http://www.amazon.com/Womens-Classic-Fitted-Boyfriend-Blazer/dp/B00GY9BWWG%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00GY9BWWG</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/Womens-Classic-Fitted-Boyfriend-Blazer/dp/tech-data/B00GY9BWWG%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GY9BWWG</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00GY9BWWG%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GY9BWWG</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00GY9BWWG%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GY9BWWG</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00GY9BWWG%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GY9BWWG</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00GY9BWWG%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GY9BWWG</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00GY9BWWG%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GY9BWWG</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00GY9BWWG%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00GY9BWWG</URL></ItemLink></ItemLinks><ItemAttributes><ProductGroup>Apparel</ProductGroup><Title>MBJ
+        Womens Classic Fitted Boyfriend Blazer Jacket</Title></ItemAttributes></Item><Item><ASIN>B00JADPYVI</ASIN><ParentASIN>B00JADPYVI</ParentASIN><DetailPageURL>http://www.amazon.com/Plus-Petite-Tailored-Bi-Stretch-Blazer/dp/B00JADPYVI%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00JADPYVI</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/Plus-Petite-Tailored-Bi-Stretch-Blazer/dp/tech-data/B00JADPYVI%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPYVI</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00JADPYVI%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPYVI</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00JADPYVI%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPYVI</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00JADPYVI%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPYVI</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00JADPYVI%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPYVI</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00JADPYVI%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPYVI</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00JADPYVI%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00JADPYVI</URL></ItemLink></ItemLinks><ItemAttributes><Manufacturer>BCO</Manufacturer><ProductGroup>Apparel</ProductGroup><Title>Plus
+        Size Petite Tailored Bi-Stretch Blazer</Title></ItemAttributes></Item><Item><ASIN>B00H3T7Y8C</ASIN><ParentASIN>B00H3T7Y8C</ParentASIN><DetailPageURL>http://www.amazon.com/Tresics-Juniors-Cotton-Button-Blazer/dp/B00H3T7Y8C%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00H3T7Y8C</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+        Details</Description><URL>http://www.amazon.com/Tresics-Juniors-Cotton-Button-Blazer/dp/tech-data/B00H3T7Y8C%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00H3T7Y8C</URL></ItemLink><ItemLink><Description>Add
+        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00H3T7Y8C%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00H3T7Y8C</URL></ItemLink><ItemLink><Description>Add
+        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00H3T7Y8C%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00H3T7Y8C</URL></ItemLink><ItemLink><Description>Add
+        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00H3T7Y8C%26SubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00H3T7Y8C</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00H3T7Y8C%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00H3T7Y8C</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00H3T7Y8C%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00H3T7Y8C</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00H3T7Y8C%3FSubscriptionId%3DAKIAJUPZNDMRU3QZQDBQ%26tag%3Dsty09-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00H3T7Y8C</URL></ItemLink></ItemLinks><ItemAttributes><ProductGroup>Apparel</ProductGroup><Title>Tresics
+        Juniors Cotton Blend One Button Blazer</Title></ItemAttributes></Item></Items></ItemSearchResponse>'
+    http_version: 
+  recorded_at: Mon, 12 May 2014 14:59:31 GMT
+- request:
+    method: get
+    uri: http://ecs.amazonaws.com/onca/xml?AWSAccessKeyId=AKIAJUPZNDMRU3QZQDBQ&AssociateTag=sty09-20&Keywords=women's%20grey%20blazer&Operation=ItemSearch&ResponseGroup=Images&SearchIndex=Apparel&Signature=CkjBG6kBwGeW585HuLrbAA/koR58TTLdexWoo3cTkv8=&Timestamp=2014-05-12T14:59:31Z
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - ecs.amazonaws.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 12 May 2014 14:59:31 GMT
+      Server:
+      - Server
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Nncoection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="Ruby"></Header></HTTPHeaders><RequestId>fdd2a8b5-cb64-4e4b-8127-ddb851636328</RequestId><Arguments><Argument
+        Name="Operation" Value="ItemSearch"></Argument><Argument Name="Signature"
+        Value="CkjBG6kBwGeW585HuLrbAA/koR58TTLdexWoo3cTkv8="></Argument><Argument
+        Name="AssociateTag" Value="sty09-20"></Argument><Argument Name="Keywords"
+        Value="women's grey blazer"></Argument><Argument Name="AWSAccessKeyId" Value="AKIAJUPZNDMRU3QZQDBQ"></Argument><Argument
+        Name="Timestamp" Value="2014-05-12T14:59:31Z"></Argument><Argument Name="ResponseGroup"
+        Value="Images"></Argument><Argument Name="SearchIndex" Value="Apparel"></Argument><Argument
+        Name="Service" Value="AWSECommerceService"></Argument></Arguments><RequestProcessingTime>0.0652710000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Keywords>women's
+        grey blazer</Keywords><ResponseGroup>Images</ResponseGroup><SearchIndex>Apparel</SearchIndex></ItemSearchRequest></Request><TotalResults>496</TotalResults><TotalPages>50</TotalPages><MoreSearchResultsUrl>http://www.amazon.com/gp/redirect.html?camp=2025&amp;creative=386001&amp;location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fsearch%3Fkeywords%3Dwomen%2527s%2Bgrey%2Bblazer%26url%3Dsearch-alias%253Dapparel&amp;linkCode=xm2&amp;tag=sty09-20&amp;SubscriptionId=AKIAJUPZNDMRU3QZQDBQ</MoreSearchResultsUrl><Item><ASIN>B00CXRN8CK</ASIN><ParentASIN>B00CXRN8CK</ParentASIN><SmallImage><URL>http://ecx.images-amazon.com/images/I/41eTmSHGLGL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41eTmSHGLGL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">107</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41eTmSHGLGL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">334</Width></LargeImage><ImageSets><ImageSet
+        Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41eTmSHGLGL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">20</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41eTmSHGLGL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41eTmSHGLGL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41eTmSHGLGL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">73</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41eTmSHGLGL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">107</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41eTmSHGLGL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">334</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41oIPw%2BhcRL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">20</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41oIPw%2BhcRL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41oIPw%2BhcRL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41oIPw%2BhcRL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">73</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41oIPw%2BhcRL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">107</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41oIPw%2BhcRL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">333</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41vAk%2BXNADL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">20</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41vAk%2BXNADL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41vAk%2BXNADL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41vAk%2BXNADL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">73</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41vAk%2BXNADL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">107</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41vAk%2BXNADL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">333</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41Wl7uYJRXL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">20</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41Wl7uYJRXL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41Wl7uYJRXL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41Wl7uYJRXL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">73</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41Wl7uYJRXL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">107</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41Wl7uYJRXL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">333</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41O9IPkBcpL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">20</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41O9IPkBcpL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41O9IPkBcpL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">50</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41O9IPkBcpL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">73</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41O9IPkBcpL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">107</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41O9IPkBcpL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">333</Width></LargeImage></ImageSet></ImageSets></Item><Item><ASIN>B00JH1NE42</ASIN><ParentASIN>B00JH1NE42</ParentASIN><SmallImage><URL>http://ecx.images-amazon.com/images/I/41hwp5Jz7AL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">63</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41hwp5Jz7AL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">133</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41hwp5Jz7AL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">417</Width></LargeImage><ImageSets><ImageSet
+        Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41hwp5Jz7AL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">25</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41hwp5Jz7AL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">63</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41hwp5Jz7AL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">63</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41hwp5Jz7AL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">92</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41hwp5Jz7AL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">133</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41hwp5Jz7AL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">417</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/4152%2B8kqLdL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">25</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/4152%2B8kqLdL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">63</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/4152%2B8kqLdL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">63</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/4152%2B8kqLdL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">92</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/4152%2B8kqLdL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">133</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/4152%2B8kqLdL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">417</Width></LargeImage></ImageSet></ImageSets></Item><Item><ASIN>B00K3GF8G2</ASIN><ParentASIN>B00K3GF8G2</ParentASIN></Item><Item><ASIN>B00BYH9QM6</ASIN><ParentASIN>B00BYH9QM6</ParentASIN><SmallImage><URL>http://ecx.images-amazon.com/images/I/41hV4r%2BKSKL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41hV4r%2BKSKL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41hV4r%2BKSKL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">385</Width></LargeImage><ImageSets><ImageSet
+        Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41hV4r%2BKSKL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41hV4r%2BKSKL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41hV4r%2BKSKL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41hV4r%2BKSKL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">85</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41hV4r%2BKSKL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41hV4r%2BKSKL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">385</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41S6ebQIgkL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41S6ebQIgkL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41S6ebQIgkL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41S6ebQIgkL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">85</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41S6ebQIgkL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41S6ebQIgkL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">385</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41IxtQnqxXL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41IxtQnqxXL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41IxtQnqxXL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41IxtQnqxXL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">85</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41IxtQnqxXL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41IxtQnqxXL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">385</Width></LargeImage></ImageSet></ImageSets></Item><Item><ASIN>B00DETR6YM</ASIN><ParentASIN>B00DETR6YM</ParentASIN><SmallImage><URL>http://ecx.images-amazon.com/images/I/41jsMqjgeFL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41jsMqjgeFL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41jsMqjgeFL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">384</Width></LargeImage><ImageSets><ImageSet
+        Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41jsMqjgeFL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41jsMqjgeFL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41jsMqjgeFL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41jsMqjgeFL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">84</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41jsMqjgeFL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41jsMqjgeFL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">384</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41PL9UL6zmL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41PL9UL6zmL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41PL9UL6zmL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41PL9UL6zmL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">84</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41PL9UL6zmL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41PL9UL6zmL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">384</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41ZCFlpEx1L._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41ZCFlpEx1L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41ZCFlpEx1L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41ZCFlpEx1L._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">84</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41ZCFlpEx1L._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41ZCFlpEx1L.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">384</Width></LargeImage></ImageSet></ImageSets></Item><Item><ASIN>B00GYHXU0K</ASIN><ParentASIN>B00GYHXU0K</ParentASIN><SmallImage><URL>http://ecx.images-amazon.com/images/I/41hU-8oRNKL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">59</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41hU-8oRNKL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">125</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41hU-8oRNKL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">391</Width></LargeImage><ImageSets><ImageSet
+        Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41hU-8oRNKL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41hU-8oRNKL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">59</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41hU-8oRNKL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">59</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41hU-8oRNKL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">86</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41hU-8oRNKL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">125</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41hU-8oRNKL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">391</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41fpRQcOJ6L._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41fpRQcOJ6L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">59</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41fpRQcOJ6L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">59</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41fpRQcOJ6L._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">86</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41fpRQcOJ6L._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">125</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41fpRQcOJ6L.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">391</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41I11rbdPHL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41I11rbdPHL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">59</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41I11rbdPHL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">59</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41I11rbdPHL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">86</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41I11rbdPHL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">125</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41I11rbdPHL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">391</Width></LargeImage></ImageSet></ImageSets></Item><Item><ASIN>B00JADPZTY</ASIN><ParentASIN>B00JADPZTY</ParentASIN><SmallImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">111</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">347</Width></LargeImage><ImageSets><ImageSet
+        Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">21</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">76</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">111</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">347</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">21</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">76</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">111</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">347</Width></LargeImage></ImageSet></ImageSets></Item><Item><ASIN>B00GY9BWWG</ASIN><ParentASIN>B00GY9BWWG</ParentASIN><SmallImage><URL>http://ecx.images-amazon.com/images/I/41bnEYCezjL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41bnEYCezjL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41bnEYCezjL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">385</Width></LargeImage><ImageSets><ImageSet
+        Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41bnEYCezjL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41bnEYCezjL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41bnEYCezjL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41bnEYCezjL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">85</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41bnEYCezjL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41bnEYCezjL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">385</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/413F3W0oqpL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/413F3W0oqpL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/413F3W0oqpL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/413F3W0oqpL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">85</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/413F3W0oqpL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/413F3W0oqpL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">385</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41OwLjA39vL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41OwLjA39vL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41OwLjA39vL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41OwLjA39vL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">85</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41OwLjA39vL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">123</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41OwLjA39vL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">385</Width></LargeImage></ImageSet></ImageSets></Item><Item><ASIN>B00JADPYVI</ASIN><ParentASIN>B00JADPYVI</ParentASIN><SmallImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">111</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">347</Width></LargeImage><ImageSets><ImageSet
+        Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">21</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">76</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">111</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41IUODQEs-L.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">347</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">21</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">52</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">76</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">111</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41uSw20Zm3L.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">347</Width></LargeImage></ImageSet></ImageSets></Item><Item><ASIN>B00H3T7Y8C</ASIN><ParentASIN>B00H3T7Y8C</ParentASIN><SmallImage><URL>http://ecx.images-amazon.com/images/I/41O3n22aeXL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41O3n22aeXL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">160</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41O3n22aeXL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">500</Width></LargeImage><ImageSets><ImageSet
+        Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41O3n22aeXL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">30</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41O3n22aeXL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41O3n22aeXL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41O3n22aeXL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">110</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41O3n22aeXL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">160</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41O3n22aeXL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">500</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/4102fldTSuL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">30</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/4102fldTSuL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/4102fldTSuL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/4102fldTSuL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">110</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/4102fldTSuL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">160</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/4102fldTSuL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">500</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41XL-ZPNZBL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">30</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41XL-ZPNZBL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41XL-ZPNZBL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41XL-ZPNZBL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">110</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41XL-ZPNZBL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">160</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41XL-ZPNZBL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">500</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51lNNp6Di6L._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">30</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51lNNp6Di6L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51lNNp6Di6L._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51lNNp6Di6L._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">110</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51lNNp6Di6L._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">160</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51lNNp6Di6L.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">500</Width></LargeImage></ImageSet><ImageSet
+        Category="variant"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/516cN5KkYdL._SL30_.jpg</URL><Height
+        Units="pixels">30</Height><Width Units="pixels">30</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/516cN5KkYdL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/516cN5KkYdL._SL75_.jpg</URL><Height
+        Units="pixels">75</Height><Width Units="pixels">75</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/516cN5KkYdL._SL110_.jpg</URL><Height
+        Units="pixels">110</Height><Width Units="pixels">110</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/516cN5KkYdL._SL160_.jpg</URL><Height
+        Units="pixels">160</Height><Width Units="pixels">160</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/516cN5KkYdL.jpg</URL><Height
+        Units="pixels">500</Height><Width Units="pixels">500</Width></LargeImage></ImageSet></ImageSets></Item></Items></ItemSearchResponse>
+    http_version: 
+  recorded_at: Mon, 12 May 2014 14:59:31 GMT
+recorded_with: VCR 2.9.0

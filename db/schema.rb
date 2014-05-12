@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509105945) do
+ActiveRecord::Schema.define(version: 20140512110317) do
 
   create_table "closets", force: true do |t|
     t.integer "photobooths_id"
@@ -33,10 +33,16 @@ ActiveRecord::Schema.define(version: 20140509105945) do
     t.string   "url"
     t.string   "file_name"
     t.integer  "user_id"
+    t.text     "description"
   end
 
   create_table "results", force: true do |t|
+    t.text    "description"
+    t.text    "url"
+    t.integer "photobooth_id"
   end
+
+  add_index "results", ["photobooth_id"], name: "index_results_on_photobooth_id"
 
   create_table "sessions", force: true do |t|
     t.integer "user_id"

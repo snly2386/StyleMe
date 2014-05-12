@@ -3,4 +3,12 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+# ActiveRecordTasks.configure do |config|
+#   # These are all the default values
+#   config.db_dir = 'db'
+#   config.db_config_path = 'db/config.yml'
+#   config.env = ENV['DB_ENV'] || 'development'
+# end
+
 Rails.application.load_tasks
+# ActiveRecordTasks.load_tasks

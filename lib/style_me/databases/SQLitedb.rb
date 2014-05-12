@@ -1,8 +1,7 @@
 require 'yaml'
 require 'active_record'
 require 'pry-debugger'
-# dbconfig = YAML::load(File.open('db/config.yml'))
-# ActiveRecord::Base.establish_connection(dbconfig)
+
 module StyleMe
   module Databases
 
@@ -31,10 +30,14 @@ module StyleMe
     class SQLiteDatabase
 
       def initialize
-        ActiveRecord::Base.establish_connection(
-          :adapter => 'sqlite3',
-          :database => '../StyleMe_dev'
-        )
+        # config = YAML.load_file('db/config.yml')
+        # ActiveRecord::Base.establish_connection(
+        #   config['test']
+        # )
+        dbconfig = YAML::load(File.open('db/config.yml'))
+        puts "DBCONFIG:"
+        puts dbconfig
+        ActiveRecord::Base.establish_connection(dbconfig['development'])
       end
       # binding.pry
       def clear_everything

@@ -2,7 +2,7 @@ require 'style_me' # for some reason this works in rspec
 require 'pry-debugger'
 require_relative 'shared/database_spec.rb'
 
-# require 'vcr'
+require 'vcr'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
@@ -16,16 +16,7 @@ RSpec.configure do |config|
   config.order = 'random'
 end
 
-# VCR.configure do |c|
-#   c.cassette_library_dir = 'fixtures/vcr_cassettes'
-#   c.hook_into :webmock # or :fakeweb
-# end
-
-# class VCRTest < Test::Unit::TestCase
-#   def test_example_dot_com
-#     VCR.use_cassette('synopsis') do
-#       response = Net::HTTP.get_response(URI('http://www.iana.org/domains/reserved'))
-#       assert_match /Example domains/, response.body
-#     end
-#   end
-# end
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  c.hook_into :webmock # or :fakeweb
+end
