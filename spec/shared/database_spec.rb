@@ -86,18 +86,22 @@ shared_examples 'a database' do
     expect(got_photobooth.photo_id).to_not be_nil
   end
 
-  xit "creates a result" do
-    user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123", :password_digest=>"123", :email=>"wendy@hotmail.com")
+  it "creates a result" do
+    user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123456", :password_digest=>"123456", :email=>"wendy234@hotmail.com")
+
     photo = db.create_photo(:user_id => user.id, :url => "www.here")
-    photobooth = db.create_photobooth(:closet_id => user.closet.id, :photo_id => photo.id)
+
+    # closet = db.create_closet(:user_id => user.id )
+    photobooth = db.create_photobooth(:photo_id => photo.id)
+    # binding.pry
     result = db.create_result(:photobooth_id => photobooth.id)
     expect(result.id).to_not be_nil
   end
 
   xit "gets a result" do
-    user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123", :password_digest=>"123", :email=>"wendy@hotmail.com")
+    user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123", :password_digest=>"123", :email=>"wendywergwergs@hotmail.com")
     photo = db.create_photo(:user_id => user.id, :url => "www.here")
-    photobooth = db.create_photobooth(:closet_id => user.closet.id, :photo_id => photo.id)
+    photobooth = db.create_photobooth(:closet_id => user.closet_id, :photo_id => photo.id)
     result = db.create_result(:photobooth_id => photobooth.id)
     get_result = db.get_result(result.id)
     expect(get_result.photobooth_id).to eq(photobooth.id)

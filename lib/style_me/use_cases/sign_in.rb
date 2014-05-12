@@ -15,7 +15,6 @@ module StyleMe
 
 
      success :user => user, :session => session
-     # binding.pry
     end
   end
 end

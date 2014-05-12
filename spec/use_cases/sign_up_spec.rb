@@ -21,7 +21,6 @@ describe StyleMe::SignUp do
   end
 
   it "creates a user" do
-    # binding.pry
       result = subject.run(:name=> "wendy", :username=>"wen567", :age=>24, :gender => "female", :about_me => "fashionista", :password => "helloo1")
       expect(result.success?).to eq true
       expect(result.user).to be_a StyleMe::User

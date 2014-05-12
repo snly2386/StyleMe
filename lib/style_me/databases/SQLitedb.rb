@@ -105,7 +105,6 @@ module StyleMe
           end
 
           def create_photo(attrs)
-            # binding.pry
             ar_photo = Photo.create(attrs)
             StyleMe::Photo.new(ar_photo.attributes)
           end
@@ -121,6 +120,11 @@ module StyleMe
 
           def get_photobooth(id)
             photobooth = StyleMe::Photobooth.new(Photobooth.find(id).attributes)
+          end
+
+          def create_result(attrs)
+            ar_result = Result.create(attrs)
+            StyleMe::Result.new(ar_result.attributes)
           end
     end
   end
