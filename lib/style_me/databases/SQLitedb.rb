@@ -130,9 +130,10 @@ module StyleMe
           end
 
           def get_result_by_photobooth(photobooth_id)
-            ar_result = Result.where(:photobooth_id => photobooth_id).first
-            # binding.pry
-            StyleMe::Result.new(ar_result.attributes)
+            ar_result = Result.where(:photobooth_id => photobooth_id)
+            ar_result.each do |result|
+              StyleMe::Result.new(result.attributes)
+            end
           end
     end
   end

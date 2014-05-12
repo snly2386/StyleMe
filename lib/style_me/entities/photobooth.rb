@@ -1,6 +1,6 @@
 module StyleMe
   class Photobooth < Entity
-    attr_accessor :results, :id, :photo_id, :closet_id, :tags, :content, :images, :user_id
+    attr_accessor :results, :id, :photo_id,:tags, :content, :images, :user_id
 
 
   end

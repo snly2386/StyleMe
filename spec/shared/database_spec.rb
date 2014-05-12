@@ -91,7 +91,8 @@ shared_examples 'a database' do
   end
   it "gets a result by photobooth id" do
     result = db.create_result(:photobooth_id => @photobooth.id)
+    result2 = db.create_result(:photobooth_id => @photobooth.id)
     result = db.get_result_by_photobooth(@photobooth.id)
-    expect(result.photobooth_id).to eq(@photobooth.id)
+    expect(result.length).to eq(2)
   end
 end

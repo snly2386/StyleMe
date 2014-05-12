@@ -109,7 +109,7 @@ module StyleMe
 
       def get_result_by_photobooth(photobooth_id)
         result = @results.select{|x,y| y.photobooth_id == photobooth_id}
-        result.values[0]
+        result.values
       end
 
     end
