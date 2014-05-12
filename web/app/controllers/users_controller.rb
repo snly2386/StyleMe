@@ -28,8 +28,4 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:username, :name, :gender, :password, :email)
   end
-
-  def closet_params
-    params.require(:closet).permit(:photobooths, :user_id)
-  end
 end

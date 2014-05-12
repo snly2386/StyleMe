@@ -49,8 +49,8 @@ module StyleMe
 
   def self.db_seed
     self.db.clear_everything
-    user1 = self.db.create_user(closet_id: nil, username: "wendy", name: "wen", age: 24, about_me: "bleh", gender: "female", password: "123456", password_digest: "123456", email: "wndyhsu@gmail.com")
-    user2 = self.db.create_user(closet_id: nil, username: "lola", name: "lololo1", age: 24, about_me: "likes green beans", gender: "female", password: "123gree", password_digest:"123gree", email: "snly2386@gmail.com")
+    user1 = self.db.create_user(username: "wendy", name: "wen", age: 24, about_me: "bleh", gender: "female", password: "123456", password_digest: "123456", email: "wndyhsu@gmail.com")
+    user2 = self.db.create_user(username: "lola", name: "lololo1", age: 24, about_me: "likes green beans", gender: "female", password: "123gree", password_digest:"123gree", email: "snly2386@gmail.com")
   end
 end
 

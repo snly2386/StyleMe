@@ -75,7 +75,6 @@ shared_examples 'a database' do
 
   it "gets a photobooth" do
     got_photobooth = db.get_photobooth(@photobooth.id)
-    # binding.pry
     expect(got_photobooth.user_id).to_not be_nil
   end
 
