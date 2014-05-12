@@ -5,46 +5,46 @@ Dotenv.load
 module StyleMe
   class CreatePhotoBooth < UseCase
     def run(params)
-
-      puts "CAMFIND KEY:"
-      puts ENV["CAMFIND_KEY"]
       @db = StyleMe.db
+      # url = params[:url]
+      @image_path = params[:file_name]
+      # url = upload_to_s3
+      #-UPLOADED TO AMAZON S3 ------------------------------------
 
-      # TODO:
-      # upload_to_s3(params[:image_file])
+      #create photo with Amazon url and file path
+      photo = @db.create_photo(:file_name => params[:file_name].original_filename)
 
-      photo = @db.create_photo(:url => nil, :image_file => params[:image_file].original_filename)
+      #Retrieve photo with CAMFIND
+      @token_response = Unirest::post "https://camfind.p.mashape.com/image_requests", 
+      headers: { 
+        "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
+      },
+      parameters: { 
+        "image_request[locale]" => "en_US",
+        "image_request[language]" => "en",
+        "image_request[device_id]" => "<image_request[device_id]>",
+        "image_request[latitude]" => "35.8714220766008",
+        "image_request[longitude]" => "14.3583203002251",
+        "image_request[altitude]" => "27.912109375",
+        "focus[x]" => "480",
+        "focus[y]" => "640",
+        # "image_request[image]" => File.new(url)
+        "image_request[image]" => File.new('/Users/chrispalmer/Desktop/' + params[:file_name].original_filename)
+      }
 
-      # Retrieve photo with CAMFIND
-      @token_response = Unirest::post("https://camfind.p.mashape.com/image_requests",
-        headers: {
-          "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
-        },
-        parameters: {
-          "image_request[locale]" => "en_US",
-          "image_request[language]" => "en",
-          "image_request[device_id]" => "<image_request[device_id]>",
-          "image_request[latitude]" => "35.8714220766008",
-          "image_request[longitude]" => "14.3583203002251",
-          "image_request[altitude]" => "27.912109375",
-          "focus[x]" => "480",
-          "focus[y]" => "640",
-          "image_request[image]" => File.new("/vagrant/StyleMe/StyleMe/cardigan.jpeg")
-        }
-      )
-
+      # def make_request
       @response = Unirest::get("https://camfind.p.mashape.com/image_responses/" + @token_response.body['token'],
-        headers: {
+        headers: { 
           "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
         }
       )
-
+      
       # end
       # Create empty photobooth
       photobooth = @db.create_photobooth(:photo_id => photo.id, :closet_id => nil, :tags => nil, :content => nil, :images => nil)
       MisterWorker.perform_in(15.seconds, @token_response.body['token'], photobooth.id)
       description = @response.body["name"]
-
+      
       # params[:url] = url
       success :results => @response, :file_name => params[:file_name].original_filename, :description => description, :photobooth => photobooth
     end
@@ -55,10 +55,9 @@ module StyleMe
     #   user = @db.get_user(params[:user_id])
     #   #UPLOAD TO AMAZON S3--------------------------------------
     #   AWS.config(
-    #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'], 
     #     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     #   )
-
 
     #   bucket_name = 'chriswendystyle'
     #   # file_name = 'images.jpeg'

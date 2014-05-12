@@ -1,10 +1,32 @@
 require 'yaml'
 require 'active_record'
 require 'pry-debugger'
-# dbconfig = YAML::load(File.open('db/config.yml'))
-# ActiveRecord::Base.establish_connection(dbconfig)
+
 module StyleMe
   module Databases
+
+    class User < ActiveRecord::Base
+      has_one :closet
+    end
+
+    class Closet < ActiveRecord::Base
+      belongs_to :user
+      has_many :photobooths
+    end
+
+    class Photobooth < ActiveRecord::Base
+      belongs_to :photo
+      has_many :results
+    end
+
+    class Photo <ActiveRecord::Base
+      has_one :photobooth
+    end
+
+    class Result < ActiveRecord::Base
+      belongs_to :photobooth
+    end
+
     class SQLiteDatabase
       def initialize(env)
 
