@@ -14,6 +14,13 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+
+  StyleMe.db_class = StyleMe::Databases::InMemory
+
+  config.before(:each) do
+    StyleMe.instance_variable_set(:@__db_instance, nil)
+    StyleMe.db.clear_everything
+  end
 end
 
 # VCR.configure do |c|

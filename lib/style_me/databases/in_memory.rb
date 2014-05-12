@@ -47,7 +47,6 @@ module StyleMe
 
       def create_session(attrs)
         id = @session_id_counter += 1
-        # binding.pry
         # attrs[:id] = id
         session = Session.new(:id => id, :user_id => attrs[:user_id])
         @sessions[id] = session

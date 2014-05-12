@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @session = result2.session
 
     if result2.success?
+      # UserMailer.signup_confirmation(result.user.id)
       redirect_to "/users/#{@user.id}"
     end
   end
