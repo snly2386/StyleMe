@@ -50,13 +50,15 @@ module StyleMe
       end
     end
 
-    results = StyleMe.db.get_results_by_photobooth_id(@photobooth.id)
+    results = StyleMe.db.get_result_by_photobooth(@photobooth.id)
 
 
 
 
     puts "PHOTOBOOTH CONTENT!"
     puts @photobooth.content
+
+    success :search_results => results, :photobooth => @photobooth
     end
   end
 
