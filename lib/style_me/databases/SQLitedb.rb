@@ -29,11 +29,10 @@ module StyleMe
 
     class SQLiteDatabase
       def initialize(env)
-        ActiveRecord::Base.establish_connection(
-          # :adapter => 'sqlite3',
-          # :database => 'styleme_test'
-          YAML.load_file('db/config.yml')[env]
-        )
+         dbconfig = YAML::load(File.open('db/config.yml'))
+         puts "DBCONFIG:"
+         puts dbconfig
+         ActiveRecord::Base.establish_connection(dbconfig['development'])
       end
 
       def clear_everything

@@ -11,57 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512110317) do
+ActiveRecord::Schema.define(version: 20140512132838) do
 
-  create_table "closets", force: true do |t|
-    t.integer "photobooths_id"
+  create_table "photobooth", force: true do |t|
+    t.string  "tags"
+    t.text    "content"
+    t.text    "images"
     t.integer "user_id"
   end
 
-  create_table "photobooths", force: true do |t|
-    t.integer "photo_id"
-    t.integer "result_id"
-    t.integer "closet_id"
-    t.text    "tags"
-    t.text    "content"
-    t.text    "images"
-  end
-
   create_table "photos", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "url"
-    t.string   "file_name"
-    t.integer  "user_id"
-    t.text     "description"
+    t.string  "file_name"
+    t.integer "photobooth_id"
+    t.text    "description"
   end
 
   create_table "results", force: true do |t|
-    t.text    "description"
-    t.text    "url"
     t.integer "photobooth_id"
+    t.text    "description"
+    t.string  "url"
   end
-
-  add_index "results", ["photobooth_id"], name: "index_results_on_photobooth_id"
 
   create_table "sessions", force: true do |t|
     t.integer "user_id"
   end
 
   create_table "users", force: true do |t|
-    t.integer  "closet_id"
-    t.string   "username"
-    t.string   "name"
-    t.integer  "age"
-    t.text     "about_me"
-    t.string   "gender"
-    t.integer  "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "password_digest"
-    t.string   "email"
+    t.string  "username"
+    t.string  "email"
+    t.string  "name"
+    t.integer "age"
+    t.text    "about_me"
+    t.string  "gender"
+    t.string  "password"
+    t.string  "password_digest"
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
