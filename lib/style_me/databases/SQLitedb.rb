@@ -29,10 +29,22 @@ module StyleMe
 
     class SQLiteDatabase
       def initialize(env)
+<<<<<<< HEAD
          dbconfig = YAML::load(File.open('db/config.yml'))
          puts "DBCONFIG:"
          puts dbconfig
          ActiveRecord::Base.establish_connection(dbconfig['development'])
+=======
+
+        config = YAML.load_file('db/config.yml')[env]
+        # puts "HERE IS THE CONFIG"
+        # puts config
+        ActiveRecord::Base.establish_connection(
+          # :adapter => 'sqlite3',
+          # :database => 'styleme_test'
+          YAML.load_file('db/config.yml')[env]
+        )
+>>>>>>> c8426393f30137c9a351db3a8363f808ea1e4244
       end
 
       def clear_everything
@@ -80,20 +92,21 @@ module StyleMe
 
           #Database Methods
           def create_user(attrs)
-            ar_user = User.create(attrs)
             # binding.pry
+            ar_user = User.create(attrs)
             StyleMe::User.new(ar_user.attributes)
           end
 
           def get_user(id)
             id = id.to_i
             user = StyleMe::User.new(User.find(id).attributes)
-            # user.closet = ...
-            # user
           end
 
           def get_user_by_username(username)
             ar_user = User.where(:username =>username).first
+            # binding.pry
+            return nil if ar_user.nil?
+
             StyleMe::User.new(ar_user.attributes)
           end
 
@@ -121,7 +134,6 @@ module StyleMe
           end
 
           def create_photo(attrs)
-            # binding.pry
             ar_photo = Photo.create(attrs)
             StyleMe::Photo.new(ar_photo.attributes)
           end
@@ -137,6 +149,11 @@ module StyleMe
 
           def get_photobooth(id)
             photobooth = StyleMe::Photobooth.new(Photobooth.find(id).attributes)
+          end
+
+          def create_result(attrs)
+            ar_result = Result.create(attrs)
+            StyleMe::Result.new(ar_result.attributes)
           end
     end
   end

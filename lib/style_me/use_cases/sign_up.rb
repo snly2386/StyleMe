@@ -13,7 +13,7 @@ module StyleMe
 
       user = @db.create_user(params)
 
-
+      # binding.pry
       success :user => user
     end
   end

@@ -1,10 +1,9 @@
 require 'spec_helper'
 
 describe StyleMe::SignUp do
-  # let(:result) { described_class.run(:name=> "wendy", :username=>"wen", :age=>24, :gender => "female", :about_me => "fashionista", :password => "helloo") }
 
    before do
-     @result = subject.run(:name=> "wendy", :username=>"wen", :age=>24, :gender => "female", :about_me => "fashionista", :password => "helloo")
+     @result = subject.run(:name=> "wendy", :username=>"wen", :age=>24, :gender => "female", :about_me => "fashionista", :password => "helloo1")
    end
 
   describe "Error handling" do
@@ -22,7 +21,8 @@ describe StyleMe::SignUp do
   end
 
   it "creates a user" do
-    expect(@result.success?).to eq true
-    expect(@result.user).to be_a StyleMe::User
+      result = subject.run(:name=> "wendy", :username=>"wen567", :age=>24, :gender => "female", :about_me => "fashionista", :password => "helloo1")
+      expect(result.success?).to eq true
+      expect(result.user).to be_a StyleMe::User
+    end
   end
-end
