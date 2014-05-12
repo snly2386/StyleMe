@@ -13,6 +13,6 @@ gem 'sqlite3'
 gem 'activerecord', '~> 4.1.0'
 gem 'active_record_tasks', '~> 1.0.4'
 
-gem 'webmock'
+gem 'webmock', :groups => [:test]
 gem 'vcr'
 gem 'bcrypt-ruby', '3.1.2'

@@ -34,8 +34,8 @@ class PhotoboothsController < ApplicationController
   def results
     # render json: StyleMe.db.get_photobooth(params[:id])
     @photobooth = StyleMe.db.get_photobooth(params[:id])
+    @search_results = StyleMe.db.get_result_by_photobooth(@photobooth.id)
     @description = @photobooth.tags
-    @content = @photobooth.content
-    @images = @photobooth.images
+   
   end
 end

@@ -41,9 +41,11 @@ module StyleMe
       
       # end
       # Create empty photobooth
-      photobooth = @db.create_photobooth(:photo_id => photo.id, :closet_id => nil, :tags => nil, :content => nil, :images => nil)
+      photobooth = @db.create_photobooth(:tags => nil, :content => nil, :images => nil)
+      photo.photobooth_id = photobooth.id
       MisterWorker.perform_in(15.seconds, @token_response.body['token'], photobooth.id)
       description = @response.body["name"]
+      
       
       # params[:url] = url
       success :results => @response, :file_name => params[:file_name].original_filename, :description => description, :photobooth => photobooth
