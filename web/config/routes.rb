@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
 
+  # devise_for :users
   root :to => 'welcome#index'
+
+
 
   resources :users, except: [:destroy] do
     # GET users/9/photobooths   -> INDEX
     # GET users/9/photobooths/3 -> SHOW
     resources :photobooths, only: [:index, :show]
   end
-  
-  # POST   photobooths   -> CREATE  - photobooths_path
-  # DELETE photobooths/3 -> DESTROY - photobooth_path(3)
+
+
   resources :photobooths, only: [:create, :destroy]
 
   get "results/:id" => "photobooths#results"
-
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

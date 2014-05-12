@@ -2,7 +2,7 @@ module StyleMe
   module Databases
     class InMemory
 
-      def initialize
+      def initialize(env= nil)
        clear_everything
       end
 
@@ -23,11 +23,11 @@ module StyleMe
       end
 
       def create_user(attrs)
-        
+
          id = @user_id_counter += 1
          attrs[:id] = id
 
-        user = User.new(:id => id, :username => attrs[:username], :name => attrs[:name], :age => attrs[:age], :gender => attrs[:gender], :about_me => attrs[:about_me], :password => attrs[:password] )
+        user = User.new(:id => id, :username => attrs[:username], :name => attrs[:name], :age => attrs[:age], :gender => attrs[:gender], :about_me => attrs[:about_me], :password => attrs[:password], :password_digest => attrs[:password_digest])
         @users[id] = user
       end
 
@@ -44,19 +44,28 @@ module StyleMe
         user.values[0]
       end
 
+
       def create_session(attrs)
         id = @session_id_counter += 1
-        attrs[:id] = id 
+        # binding.pry
+        # attrs[:id] = id
         session = Session.new(:id => id, :user_id => attrs[:user_id])
-        @sessions[id] = session 
+        @sessions[id] = session
       end
 
-      def get_session
+      def get_session(id)
         @sessions[id]
+
+        #returns { session_id => session}
+      end
+
+      def get_session_by_user_id(user_id)
+        session = @sessions.select{|x,y| y.user_id == user_id}
+        session.values[0]
       end
 
       def create_closet(attrs)
-        id = @closets_id_counter += 1 
+        id = @closets_id_counter += 1
         attrs[:id] = id
         closet = Closet.new(:id => id, :user_id => attrs[:user_id])
         @closets[id] = closet

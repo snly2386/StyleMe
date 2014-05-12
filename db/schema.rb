@@ -58,6 +58,10 @@ ActiveRecord::Schema.define(version: 20140512110317) do
     t.integer  "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
+    t.string   "email"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

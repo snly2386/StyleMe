@@ -29,9 +29,29 @@ require_relative 'style_me/use_cases/create_photobooth.rb'
 require_relative 'style_me/use_cases/load_photo_booth.rb'
 
 module StyleMe
+  # def self.db
+  #   puts "hello"
+  #   @__db_instance ||= Databases::SQLiteDatabase.new
+  # end
+
   def self.db
-    puts "hello"
-    @__db_instance ||= Databases::SQLiteDatabase.new
+    @db_class ||= Databases::SQLiteDatabase
+    @__db_instance ||= @db_class.new(@env || 'test')
+  end
+
+  def self.db_class=(db_class)
+    @db_class = db_class
+  end
+
+  def self.env=(env_name)
+    @env = env_name
+  end
+
+  def self.db_seed
+    self.db.clear_everything
+    user1 = self.db.create_user(closet_id: nil, username: "wendy", name: "wen", age: 24, about_me: "bleh", gender: "female", password: "123456", password_digest: "123456", email: "wndyhsu@gmail.com")
+    user2 = self.db.create_user(closet_id: nil, username: "lola", name: "lololo1", age: 24, about_me: "likes green beans", gender: "female", password: "123gree", password_digest:"123gree", email: "snly2386@gmail.com")
+    # binding.pry
   end
 end
 

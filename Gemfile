@@ -15,4 +15,4 @@ gem 'active_record_tasks', '~> 1.0.4'
 
 gem 'webmock'
 gem 'vcr'
-# gem 'sidekiq'
+gem 'bcrypt-ruby', '3.1.2'
