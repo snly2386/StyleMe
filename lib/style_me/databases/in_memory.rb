@@ -88,7 +88,7 @@ module StyleMe
       def create_photobooth(attrs)
         id = @photobooths_id_counter += 1
         attrs[:id] = id
-        photobooth = Photobooth.new(:id => id, :closet_id => attrs[:closet_id], :photo_id => attrs[:photo_id])
+        photobooth = Photobooth.new(:id => id, :user_id => attrs[:user_id])
         @photobooths[id] = photobooth
       end
 
@@ -99,12 +99,17 @@ module StyleMe
       def create_result(attrs)
         id = @result_id_counter += 1
         attrs[:id] = id
-        result = Result.new(:id => id, :photobooth_id => attrs[:photobooth_id])
+        result = Result.new(:id => id, :photobooth_id => attrs[:photobooth_id], :description =>attrs[:description], :url =>attrs[:url])
         @results[id] = result
       end
 
       def get_result(id)
         @results[id]
+      end
+
+      def get_result_by_photobooth(photobooth_id)
+        result = @results.select{|x,y| y.photobooth_id == photobooth_id}
+        result.values[0]
       end
 
     end

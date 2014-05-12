@@ -4,37 +4,8 @@ require 'pry-debugger'
 
 module StyleMe
   module Databases
-
-    class User < ActiveRecord::Base
-      has_one :closet
-    end
-
-    class Closet < ActiveRecord::Base
-      belongs_to :user
-      has_many :photobooths
-    end
-
-    class Photobooth < ActiveRecord::Base
-      belongs_to :photo
-      has_many :results
-    end
-
-    class Photo <ActiveRecord::Base
-      has_one :photobooth
-    end
-
-    class Result < ActiveRecord::Base
-      belongs_to :photobooth
-    end
-
     class SQLiteDatabase
       def initialize(env)
-<<<<<<< HEAD
-         dbconfig = YAML::load(File.open('db/config.yml'))
-         puts "DBCONFIG:"
-         puts dbconfig
-         ActiveRecord::Base.establish_connection(dbconfig['development'])
-=======
 
         config = YAML.load_file('db/config.yml')[env]
         # puts "HERE IS THE CONFIG"
@@ -44,7 +15,6 @@ module StyleMe
           # :database => 'styleme_test'
           YAML.load_file('db/config.yml')[env]
         )
->>>>>>> c8426393f30137c9a351db3a8363f808ea1e4244
       end
 
       def clear_everything
@@ -104,7 +74,6 @@ module StyleMe
 
           def get_user_by_username(username)
             ar_user = User.where(:username =>username).first
-            # binding.pry
             return nil if ar_user.nil?
 
             StyleMe::User.new(ar_user.attributes)
@@ -153,6 +122,16 @@ module StyleMe
 
           def create_result(attrs)
             ar_result = Result.create(attrs)
+            StyleMe::Result.new(ar_result.attributes)
+          end
+
+          def get_result(id)
+            result = StyleMe::Result.new(Result.find(id).attributes)
+          end
+
+          def get_result_by_photobooth(photobooth_id)
+            ar_result = Result.where(:photobooth_id => photobooth_id).first
+            # binding.pry
             StyleMe::Result.new(ar_result.attributes)
           end
     end

@@ -21,7 +21,7 @@ describe StyleMe::LoadPhotoBooth do
     Time.stub(:now).and_return(Time.parse '2014-05-12T14:59:31Z')
   end
 
-  it "updates the photobooth tags" do
+  xit "updates the photobooth tags" do
     VCR.use_cassette('camfind_success') do
       expect(result.photobooth.tags).to_not be_nil
     end

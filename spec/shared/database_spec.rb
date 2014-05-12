@@ -6,6 +6,8 @@ shared_examples 'a database' do
   before do
     db.clear_everything
     @user = db.create_user(:username => "wen", :name => "wendy", :age=> 24, :gender => "female", :about_me => "beautiful", :password => "123tree1", :password_digest=>"123tree1", :email=>"wendy@hotmail.com")
+    @photobooth = db.create_photobooth(:tags => nil, :content=> "fun", :images => nil, :user_id=> @user.id)
+    @photo = db.create_photo(:photobooth_id => @photobooth.id, :file_name => "IMG2123", :description=> "dark skirt")
 
   end
 
@@ -58,52 +60,38 @@ shared_examples 'a database' do
 
 
   it "creates a photo" do
-    photo = db.create_photo(:user_id => @user.id, :url => "www.here")
-    expect(photo.id).to_not be_nil
+    expect(@photo.id).to_not be_nil
   end
 
   it "gets a photo" do
-    photo = db.create_photo(:user_id => @user.id, :url => "www.here")
-    got_photo = db.get_photo(photo.id)
-    expect(got_photo.url).to_not be_nil
+    got_photo = db.get_photo(@photo.id)
+    expect(got_photo.file_name).to_not be_nil
   end
 
   it "creates a photobooth" do
-    user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123456", :password_digest=>"123456", :email=>"g@hotmail.com")
-    photo = db.create_photo(:user_id => user.id, :url => "www.here")
-    closet = db.create_closet(:user_id => user.id)
-    photobooth = db.create_photobooth(:closet_id => closet.id, :photo_id => photo.id)
-    expect(photobooth.id).to_not be_nil
-    expect(photobooth.closet_id).to eq(closet.id)
+    closet = db.create_closet(:user_id => @user.id)
+    expect(@photobooth.id).to_not be_nil
   end
 
   it "gets a photobooth" do
-    user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123", :password_digest=>"123", :email=>"wendy@hotmail.com")
-    photo = db.create_photo(:user_id => user.id, :url => "www.here")
-    closet = db.create_closet(:user_id => user.id)
-    photobooth = db.create_photobooth(:closet_id => closet.id, :photo_id => photo.id)
-    got_photobooth = db.get_photobooth(photobooth.id)
-    expect(got_photobooth.photo_id).to_not be_nil
+    got_photobooth = db.get_photobooth(@photobooth.id)
+    # binding.pry
+    expect(got_photobooth.user_id).to_not be_nil
   end
 
   it "creates a result" do
-    user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123456", :password_digest=>"123456", :email=>"wendy234@hotmail.com")
-
-    photo = db.create_photo(:user_id => user.id, :url => "www.here")
-
-    # closet = db.create_closet(:user_id => user.id )
-    photobooth = db.create_photobooth(:photo_id => photo.id)
-    # binding.pry
-    result = db.create_result(:photobooth_id => photobooth.id)
+    result = db.create_result(:photobooth_id => @photobooth.id, :description => "fun", :url=>"ww.asdf")
     expect(result.id).to_not be_nil
   end
 
-  xit "gets a result" do
-    user = db.create_user(:username => "billybob", :name=> "bill", :age=> 100, :gender => "male", :about_me =>"redneck", :password => "123", :password_digest=>"123", :email=>"wendywergwergs@hotmail.com")
-    photo = db.create_photo(:user_id => user.id, :url => "www.here")
-    photobooth = db.create_photobooth(:closet_id => user.closet_id, :photo_id => photo.id)
-    result = db.create_result(:photobooth_id => photobooth.id)
+  it "gets a result" do
+    result = db.create_result(:photobooth_id => @photobooth.id)
     get_result = db.get_result(result.id)
-    expect(get_result.photobooth_id).to eq(photobooth.id)
+    expect(get_result.photobooth_id).to eq(@photobooth.id)
+  end
+  it "gets a result by photobooth id" do
+    result = db.create_result(:photobooth_id => @photobooth.id)
+    result = db.get_result_by_photobooth(@photobooth.id)
+    expect(result.photobooth_id).to eq(@photobooth.id)
   end
 end

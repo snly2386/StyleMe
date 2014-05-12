@@ -1,8 +1,8 @@
 module StyleMe
   class Closet < Entity
-    attr_accessor :id, :photobooths, :user_id
+    attr_accessor :id, :user_id
 
-    
+
 
   end
 end
