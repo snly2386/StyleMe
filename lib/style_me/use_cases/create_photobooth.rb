@@ -13,6 +13,7 @@ module StyleMe
 
       #create photo with Amazon url and file path
       photo = @db.create_photo(:file_name => params[:file_name].original_filename)
+      binding.pry
 
       #Retrieve photo with CAMFIND
       @token_response = Unirest::post "https://camfind.p.mashape.com/image_requests", 
@@ -41,9 +42,9 @@ module StyleMe
       
       # end
       # Create empty photobooth
-      photobooth = @db.create_photobooth(:tags => nil, :content => nil, :images => nil)
+      photobooth = @db.create_photobooth(:tags => nil, :content => nil, :images => nil, :user_id => nil)
       photo.photobooth_id = photobooth.id
-      MisterWorker.perform_in(15.seconds, @token_response.body['token'], photobooth.id)
+      MisterWorker.perform_in(5.seconds, @token_response.body['token'], photobooth.id)
       description = @response.body["name"]
       
       

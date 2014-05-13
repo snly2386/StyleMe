@@ -1,7 +1,8 @@
+require 'pry-debugger'
+
 class PhotoboothsController < ApplicationController
   def create
-    result = StyleMe::CreatePhotoBooth.run(:file_name => params[:file_name])
-    # binding.pry   
+    result = StyleMe::CreatePhotoBooth.run(:file_name => params[:file_name])  
     @result = result.results.inspect
     @description = result.description
     @photobooth = result.photobooth

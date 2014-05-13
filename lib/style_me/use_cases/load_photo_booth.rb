@@ -9,6 +9,7 @@ module StyleMe
       puts "AMAZON KEYS:"
       puts ENV['AWS_ACCESS_KEY_ID']
       puts ENV['AWS_SECRET_ACCESS_KEY']
+      puts "USING TEKON: #{params[:token]}"
 
      @response = Unirest::get("https://camfind.p.mashape.com/image_responses/" + params[:token],
       headers: { 
@@ -25,6 +26,7 @@ module StyleMe
     # @photobooth.save
     puts "photobooth tags"
     puts @photobooth.tags 
+
 
 
     #Amazon Product Market API
@@ -53,10 +55,6 @@ module StyleMe
     results = StyleMe.db.get_result_by_photobooth(@photobooth.id)
 
 
-
-
-    puts "PHOTOBOOTH CONTENT!"
-    puts @photobooth.content
 
     success :search_results => results, :photobooth => @photobooth
     end

@@ -1,11 +1,11 @@
 development:
   adapter: sqlite3
   database: ../StyleMe_dev
-  pool: 5
+  pool: 25
   timeout: 5000
 
 test:
   adapter: sqlite3
   database: StyleMe_dev
-  pool: 5
+  pool: 20
   timeout: 5000

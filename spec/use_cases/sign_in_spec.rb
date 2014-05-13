@@ -11,7 +11,7 @@ describe StyleMe::SignIn do
 
   describe "Error handling" do
     it "ensures the username is valid" do
-      result = subject.run(:username=> "hithere", :password=>"12345")
+      result = subject.run(:username=> "hellllothere", :password=>"1234567")
       expect(result.success?).to eq false
       expect(result.error).to eq :no_user_exists
     end
@@ -24,8 +24,9 @@ describe StyleMe::SignIn do
     end
 
     it "signs the user in and creates a session" do
-      StyleMe.db.create_user(:username => "bahbah", :name=> "bill", :email=> "billy123@example.com",:age=> 100, :gender => "male", :about_me =>"redneck", :password => "123456")
-      result = subject.run(:username=> "bahbah", :password => "123456")
+      StyleMe.db.create_user(:username => "bahbah", :name=> "bill", :email=> "billy123@example.com",:age=> 100, :gender => "male", :about_me =>"redneck", :password => "1234567")
+      result = subject.run(:username=> "bahbah", :password => "1234567")
+      binding.pry
       expect(result.success?).to eq true
       expect(result.user).to be_a StyleMe::User
       expect(result.session).to be_a StyleMe::Session

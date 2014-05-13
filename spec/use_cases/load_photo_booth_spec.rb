@@ -8,12 +8,12 @@ describe StyleMe::LoadPhotoBooth do
   before do
     @photo = photo = StyleMe.db.create_photo(:file_name => 'some/file.jpg')
     @photobooth = StyleMe.db.create_photobooth(
-      :photo_id => @photo.id,
-      :closet_id => nil,
       :tags => nil,
       :content => nil,
-      :images => nil
+      :images => nil,
+      :user_id => nil
     )
+    @photo.photobooth_id = @photobooth.id
     @params = {
       :token => 'kumc9wRdQRAO5lNzmFpe3g',
       :photobooth_id => @photobooth.id
