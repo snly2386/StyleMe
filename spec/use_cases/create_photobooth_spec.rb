@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-# describe StyleMe::CreatePhotoBooth do 
+describe StyleMe::CreatePhotoBooth do 
 
-#   it "returns error if url is not valid" do 
-#     result = subject.run(:url => "")
-#     expect(result.success?).to eq(false)
-#     expect(result.error).to eq(:invalid_url)
-#   end
+  # it "is testing" do 
+  #   result = subject.run(:file_name => {original_filename => 'images.jpeg'})
+    
+    
+  # end
 
   # it "uploads a photo" do 
   #   VCR.use_cassette('s3_and_camfind') do
@@ -16,4 +16,4 @@ require 'spec_helper'
   #     # expect(result.photo.url).to be_a '...[based on image file name]...'
   #   end
   
-# end
+end

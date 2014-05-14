@@ -3,7 +3,7 @@ require 'dotenv'
 Dotenv.load
 @token_response = Unirest::post "https://camfind.p.mashape.com/image_requests", 
   headers: { 
-    "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
+    "X-Mashape-Authorization" => ENV["NEW_CAMFIND_KEY"]
   },
   parameters: { 
     "image_request[locale]" => "en_US",
@@ -14,13 +14,15 @@ Dotenv.load
     "image_request[altitude]" => "27.912109375",
     "focus[x]" => "480",
     "focus[y]" => "640",
-    "image_request[image]" => File.new("/Users/chrispalmer/Desktop/images.jpeg")
+    "image_request[image]" => File.new("/Users/chrispalmer/Desktop/superdry.jpeg")
   }
+  puts "CAMFIND SHIIIT:"
+  puts ENV["NEW_CAMFIND_KEY"]
 
 def make_request
   @response = Unirest::get("https://camfind.p.mashape.com/image_responses/" + @token_response.body['token'],
     headers: { 
-      "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
+      "X-Mashape-Authorization" => ENV["NEW_CAMFIND_KEY"]
     }
   )
 end

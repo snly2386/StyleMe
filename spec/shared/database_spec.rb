@@ -78,6 +78,17 @@ shared_examples 'a database' do
     expect(got_photobooth.user_id).to_not be_nil
   end
 
+  # it "updates a photobooth" do
+  #   photobooth =  db.create_photobooth(:tags => nil, :content=> "fun", :images => nil, :user_id=> @user.id)
+  #   db.update_photobooth(photobooth.id, {:tags => "hello"})
+  #   expect(photobooth.tags).to eq("hello")
+  # end
+
+  it "gets a photo by photobooth id" do
+    got_photo = db.get_photo_by_photobooth_id(@photobooth.id)
+    expect(got_photo.id).to eq(@photo.id)
+  end
+
   it "creates a result" do
     result = db.create_result(:photobooth_id => @photobooth.id, :description => "fun", :url=>"ww.asdf")
     expect(result.id).to_not be_nil

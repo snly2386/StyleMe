@@ -1,4 +1,3 @@
-require 'pry-debugger'
 
 class PhotoboothsController < ApplicationController
   def create
@@ -37,6 +36,9 @@ class PhotoboothsController < ApplicationController
     @photobooth = StyleMe.db.get_photobooth(params[:id])
     @search_results = StyleMe.db.get_result_by_photobooth(@photobooth.id)
     @description = @photobooth.tags
+    photo = StyleMe.db.get_photo_by_photobooth_id(params[:id])
+    @photo_path = photo.file_name 
+
    
   end
 end

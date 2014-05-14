@@ -1,6 +1,7 @@
 require 'unirest'
 require 'dotenv'
 Dotenv.load
+# require 'pry-debugger'
 
 module StyleMe
   class CreatePhotoBooth < UseCase
@@ -11,14 +12,18 @@ module StyleMe
       # url = upload_to_s3
       #-UPLOADED TO AMAZON S3 ------------------------------------
 
+      # Create empty photobooth
+      photobooth = @db.create_photobooth(:tags => nil, :content => nil, :images => nil, :user_id => nil)
       #create photo with Amazon url and file path
-      photo = @db.create_photo(:file_name => params[:file_name].original_filename)
-      binding.pry
+
+
+      photo_path = '../../../../../../../Desktop/' + params[:file_name].original_filename
+      photo = @db.create_photo(:file_name => photo_path, :photobooth_id => photobooth.id)
 
       #Retrieve photo with CAMFIND
       @token_response = Unirest::post "https://camfind.p.mashape.com/image_requests", 
       headers: { 
-        "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
+        "X-Mashape-Authorization" => ENV["NEW_CAMFIND_KEY"]
       },
       parameters: { 
         "image_request[locale]" => "en_US",
@@ -29,27 +34,22 @@ module StyleMe
         "image_request[altitude]" => "27.912109375",
         "focus[x]" => "480",
         "focus[y]" => "640",
-        # "image_request[image]" => File.new(url)
         "image_request[image]" => File.new('/Users/chrispalmer/Desktop/' + params[:file_name].original_filename)
       }
 
       # def make_request
       @response = Unirest::get("https://camfind.p.mashape.com/image_responses/" + @token_response.body['token'],
         headers: { 
-          "X-Mashape-Authorization" => ENV["CAMFIND_KEY"]
+          "X-Mashape-Authorization" => ENV["NEW_CAMFIND_KEY"]
         }
       )
       
-      # end
-      # Create empty photobooth
-      photobooth = @db.create_photobooth(:tags => nil, :content => nil, :images => nil, :user_id => nil)
-      photo.photobooth_id = photobooth.id
-      MisterWorker.perform_in(5.seconds, @token_response.body['token'], photobooth.id)
+      
+      MisterWorker.perform_in(15.seconds, @token_response.body['token'], photobooth.id)
       description = @response.body["name"]
       
-      
       # params[:url] = url
-      success :results => @response, :file_name => params[:file_name].original_filename, :description => description, :photobooth => photobooth
+      success :results => @response, :file_name => params[:file_name].original_filename, :description => description, :photobooth => photobooth, :photo_path => photo_path
     end
 
     # def upload_to_s3

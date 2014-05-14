@@ -22,6 +22,16 @@ module StyleMe
 
       end
 
+      # @users = {
+      #   1 => {
+      #     name: 'alice',
+      #     dob: 'may'
+      #   }
+      # }
+
+      # @users[1].name = "bob"
+
+
       def create_user(attrs)
 
          id = @user_id_counter += 1
@@ -77,12 +87,17 @@ module StyleMe
       def create_photo(attrs)
         id = @photo_id_counter += 1
         attrs[:id] = id
-        photo = Photo.new(:id => id, :file_name => attrs[:file_name])
+        photo = Photo.new(:id => id, :file_name => attrs[:file_name], :photobooth_id => attrs[:photobooth_id])
         @photos[photo.id] = photo
       end
 
       def get_photo(id)
         @photos[id]
+      end
+
+      def get_photo_by_photobooth_id(id)
+        photo = @photos.select{|x,y| y.photobooth_id == id}
+        photo.values[0]
       end
 
       def create_photobooth(attrs)
@@ -94,6 +109,11 @@ module StyleMe
 
       def get_photobooth(id)
         @photobooths[id]
+      end
+
+      def update_photobooth(id, attribute)
+        photobooth = @photobooths[id]
+
       end
 
       def create_result(attrs)

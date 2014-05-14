@@ -9,6 +9,8 @@ class MisterWorker
     logger.info "it works~"
     logger.info token
 
+   
+
     StyleMe::LoadPhotoBooth.run(:token => token, :photobooth_id => photobooth_id)
     
     # @response = Unirest::get("https://camfind.p.mashape.com/image_responses/" + token,

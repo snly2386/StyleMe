@@ -5,19 +5,26 @@
   <div class="gif">
     <%=image_tag("ball.gif", class: "ball")%>
   </div>
-  <script type="text/javascript">
-    setTimeout(function(){
-      location.reload()
-      },30000)
-  </script>
+   <script type="text/javascript">
+     setTimeout(function(){
+       location.reload()
+       },5000)
+   </script>
 <% else %>
   <h2> DESCRIPTION: <%=@description%> </h2>
-  
-  <ul>
+
+  <h1> ORIGINAL PHOTO </h1>
+  <img src="/Users/chrispalmer/Desktop/super.jpeg">
+ 
+  <h2> SEARCH RESULTS </h2>
+  <div class="resultscontainer">
   <%@search_results.each do |results| %>
-   <li> <%= results %> </li>
+   <div></div>
+   <div> Description: <%= results.description %> </div>
+   <%=image_tag(results.url)%>
+
     <% end %>
-  </ul>
+  </div>
 <%end%>
 
 
