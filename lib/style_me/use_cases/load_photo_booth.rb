@@ -87,7 +87,7 @@ module StyleMe
 
 
     parsed_descriptions.each_with_index do |description, i| 
-        StyleMe.db.create_result(:description => description, :url => parsed_urls[i], :photobooth_id => @photobooth.id)
+        StyleMe.db.create_result(:description => description, :url => parsed_urls[i], :shopping_url => first_ten_shopping[i], :photobooth_id => @photobooth.id)
       
     end
 

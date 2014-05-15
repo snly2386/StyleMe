@@ -90,7 +90,7 @@ shared_examples 'a database' do
   end
 
   it "creates a result" do
-    result = db.create_result(:photobooth_id => @photobooth.id, :description => "fun", :url=>"ww.asdf")
+    result = db.create_result(:photobooth_id => @photobooth.id, :description => "fun", :url=>"ww.asdf", :shopping_url => "www.shopping.com")
     expect(result.id).to_not be_nil
   end
 
