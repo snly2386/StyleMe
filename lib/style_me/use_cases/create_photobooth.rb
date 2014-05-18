@@ -17,7 +17,7 @@ module StyleMe
       #create photo with Amazon url and file path
 
 
-      photo_path = '../../../../../../../Desktop/' + params[:file_name].original_filename
+      photo_path = '/Users/chrispalmer/Desktop/' + params[:file_name].original_filename
       photo = @db.create_photo(:file_name => photo_path, :photobooth_id => photobooth.id)
 
       #Retrieve photo with CAMFIND
@@ -53,9 +53,7 @@ module StyleMe
     end
 
     # def upload_to_s3
-    #   return failure(:invalid_url) if url.empty?
-    #   get_photo = @db.get_photo(@image_path)
-    #   user = @db.get_user(params[:user_id])
+   
     #   #UPLOAD TO AMAZON S3--------------------------------------
     #   AWS.config(
     #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'], 
@@ -63,7 +61,7 @@ module StyleMe
     #   )
 
     #   bucket_name = 'chriswendystyle'
-    #   # file_name = 'images.jpeg'
+    #   # file_name = photo_path
     #   file_name = get_photo.file_name
 
     #   # Get an instance of the S3 interface.

@@ -1,16 +1,6 @@
 <!-- <h1> THIS IS THE PHOTOBOOTHS SHOW PAGE </h1> -->
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <!-- Start WOWSlider.com HEAD section -->
-  <!-- End WOWSlider.com HEAD section -->
-</head>
 <% if @description == nil %>
-<body style="background-color:#FFFFFF">
   <!-- Start WOWSlider.com BODY section -->
   <div id="wowslider-container1">
   <div class="ws_images"><ul>
@@ -46,13 +36,31 @@
   </div>
   <!-- End WOWSlider.com BODY section -->
 
-     <script type="text/javascript">
-        setTimeout(function(){
-          location.reload()
-         },10000)
-      </script>
-</body>
-</html>
+ <script type="text/javascript">
+    <%= render 'photobooths/slider/wowslider.js' %>
+    <%= render 'photobooths/slider/wowscript.js' %>
+    setTimeout(function(){
+      location.reload()
+     },10000)
+
+    var url = "/results/<%=@photobooth.id%>";
+
+    function check() {
+      $.get(url, function(data) {
+        console.log(data);
+        window.xyz = data;
+        if (data.description == null) {
+          setTimeout(check,5000)
+        } else {
+          document.location.reload(true);
+        }
+
+      }, 'json'); 
+    }
+    check();
+  </script>
+
+  <div class= "loading"> LOADING ... </div>
 <% else %>
   <h2> DESCRIPTION: <%=@description%> </h2>
 
@@ -62,7 +70,7 @@
   <h2> SEARCH RESULTS </h2>
   <div class="resultscontainer">
     <%@search_results.each do |results| %>
-      <div class="imgdiv"><%=image_tag(results.url, class: 'imgresult')%></div>
+       <div class="imgdiv"> <%=link_to image_tag(results.url, class: 'imgresult'), results.shopping_url%></div>
      <!--  <div class="descdiv"> <%= results.description %> </div> -->
 
     <% end %>

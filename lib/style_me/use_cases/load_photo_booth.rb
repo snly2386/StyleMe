@@ -59,11 +59,10 @@ module StyleMe
     parsed_urls = []
     parsed_descriptions = []
     parsed_shopping = []
-    first_ten_descriptions = newray[0..9]
-    first_ten_urls = newray2[0..9]
-    first_ten_shopping = newray3[0..9]
+    first_ten_descriptions = newray[0..20]
+    first_ten_urls = newray2[0..20]
+    first_ten_shopping = newray3[0..20]
 
-   
 
     first_ten_urls.each do |urls|
       5.times{urls[0] = ""}
@@ -88,7 +87,6 @@ module StyleMe
 
     parsed_descriptions.each_with_index do |description, i| 
         StyleMe.db.create_result(:description => description, :url => parsed_urls[i], :shopping_url => first_ten_shopping[i], :photobooth_id => @photobooth.id)
-      
     end
 
     results = StyleMe.db.get_result_by_photobooth(@photobooth.id)

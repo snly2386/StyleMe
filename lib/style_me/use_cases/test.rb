@@ -14,18 +14,34 @@ AWS.config(
 
         bucket_name = 'chriswendystyle'
         # file_name = 'images.jpeg'
-        file_name = '/Users/chrispalmer/Desktop/images.jpeg'
+        file_name = '/Users/chrispalmer/Desktop/super.jpeg'
 
 
 
         # Get an instance of the S3 interface.
         s3 = AWS::S3.new
-
+        #make url accessible to public
+        s3.buckets[bucket_name].acl = :public_read
+        b = s3.buckets[bucket_name].objects['target-key'].url_for(:write, :acl => :public_read)
         # Upload a file.
         key = File.basename(file_name)
         a = s3.buckets[bucket_name].objects[key].write(:file => file_name)
         puts "Uploading file #{file_name} to bucket #{bucket_name}."
         url = File.join("https://s3.amazonaws.com/chriswendystyle", key)
+
+        # policy = AWS::S3::Policy.new
+        #     policy.allow(
+        #       :Sid => "AllowPublicRead")
+
+        #     s3.buckets[bucket_name].policy = policy
+
+        doomsday = Time.mktime(2038, 1, 18).to_i
+        a.public_url(:expires => doomsday)
+        # puts "URL:"
+        # puts url
+        puts "public url"
+        puts a.public_url
+        puts b
 
 #         # bucket = s3.buckets[bucket_name]
 #         # puts "buckets: #{s3.buckets.inspect} #{bucket}"
