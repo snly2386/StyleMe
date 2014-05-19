@@ -5,6 +5,12 @@ class UsersController < ApplicationController
 
   def show
     @user = StyleMe.db.get_user(params[:id])
+    @username = @user.username
+    @email = @user.email 
+    @name = @user.name
+    @age = @user.age 
+    @about_me = @user.about_me
+    @gender = @user.gender 
   end
 
   def create

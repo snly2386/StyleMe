@@ -1,12 +1,27 @@
-<% provide(:title, @user.name) %>
+
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-        <p> Session </p><%= @session %>
+        <p> Name: <%= @name %> </p>
+        <p> Gender: <%= @gender %> </p>
+        <p> Email: <%= @email %> </p>
+        <p> username: <%= @username %> </p>
       </h1>
     </section>
   </aside>
 </div>
+
+<h1> UPLOAD A PHOTO HERE! </h1>
+
+
+      <%= form_tag "/users/#{@user.id}/photobooths", :method => "post", multipart: true do %>
+      <div class="subtext">upload a picture <%= file_field_tag "file_name", class: 'upload' %></div>
+      <div class="subtag"><%= submit_tag 'match me', :class => 'submitphoto'%></div>
+      <% end %>
+
+ <h1><%= link_to "Go To Photobooths Page", "/users/#{@user.id}/photobooths/", :method => :get %></h1>
+
+ 

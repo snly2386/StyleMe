@@ -1,7 +1,84 @@
-<h1> THIS IS THE PHOTOBOOTHS SHOW PAGE </h1>
+<h1> THIS IS <%=@username %>s PHOTOBOOTHS SHOW PAGE </h1>
 
-<h2>RESULT: <%=@result%> </h2>
 
-<h2>DESCRIPTION: <%=@description%> </h2>
 
-<h2> MISTER RESULTS!!!!!!!:  </h2>
+<!-- <h1> THIS IS THE PHOTOBOOTHS SHOW PAGE </h1> -->
+
+<% if @description == nil %>
+  <!-- Start WOWSlider.com BODY section -->
+  <div id="wowslider-container1">
+  <div class="ws_images"><ul>
+    <li><%=image_tag("fashion8.jpg", alt:'fashion8', id:"wows1_0", title:"fashion8")%> </li>
+    <li><%=image_tag("fashion10.jpg", alt:'fashion10', id:"wows1_1", title:"fashion10")%> </li>
+    <li><%=image_tag("real1.jpg", alt:'real1', id:"wows1_2", title:"real1")%> </li>
+    <li><%=image_tag("real2.jpg", alt:'real2', id:"wows1_3", title:"real2")%> </li>
+    <li><%=image_tag("real3.jpg", alt:'real3', id:"wows1_4", title:"real3")%> </li>
+    <li><%=image_tag("real4.jpg", alt:'real4', id:"wows1_5", title:"real4")%> </li>
+    <li><%=image_tag("real5.jpg", alt:'real5', id:"wows1_6", title:"real5")%> </li>
+    <li><%=image_tag("real6.jpg", alt:'real6', id:"wows1_7", title:"real6")%> </li>
+<!-- <li><img src="data1/images/fashion8.jpg" alt="fashion8" title="fashion8" id="wows1_0"/></li> -->
+<!-- <li><img src="data1/images/fashion10.jpg" alt="fashion10" title="fashion10" id="wows1_1"/></li>
+<li><img src="data1/images/real1.jpg" alt="real1" title="real1" id="wows1_2"/></li>
+<li><img src="data1/images/real2.jpg" alt="real2" title="real2" id="wows1_3"/></li>
+<li><img src="data1/images/real3.jpg" alt="real3" title="real3" id="wows1_4"/></li>
+<li><img src="data1/images/real4.jpg" alt="real4" title="real4" id="wows1_5"/></li>
+<li><img src="data1/images/real5.jpg" alt="real5" title="real5" id="wows1_6"/></li>
+<li><img src="data1/images/real6.jpg" alt="real6" title="real6" id="wows1_7"/></li> -->
+</ul></div>
+<div class="ws_bullets"><div>
+<a href="#" title="fashion8"><%=image_tag("fashion8.jpg", alt:"fashion8")%>/></a>
+<a href="#" title="fashion10"><%=image_tag("fashion10.jpg", alt:"fashion10")%>/></a>
+<a href="#" title="real1"><%=image_tag("real1.jpg", alt:"real1")%>/></a>
+<a href="#" title="real2"><%=image_tag("real2.jpg", alt:"real2")%>/></a>
+<a href="#" title="real3"><%=image_tag("real3.jpg", alt:"real3")%>/></a>
+<a href="#" title="real4"><%=image_tag("real4.jpg", alt:"real4")%>/></a>
+<a href="#" title="real5"><%=image_tag("real5.jpg", alt:"real5")%>/></a>
+<a href="#" title="real6"><%=image_tag("real6.jpg", alt:"real6")%>/></a>
+</div></div>
+
+  <div class="ws_shadow"></div>
+  </div>
+  <!-- End WOWSlider.com BODY section -->
+
+ <script type="text/javascript">
+    <%= render 'photobooths/slider/wowslider.js' %>
+    <%= render 'photobooths/slider/wowscript.js' %>
+    setTimeout(function(){
+      location.reload()
+     },10000)
+
+    var url = "/results/<%=@photobooth.id%>";
+
+    function check() {
+      $.get(url, function(data) {
+        console.log(data);
+        window.xyz = data;
+        if (data.description == null) {
+          setTimeout(check,5000)
+        } else {
+          document.location.reload(true);
+        }
+
+      }, 'json'); 
+    }
+    check();
+  </script>
+
+  <div class= "loading"> LOADING ... </div>
+<% else %>
+  <h2> DESCRIPTION: <%=@description%> </h2>
+
+  <h1> ORIGINAL PHOTO </h1>
+  <div> <%= image_tag(@original_photo)%> </div>
+ 
+  <h2> SEARCH RESULTS </h2>
+  <div class="resultscontainer">
+    <%@search_results.each do |results| %>
+       <div class="imgdiv"> <%=link_to image_tag(results.url, class: 'imgresult'), results.shopping_url%></div>
+     <!--  <div class="descdiv"> <%= results.description %> </div> -->
+
+    <% end %>
+  </div>
+<%end%>
+
+<h1><%= link_to 'CLICK HERE FOR HISTORY!',"/users/#{@user.id}/photobooths"%></h1>

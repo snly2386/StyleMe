@@ -125,6 +125,14 @@ module StyleMe
             Photobooth.find(id)
           end
 
+          def get_all_photobooths_by_user_id(id)
+            ar_photobooth = Photobooth.where(:user_id => id)
+            ar_photobooth.each do |photobooth| 
+              StyleMe::Photobooth.new(photobooth.attributes)
+            end
+            ar_photobooth
+          end
+
           def update_photobooth(id, attrs)
             photobooth = Photobooth.find(id)
             photobooth.update_attributes(attrs)
@@ -150,8 +158,8 @@ module StyleMe
             ar_result = Result.where(:photobooth_id => photobooth_id)
             ar_result.each do |result|
               StyleMe::Result.new(result.attributes)
-              ar_result
             end
+            ar_result
           end
     end
   end

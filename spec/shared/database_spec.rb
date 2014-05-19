@@ -78,6 +78,13 @@ shared_examples 'a database' do
     expect(got_photobooth.user_id).to_not be_nil
   end
 
+  it "gets all photobooths by user id" do 
+    photobooth = db.create_photobooth(:tags => nil, :content=> "fun", :images => nil, :user_id=> @user.id)
+    photobooth2 = db.create_photobooth(:tags => nil, :content=> "nun", :images => nil, :user_id => @user.id)
+    photobooths = db.get_all_photobooths_by_user_id(@user.id)
+    expect(photobooths).to_not be_empty
+  end
+
   # it "updates a photobooth" do
   #   photobooth =  db.create_photobooth(:tags => nil, :content=> "fun", :images => nil, :user_id=> @user.id)
   #   db.update_photobooth(photobooth.id, {:tags => "hello"})

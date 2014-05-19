@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   resources :users, except: [:destroy] do
     # GET users/9/photobooths   -> INDEX
     # GET users/9/photobooths/3 -> SHOW
-    resources :photobooths, only: [:index, :show]
+    resources :photobooths, only: [:index, :show, :create]
   end
 
 
-  resources :photobooths, only: [:create, :destroy]
+  resources :photobooths, only: [:destroy, :create]
 
   get "results/:id" => "photobooths#results"
 

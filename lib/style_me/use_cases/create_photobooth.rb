@@ -1,5 +1,6 @@
 require 'unirest'
 require 'dotenv'
+require 'aws-sdk'
 Dotenv.load
 # require 'pry-debugger'
 
@@ -9,16 +10,48 @@ module StyleMe
       @db = StyleMe.db
       # url = params[:url]
       @image_path = params[:file_name]
+      photo_path = '/Users/chrispalmer/Desktop/' + params[:file_name].original_filename
       # url = upload_to_s3
       #-UPLOADED TO AMAZON S3 ------------------------------------
+     AWS.config(
+          :access_key_id => ENV['AWS_ACCESS_KEY_ID'], 
+          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+        )
+
+
+        bucket_name = 'chriswendystyle'
+        # file_name = 'images.jpeg'
+        file_name = '/Users/chrispalmer/Desktop/super.jpeg'
+
+
+
+        # Get an instance of the S3 interface.
+        s3 = AWS::S3.new
+        #make url accessible to public
+        s3.buckets[bucket_name].acl = :public_read
+        b = s3.buckets[bucket_name].objects['target-key'].url_for(:write, :acl => :public_read)
+        # Upload a file.
+        key = File.basename(file_name)
+        image = s3.buckets[bucket_name].objects[key].write(:file => file_name)
+        puts "Uploading file #{file_name} to bucket #{bucket_name}."
+        url = File.join("https://s3.amazonaws.com/chriswendystyle", key)
+
+
+        doomsday = Time.mktime(2038, 1, 18).to_i
+        image.public_url(:expires => doomsday)
+        url_string = image.public_url.to_s
+       
+        # puts "public url"
+        # puts image.public_url
 
       # Create empty photobooth
-      photobooth = @db.create_photobooth(:tags => nil, :content => nil, :images => nil, :user_id => nil)
-      #create photo with Amazon url and file path
-
-
-      photo_path = '/Users/chrispalmer/Desktop/' + params[:file_name].original_filename
+      photobooth = @db.create_photobooth(:tags => nil, :content => nil, :images => url_string, :user_id => params[:user_id])
+      #create photo with file path
       photo = @db.create_photo(:file_name => photo_path, :photobooth_id => photobooth.id)
+
+
+
+
 
       #Retrieve photo with CAMFIND
       @token_response = Unirest::post "https://camfind.p.mashape.com/image_requests", 
@@ -62,7 +95,7 @@ module StyleMe
 
     #   bucket_name = 'chriswendystyle'
     #   # file_name = photo_path
-    #   file_name = get_photo.file_name
+    #   
 
     #   # Get an instance of the S3 interface.
     #   s3 = AWS::S3.new

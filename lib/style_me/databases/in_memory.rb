@@ -116,6 +116,11 @@ module StyleMe
 
       end
 
+      def get_all_photobooths_by_user_id(id)
+        photobooth = @photobooths.select{|x,y| y.user_id == id}
+        photobooth.values
+      end
+
       def create_result(attrs)
         id = @result_id_counter += 1
         attrs[:id] = id

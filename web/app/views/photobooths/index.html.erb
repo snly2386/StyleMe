@@ -1,7 +1,10 @@
-<h1> THIS IS THE PHOTOBOOTHS PAGE </h1>
+<h1> THIS IS <%=@username %>s PHOTOBOOTHS HISTORY PAGE </h1>
 
-<h2>RESULT: <%=@result%> </h2>
-
-<h2>DESCRIPTION: <%=@description%> </h2>
-
-<h2> MISTER RESULTS!!!!!!!: <%=@misterw%> </h2>
+ <% @results.each_with_index do |resultsarray, i| %>
+    <div><%=image_tag(@originals[i]) %></div>
+      <% resultsarray.each do |results| %>
+          <div> 
+          <div class="imgdiv"><%=image_tag(results.url, class: 'imgresult')%> </div> 
+          </div>
+      <% end%>
+ <% end %>
