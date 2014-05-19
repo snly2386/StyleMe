@@ -11,7 +11,11 @@ class MisterWorker
 
    
 
-    StyleMe::LoadPhotoBooth.run(:token => token, :photobooth_id => photobooth_id)
+    result = StyleMe::LoadPhotoBooth.run(:token => token, :photobooth_id => photobooth_id)
+    if result.photobooth.tags == nil 
+        MisterWorker.perform_in(15.seconds, result.response.body['token'], result.photobooth.id)
+     end
+
     
     # @response = Unirest::get("https://camfind.p.mashape.com/image_responses/" + token,
     #   headers: { 

@@ -21,7 +21,7 @@ module StyleMe
 
         bucket_name = 'chriswendystyle'
         # file_name = 'images.jpeg'
-        file_name = '/Users/chrispalmer/Desktop/super.jpeg'
+        # file_name = '/Users/chrispalmer/Desktop/super.jpeg'
 
 
 
@@ -31,9 +31,9 @@ module StyleMe
         s3.buckets[bucket_name].acl = :public_read
         b = s3.buckets[bucket_name].objects['target-key'].url_for(:write, :acl => :public_read)
         # Upload a file.
-        key = File.basename(file_name)
-        image = s3.buckets[bucket_name].objects[key].write(:file => file_name)
-        puts "Uploading file #{file_name} to bucket #{bucket_name}."
+        key = File.basename(photo_path)
+        image = s3.buckets[bucket_name].objects[key].write(:file => photo_path)
+        puts "Uploading file #{photo_path} to bucket #{bucket_name}."
         url = File.join("https://s3.amazonaws.com/chriswendystyle", key)
 
 
@@ -82,7 +82,7 @@ module StyleMe
       description = @response.body["name"]
       
       # params[:url] = url
-      success :results => @response, :file_name => params[:file_name].original_filename, :description => description, :photobooth => photobooth, :photo_path => photo_path
+      success :results => @response, :file_name => params[:file_name].original_filename, :description => description, :photobooth => photobooth, :photo_path => photo_path, :response => @token_response
     end
 
     # def upload_to_s3

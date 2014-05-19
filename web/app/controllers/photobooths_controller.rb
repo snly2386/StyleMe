@@ -13,6 +13,7 @@ class PhotoboothsController < ApplicationController
       @photobooths.each do |photobooth|
         @originals.push(photobooth.images)
       end
+    
   end
 
   def create
