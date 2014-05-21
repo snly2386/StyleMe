@@ -1,4 +1,4 @@
 require 'spec_helper'
-describe StyleMe::Databases::SQLiteDatabase do
+describe StyleMe::Databases::PostGres do
   it_behaves_like "a database"
 end

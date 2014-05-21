@@ -13,7 +13,7 @@ class MisterWorker
 
     result = StyleMe::LoadPhotoBooth.run(:token => token, :photobooth_id => photobooth_id)
     if result.photobooth.tags == nil 
-        MisterWorker.perform_in(15.seconds, result.response.body['token'], result.photobooth.id)
+        MisterWorker.perform_in(5.seconds, result.response.body['token'], result.photobooth.id)
      end
 
     

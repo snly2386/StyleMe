@@ -4,7 +4,7 @@ require 'pry-debugger'
 
 module StyleMe
   module Databases
-    class SQLiteDatabase
+    class PostGres
       def initialize(env)
 
         config = YAML.load_file('db/config.yml')[env]

@@ -55,13 +55,13 @@ module StyleMe
     res.items.each{|item| newray3.push(item.get_hash["DetailPageURL"])}
     image_data = Amazon::Ecs.item_search(@photobooth.tags, :search_index => 'Apparel', :response_group => "Images")
     #Image URL
-    image_data.items.each {|item| newray2.push(item.get_hash["MediumImage"])}
+    image_data.items.each {|item| newray2.push(item.get_hash["LargeImage"])}
     parsed_urls = []
     parsed_descriptions = []
     parsed_shopping = []
-    first_ten_descriptions = newray[0..20]
-    first_ten_urls = newray2[0..20]
-    first_ten_shopping = newray3[0..20]
+    first_ten_descriptions = newray[0..1]
+    first_ten_urls = newray2[0..1]
+    first_ten_shopping = newray3[0..1]
 
 
     first_ten_urls.each do |urls|

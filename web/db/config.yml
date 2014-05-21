@@ -1,11 +1,17 @@
 development:
-  adapter: sqlite3
-  database: ../StyleMe_dev
+  adapter: postgresql
+  database: StyleMe_dev
   pool: 25
   timeout: 5000
 
 test:
-  adapter: sqlite3
+  adapter: postgresql
+  database: StyleMe_dev
+  pool: 20
+  timeout: 5000
+
+production:
+  adapter: postgresql
   database: StyleMe_dev
   pool: 20
   timeout: 5000

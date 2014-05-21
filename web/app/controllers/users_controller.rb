@@ -11,7 +11,13 @@ class UsersController < ApplicationController
     @age = @user.age 
     @about_me = @user.about_me
     @gender = @user.gender 
+    @photobooths = StyleMe.db.get_all_photobooths_by_user_id(params[:id])
+    @results = []
+    @photobooths.each do |photobooth| 
+        @results.push(StyleMe.db.get_result_by_photobooth(photobooth.id))
+    end
   end
+
 
   def create
 

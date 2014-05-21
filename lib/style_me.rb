@@ -35,7 +35,7 @@ module StyleMe
   # end
 
   def self.db
-    @db_class ||= Databases::SQLiteDatabase
+    @db_class ||= Databases::PostGres
     @__db_instance ||= @db_class.new(@env || 'test')
   end
 

@@ -62,20 +62,109 @@
 
   <div class= "loading"> LOADING ... </div>
 <% else %>
-  <h2> DESCRIPTION: <%=@description%> </h2>
 
-  <h1> ORIGINAL PHOTO: </h1>
-  <div> <%= image_tag(@original_photo)%> </div>
+<script type="text/javascript">
+   <%= render 'photobooths/jstuff/jquery.js' %>
+   <%= render 'photobooths/jstuff/superfish.js' %>
+   <%= render 'photobooths/jstuff/jquery.easing.1.3.js' %>
+   <%= render 'photobooths/jstuff/touchTouch.jquery.js' %>
+
+</script>
+
+<script>  
+     jQuery(window).load(function() { 
+     $x = $(window).width();    
+  if($x > 1024)
+  {     
+  jQuery("#content .row").preloader();    }      
+   jQuery('.magnifier').touchTouch();
+     jQuery('.spinner').animate({'opacity':0},1000,'easeOutCubic',function (){jQuery(this).css('display','none')}); 
+        }); 
+</script>
+
+<header>
+      <div class="container clearfix">
+    <div class="row">
+          <div class="span12">
+        <div class="navbar navbar_">
+              <div class="container">
+            <div class="brand"><%=image_tag('logo.png')%></div>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse_">Menu <span class="icon-bar"></span> </a>
+            <div class="nav-collapse nav-collapse_  collapse">
+                  <ul class="nav sf-menu">
+                <li><a href="#">Home</a></li>
+                <li class="sub-menu"><a href="#">About</a>
+                      <ul>
+                    <li><a href="#">StyleMe</a></li>
+                    <li><a href="#">Meet the Developers</a></li>
+                  </ul>
+                    </li>
+                <li class="active"><a href="index-2.html">Search Results</a></li>
+                <li><a href="index-3.html">My Profile</a></li>
+                <li><a href="index-4.html">History</a></li>
+              </ul>
+                </div>
+          </div>
+            </div>
+      </div>
+        </div>
+  </div>
+    </header>
+<div class="bg-content">       
+  <!--============================== content =================================-->  
+   
+      
+    <div class="container">
+          <div class="row">
+        <article class="span12">
+        <h3>Search Results</h3>
+         </article>
+        <div class="clear"></div>
+         <ul class="portfolio clearfix"> 
+               <div class="box"><%= image_tag('result1.jpeg', class: 'magnifier') %></div> 
+               <div class="box"><%= image_tag('result2.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result3.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result4.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result5.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result6.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result7.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result8.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result9.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result10.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result11.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result12.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result13.jpeg', class: 'magnifier') %></div>
+                <div class="box"><%= image_tag('result14.jpeg', class: 'magnifier') %></div>
+        
+         <%@search_results.each do |results| %>         
+          <div class="box"><%=link_to image_tag(results.url, class: 'magnifier'), results.shopping_url%></div>                        
+            </ul> 
+            <% end %>
+      </div>
+        </div>
+  </div>
+    </div>
+    <% end %>
+
+<!--============================== footer =================================-->
+<footer>
+      <div class="container clearfix">
+    <ul class="list-social pull-right">
+          <li><a class="icon-1" href="#"></a></li>
+          <li><a class="icon-2" href="#"></a></li>
+          <li><a class="icon-3" href="#"></a></li>
+          <li><a class="icon-4" href="#"></a></li>
+        </ul>
+    
+  </div>
+    </footer>
+
+   <script type="text/javascript">
+    <%= render 'photobooths/jstuff/bootstrap.js' %>
+    </script>
+  
   
  
-  <h2> SEARCH RESULTS </h2>
-  <div class="resultscontainer">
-    <%@search_results.each do |results| %>
-       <div class="imgdiv"> <%=link_to image_tag(results.url, class: 'imgresult'), results.shopping_url%></div>
-     <!--  <div class="descdiv"> <%= results.description %> </div> -->
-
-    <% end %>
-  </div>
-<%end%>
+  
 
 
