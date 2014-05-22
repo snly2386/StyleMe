@@ -9,8 +9,9 @@ module StyleMe
     def run(params)
       @db = StyleMe.db
       # url = params[:url]
-      @image_path = params[:file_name]
-      photo_path = '/Users/chrispalmer/Desktop/' + params[:file_name].original_filename
+  
+      # photo_path = '/Users/chrispalmer/Desktop/' + params[:file_name].original_filename
+      photo_path = params[:file_name]
       # url = upload_to_s3
       #-UPLOADED TO AMAZON S3 ------------------------------------
      AWS.config(
@@ -28,14 +29,16 @@ module StyleMe
         # Get an instance of the S3 interface.
         s3 = AWS::S3.new
         #make url accessible to public
-        s3.buckets[bucket_name].acl = :public_read
-        b = s3.buckets[bucket_name].objects['target-key'].url_for(:write, :acl => :public_read)
+        # s3.buckets[bucket_name].acl = :public_read
+        # b = s3.buckets[bucket_name].objects['target-key'].url_for(:write, :acl => :public_read)
         # Upload a file.
-        key = File.basename(photo_path)
+        key = photo_path.original_filename
+        # key = File.basename(photo_path)
+       
         image = s3.buckets[bucket_name].objects[key].write(:file => photo_path)
         puts "Uploading file #{photo_path} to bucket #{bucket_name}."
-        url = File.join("https://s3.amazonaws.com/chriswendystyle", key)
-
+        # url = File.join("https://s3.amazonaws.com/chriswendystyle", key)
+       
 
         doomsday = Time.mktime(2038, 1, 18).to_i
         image.public_url(:expires => doomsday)
@@ -47,12 +50,13 @@ module StyleMe
       # Create empty photobooth
       photobooth = @db.create_photobooth(:tags => nil, :content => nil, :images => url_string, :user_id => params[:user_id])
       #create photo with file path
-      photo = @db.create_photo(:file_name => photo_path, :photobooth_id => photobooth.id)
+      photo = @db.create_photo(:file_name => key, :photobooth_id => photobooth.id)
 
 
+   
 
-
-
+      # buffer = File.open(photo_path.tempfile, "rb")
+      # new_file = File.new(photo_path.original_filename, "wb")
       #Retrieve photo with CAMFIND
       @token_response = Unirest::post "https://camfind.p.mashape.com/image_requests", 
       headers: { 
@@ -67,7 +71,7 @@ module StyleMe
         "image_request[altitude]" => "27.912109375",
         "focus[x]" => "480",
         "focus[y]" => "640",
-        "image_request[image]" => File.new('/Users/chrispalmer/Desktop/' + params[:file_name].original_filename)
+        "image_request[remote_image_url]" => url_string
       }
 
       # def make_request
@@ -77,6 +81,7 @@ module StyleMe
         }
       )
       
+    
       
       MisterWorker.perform_in(15.seconds, @token_response.body['token'], photobooth.id)
       description = @response.body["name"]

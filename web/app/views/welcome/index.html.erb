@@ -10,8 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
 </head>
-<body>
-    <div class=​"fullscreen fade" style="padding-bottom: 195.25px; margin: 0px auto; opacity: 1; top: 0px; background-color:black">​
+<body class= "homepage-body">
+    <div class=​"fullscreen fade" style="padding-bottom: 195.25px; margin: 0px auto; opacity: 1; top: 0px; ">​
     <div style="position: fixed; z-index: -99; width: 100%; height: 100%; padding-top:0px ">
     <iframe frameborder="0" height="100%" width="100%"style src="https://youtube.com/embed/MUCVB0TuQr4?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1">
     </iframe>
@@ -23,13 +23,13 @@
       <nav role="navigation">
         <div class="nav-wrap">
           <ul >
-            <li>My Closet</li>
+            <li class ="home-nav">My Closet</li>
             <li class="divide"> | </li>
-            <li>About</li>
+            <li class ="home-nav">About</li>
             <li class="divide"> | </li>
-            <a href="" class="list"><li>Sign In</li></a>
+            <a href="" class="home-nav list"><li>Sign In</li></a>
             <li class="divide"> | </li>
-           <li><%= link_to "Sign Up", '/users/new', :method => :get, class: 'su' %></li>
+           <li class ="home-nav"><%= link_to "Sign Up", '/users/new', :method => :get, class: 'su' %></li>
           </ul>
         </div>
       </nav>
@@ -42,8 +42,26 @@
       <h1 class = "title">S t y l e  M e </h1>
 
       <%= form_tag photobooths_path, :method => "post", multipart: true do %>
-      <div class="subtext">upload a picture <%= file_field_tag "file_name", class: 'upload' %></div>
-      <div class="subtag"><%= submit_tag 'match me', :class => 'submitphoto'%></div>
+      <!-- <div class="subtext">upload a picture <%= file_field_tag "file_name", class: 'upload' %></div> -->
+
+        <section id="wrapper">
+        <article>
+          <div id="holder">
+          </div>
+          <p id="upload" class="hidden"><label>
+          <br><input id="file_name" name="file_name" type="file"></label></p>
+          
+
+
+
+          <p id="filereader"></p>
+          <p id="formdata"></p>
+          <p id="progress"></p>
+
+          <div class="subtag"><%= submit_tag 'match me', :class => 'submitphoto'%></div>
+        </article>
+
+  
       <% end %>
 
       <!-- <form method="post" enctype="multipart/form-data" action="photobooths_path">
@@ -67,5 +85,123 @@
     <!-- <a class='forgot' href='#'>Forgot your password?</a> -->
 </div>
 
+        <script>
+        var holder = document.getElementById('holder'),
+            tests = {
+              filereader: typeof FileReader != 'undefined',
+              dnd: 'draggable' in document.createElement('span'),
+              formdata: !!window.FormData,
+              progress: "upload" in new XMLHttpRequest
+            },
+            support = {
+              filereader: document.getElementById('filereader'),
+              formdata: document.getElementById('formdata'),
+              progress: document.getElementById('progress')
+            },
+            acceptedTypes = {
+              'image/png': true,
+              'image/jpeg': true,
+              'image/gif': true
+            },
+            progress = document.getElementById('uploadprogress'),
+            fileupload = document.getElementById('upload');
+
+        "filereader formdata progress".split(' ').forEach(function (api) {
+          if (tests[api] === false) {
+            support[api].className = 'fail';
+          } else {
+
+            support[api].className = 'hidden';
+          }
+        });
+
+        function previewfile(file) {
+          if (tests.filereader === true && acceptedTypes[file.type] === true) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+              var image = new Image();
+              image.src = event.target.result;
+              image.width = 250; // a fake resize
+              holder.appendChild(image);
+              $(image).addClass('newimage');
+
+              $('.newimage').on('click',function(){
+                $('.newimage').hide();
+              });
+            };
+
+            reader.readAsDataURL(file);
+          }  else {
+            holder.innerHTML += '<p>Uploaded ' + file.name + ' ' + (file.size ? (file.size/1024|0) + 'K' : '');
+            console.log(file);
+          }
+        }
+
+        function readfiles(files) {
+            var formData = tests.formdata ? new FormData() : null;
+            for (var i = 0; i < files.length; i++) {
+              if (tests.formdata) formData.append('file', files[i]);
+              previewfile(files[i]);
+            }
+
+
+
+            if (tests.formdata) {
+              console.log('hi')
+              // $.post('/photobooths', formData);
+              $.ajax({
+                type: 'POST',
+                url: '/photobooths',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(data){
+                  alert(data);
+                }
+              });
+              // var xhr = new XMLHttpRequest();
+              // xhr.open('POST', '/photobooths');
+              // xhr.onload = function() {
+              //   progress.value = progress.innerHTML = 100;
+              // };
+
+              // if (tests.progress) {
+              //   xhr.upload.onprogress = function (event) {
+              //     if (event.lengthComputable) {
+              //       var complete = (event.loaded / event.total * 100 | 0);
+              //       progress.value = progress.innerHTML = complete;
+              //     }
+              //   }
+              // }
+
+              // xhr.send(formData);
+            }
+        }
+
+        if (tests.dnd) {
+          holder.ondragover = function () { this.className = 'hover'; return false; };
+          holder.ondragend = function () { this.className = ''; return false; };
+          holder.ondrop = function (e) {
+            this.className = '';
+            e.preventDefault();
+            readfiles(e.dataTransfer.files);
+          }
+        } else {
+          fileupload.className = 'hidden';
+          fileupload.querySelector('input').onchange = function () {
+            readfiles(this.files);
+          };
+        }
+        </script>
+        </section>
+        <script>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script>
+        try {
+        var pageTracker = _gat._getTracker("UA-1656750-18");
+        pageTracker._trackPageview();
+        } catch(err) {}</script>
 </body>
 </html>

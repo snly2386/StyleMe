@@ -1,3 +1,4 @@
+<body class = "signup-div">
 <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post">
 
   <link type="text/css" href="signup.css" rel="stylesheet">
@@ -5,31 +6,32 @@
   <h2 class="reg">Sign Up</h2>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="input-boxes">
     <%= form_tag '/users', :method => "post" %>
 
-      <%=  label_tag :username %>
+      <%=  label_tag :username,nil, class:"su-text" %>
       <%= text_field_tag :username %>
 
-      <%=  label_tag :name %>
+      <%=  label_tag :name,nil, class:"su-text" %>
       <%= text_field_tag :name %>
 
-      <%=  label_tag :gender %>
-      <%= text_field_tag :gender %>
 
-      <%= label_tag :email %>
+      <%= label_tag :email,nil, class:"su-text" %>
       <%= text_field_tag :email %>
+      
+      <%= label_tag :about_me, nil,class:"su-text" %>
+      <%= text_area_tag :about_me %>
 
-      <%= label_tag :password %>
+      <%= label_tag :password, nil,class:"su-text" %>
       <%= password_field_tag :password %>
 
-      <%= label_tag :password_confirmation, "Confirmation" %>
+      <%= label_tag :password_confirmation, "Password Confirmation", class:"su-text" %>
       <%= password_field_tag :password_confirmation %>
 
-      <%= submit_tag "Create my account", class: "btn-primary" %>
+      <%= submit_tag "Create my account", class: "signup-btn" %>
   </div>
 </div>
-
+</body>
 
 
 <!--   <input class ="regform"name="username" placeholder="Username" type="text"></input> -->

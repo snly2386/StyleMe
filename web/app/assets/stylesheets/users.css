@@ -1,154 +1,30 @@
-/** {
-  margin: 0;
-  padding: 0;
+.signup-div{
+  background: url('neon-background.jpg') 1410px 700px;
+  height: 650px;
 }
 
-body {
-  background: #2e3740;
-  color: #435160;
-  font-family: "Open Sans", sans-serif;
-}*/
-
-/*.reg {
-  color: #6d7781;
-  font-family: "Sofia", cursive;
-  font-size: 15px;
-  font-weight: bold;
-  font-size: 3.6em;
-  text-align: center;
-  margin-bottom: 20px;
+.reg, .signup-btn, .su-text{
+  font-family: 'Raleway', sans-serif;
 }
-.reg:hover{
-  color:#608AB4
+.reg{
+  font-weight: 300;
+  color: #F59999;
+  letter-spacing: 1px;
+  padding-left: 300px
 }
-
-a {
-  color: #435160;
-  text-decoration: none;
-}
-
-.logon {
-  width: 350px;
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  margin-left: -175px;
-}
-
-.regform {
-  width: 350px;
-  padding: 20px 0px;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid #435160;
-  outline: none;
-  color: #6d7781;
-  font-size: 16px;
-}
-
-textarea {
-  background-color: #2e3740 ;
-  border: 0;
-  background: transparent;
-  border-bottom: 1px solid #435160;
-  outline: none;
-  color: #6d7781;
-  height: 80px;
-}
-
-textarea:focus{
-  background-color: #2e3740;
-}
-
-.regform:focus {
-background-color: #2e3740 ;
-}
-
-.regform:focus {
-background-color: #2e3740 ;
-  
-}
-input[type=checkbox] {
-  display: none;
-}
-
-label {
-  display: block;
-  position: absolute;
-  margin-right: 10px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: transparent;
-  content: "";
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  border: 3px solid #435160;
-}
-
-#agree:checked ~ label[for=agree] {
-  background: #435160;
-}
-
-.animated {
-  background: #3C6C97;
-  border: 0;
-  width: 350px;
-  height: 40px;
-  border-radius: 3px;
+.signup-btn{
+  background-color: #F59999;
+  border: 1px solid #F59999;
   color: white;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
-}
-.animated:hover {
-  background: #59AEFA;
-  animation-name: shake;
 }
 
-.forgot {
-  margin-top: 30px;
-  display: block;
-  font-size: 11px;
-  text-align: center;
-  font-weight: bold;
-}
-.forgot:hover {
-  margin-top: 30px;
-  display: block;
-  font-size: 11px;
-  text-align: center;
-  font-weight: bold;
-  color: #6d7781;
+.signup-btn:hover{
+  background-color: transparent;
+  border: 1px solid #F59999;
+  color:black;
 }
 
-.agree {
-  padding: 30px 0px;
-  font-size: 12px;
-  text-indent: 25px;
-  line-height: 15px;
+.input-boxes{
+  padding-top: 30px;
+  padding-left: 350px
 }
-
-::-webkit-input-placeholder {
-  color: #435160;
-  font-size: 12px;
-}
-
-.animated {
-  animation-fill-mode: both;
-  animation-duration: 1s;
-}
-
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-10px);
-  }
-
-  20%, 40%, 60%, 80% {
-    transform: translateX(10px);
-  }
-}*/

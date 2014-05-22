@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def create
 
-    result = StyleMe::SignUp.run(:username => params[:username], :name => params[:name], :gender => params[:gender], :email => params[:email], :password => params[:password], :password_confirmation => params[:password_confirmation])
+    result = StyleMe::SignUp.run(:username => params[:username], :name => params[:name], :gender => params[:gender],:about_me => params[:about_me], :email => params[:email], :password => params[:password], :password_confirmation => params[:password_confirmation])
     @user = result.user
     @username = @user.username
 

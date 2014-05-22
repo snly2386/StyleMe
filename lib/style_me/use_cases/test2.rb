@@ -14,7 +14,8 @@ Dotenv.load
     "image_request[altitude]" => "27.912109375",
     "focus[x]" => "480",
     "focus[y]" => "640",
-    "image_request[image]" => File.new("/Users/chrispalmer/Desktop/super.jpeg")
+    "image_request[remote_image_url]" => "https://s3.amazonaws.com/chriswendystyle/super.jpeg"
+    
   }
   puts "CAMFIND SHIIIT:"
   puts ENV["NEW_CAMFIND_KEY"]

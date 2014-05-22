@@ -18,27 +18,28 @@ class PhotoboothsController < ApplicationController
 
   def create
     
+    binding.pry
     result = StyleMe::CreatePhotoBooth.run(:file_name => params[:file_name], :user_id => params[:user_id])  
     @result = result.results.inspect
     @description = result.description
     @photobooth = result.photobooth
+    @file = result.file_name
 
     if params[:user_id] != nil
       @user = StyleMe.db.get_user(params[:user_id])
     end
 
-    # @user = result.user
-    # @photo - result.photo
+  
+    # respond_to do |format|
+    #   format.js do
+    #   end
+    #   format.html do
 
-
-
+    #   end
+    # end
 
 
     if params[:user_id] == nil && result.success?
-
-    #   redirect_to "/users/#{@user.id}/photos/#{@photo.id}/photobooths"
-    # else
-
       redirect_to "/results/#{result.photobooth.id}"
     elsif result.success?
       redirect_to "/users/#{@user.id}/photobooths/#{result.photobooth.id}"

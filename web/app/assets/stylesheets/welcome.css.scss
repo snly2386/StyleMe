@@ -1,0 +1,287 @@
+
+.homepage-body{
+  background-color:black
+}
+.list, .white, .divide{
+  text-decoration: none;
+  color: #fff ;
+}
+
+
+nav{
+  padding: 0;
+  height: 47px;
+  position: relative;
+  float:left;
+  border-bottom: none;
+  left:50%;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-wrap{
+  width: 800px;
+  padding-top: 60px;
+  padding-left: 100px;
+  float:left;
+  left:-50%;
+  position: relative;
+}
+
+.su{
+ text-decoration: none;
+ color: #fff;
+}
+
+
+.home-nav{
+  list-style: none;
+  width:auto;
+  float:left;
+  border-bottom: none;
+  line-height: 47px;
+  margin-right: 35px;
+  height:36px;
+  opacity: .4;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  &:hover{
+
+    opacity: 0.6;
+  }
+}
+
+.divide{
+  font-size:29px;
+}
+
+/*end of navbar css*/
+
+.homepage-center{
+  padding-top: 280px;
+
+}
+.title{
+  font-size: 80px;
+  letter-spacing: 9px;
+  color: #fff;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  padding-top: 0px;
+  margin-bottom: 20px
+
+}
+
+.submitphoto, .subtext{
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  letter-spacing: 9px;
+  text-align: center;
+  opacity: .5;
+  line-height: 1.5;
+  color: white;
+}
+
+.submitphoto {
+  background: transparent;
+  height:30px;
+  width:21%;
+  top:50%;
+  left:41%;
+  position: relative;
+  color:#fff;
+  letter-spacing: 9px;
+
+}
+.subtag {
+  border:none;
+
+}
+.subtext{
+  border-color: #fff;
+  border-width:1px;
+  border-style:outset;
+  width:20%;
+  height: 80px;
+  margin: auto;
+  overflow: hidden;
+  &:hover{
+    color:#fff;
+    opacity: .2
+  }
+}
+
+.logo{
+  margin:auto;
+  width:10%;
+}
+.arrow{
+  padding-left: 48%;
+  opacity: .5
+}
+
+
+
+
+
+/*********************************************************************************/
+/* Sign In                                                                     */
+/*********************************************************************************/
+
+
+.sign-in{
+  color: rgba(232, 217, 236, 0.35);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-right: 40px;
+  font-family: 'Raleway', sans-serif
+}
+
+a {
+  color: #46485c;
+  text-decoration: none;
+}
+[draggable=true]{
+  cursor: move;
+}
+.login {
+  color:rgba(193, 182, 196, 0.86);
+  width: 312px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -184px 0px 0px -155px;
+  padding: 20px 30px;
+  padding-right:0;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07);
+  background-color: rgba(104, 93, 99, 0.93);
+  display: none;
+  overflow: scroll;
+  -webkit-user-drag: element;
+}
+
+
+
+
+#remember:checked ~ label[for=remember] {
+  background: rgba(232, 217, 236, 0.66);
+  border: 3px solid #252730;
+  box-shadow: 0px 0px 0px 2px rgba(232, 217, 236, 0.66);
+}
+
+
+.signin {
+  background: rgba(232, 217, 236, 0.66);
+  border: 0;
+  width: 250px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+
+.forgot {
+  margin-top: 30px;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+  color:rgba(193, 182, 196, 0.86);
+}
+.forgot:hover {
+  margin-top: 30px;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+  color: #6d7781;
+}
+
+.remember {
+  padding: 30px 0px;
+  font-size: 12px;
+  text-indent: 25px;
+  line-height: 15px;
+}
+
+::-webkit-input-placeholder {
+  color:rgba(193, 182, 196, 0.86);
+}
+
+.close {
+  background: none;
+  border: none;
+  float:right;
+}
+
+.closeform{
+  padding-right:20px;
+}
+
+
+.subtag{
+  padding-top: 20px;
+  padding-right: 50px;
+}
+
+
+.copyright{
+  padding:0px;
+}
+
+
+
+
+
+  .checkbox {
+    font-weight: normal;
+  }
+
+  .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+
+
+
+
+
+#holder {
+  border: 3px dashed #ccc;
+  opacity: 0.75;
+  width: 300px;
+  min-height: 300px;
+  margin: 20px auto;
+}
+#holder.hover {
+  border: 4px dashed #AC6C95;
+}
+#holder img {
+  display: block;
+  margin: 10px auto;
+}
+#holder p {
+  margin: 10px;
+  font-size: 14px; }
+.x{
+  color:white;
+  font-size: 30px
+}
+
+
+
+.fail { background: #E6005C; padding: 2px; color: #E6005C; }
+.hidden { display: none !important;}
+
+
