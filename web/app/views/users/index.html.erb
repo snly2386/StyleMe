@@ -1,9 +1,57 @@
+<div class = "profile-body">
+
+
+<header>
+      <div class="container clearfix">
+    <div class="row">
+          <div class="span12">
+        <div class="navbar navbar_">
+              <div class="container">
+            <!-- <div class="brand"><%=image_tag('logo.png')%></div> -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse_">Menu <span class="icon-bar"></span> </a>
+            <div class="nav-collapse nav-collapse_  collapse">
+                  <ul class="nav sf-menu">
+                <li><%= link_to "StyleMe", '/', :method => :get %></li>
+
+                <li class="sub-menu"><a href="#">About</a>
+                      <ul>
+                    <li><a href="#">StyleMe</a></li>
+                    <li><a href="#">Meet the Developers</a></li>
+                  </ul>
+                    </li>
+                <li class="active"><%= link_to "Closet", users_path, :method => :get %>
+                  </li>
+                <li><%= link_to "Profile", user_path, :method => :get %></li>
+                <li><a href="index-4.html">History</a></li>
+              </ul>
+                </div>
+          </div>
+            </div>
+      </div>
+        </div>
+  </div>
+    </header>
+<div class="bg-content">     
+<div class="top">
+  <!-- Logo -->
+  <div id="logo">
+    <span class="image avatar48">
+      <div class ="my-info">
+      <h1 class="closet-title">Christopher Palmer's Closet</h1>
+    </div>
+    </span>
+  </div>
+</div>
+
+
+
+
 <div class ="closet-container">
 
   <div class = "photobooth">
       <!-- first image  -->
       <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-            <p style="text-align:center; margin-top:20px;">
+            <p class ="photobooth-p">
               <div class = "large-image-div"><%=image_tag "boots3.jpg", :class =>"img-responsive"%>
             </div></p>
             <div class="caption">
@@ -31,7 +79,7 @@
     <!-- second image -->
     <div class ="photobooth">
          <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-            <p style="text-align:center; margin-top:20px;">
+            <p class ="photobooth-p">
               <div class = "large-image-div"><%=image_tag "blazer.jpg", :class =>"img-responsive"%>
             </div></p>
             <div class="caption">
@@ -60,7 +108,7 @@
 
     <div class ="photobooth">
          <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-            <p style="text-align:center; margin-top:20px;">
+            <p class = "photobooth-p">
               <div class = "large-image-div"><%=image_tag "leather.jpg", :class =>"img-responsive"%>
             </div></p>
             <div class="caption">
@@ -89,7 +137,7 @@
 
     <div class ="photobooth">
          <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-            <p style="text-align:center; margin-top:20px;">
+            <p class = "photobooth-p">
               <div class = "large-image-div"><%=image_tag "backpack.jpeg", :class =>"img-responsive"%>
             </div></p>
             <div class="caption">
@@ -118,7 +166,7 @@
 <!-- fifth image -->
     <div class ="photobooth">
          <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-            <p style="text-align:center; margin-top:20px;">
+            <p class = "photobooth-p">
               <div class = "large-image-div"><%=image_tag "sweater4.jpeg", :class =>"img-responsive"%>
             </div></p>
             <div class="caption">
@@ -147,7 +195,7 @@
 
     <div class ="photobooth">
          <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-            <p style="text-align:center; margin-top:20px;">
+            <p class = "photobooth-p">
               <div class = "large-image-div"><%=image_tag "jeans.png", :class =>"img-responsive"%>
             </div></p>
             <div class="caption">
@@ -176,7 +224,7 @@
 
     <div class ="photobooth">
          <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-            <p style="text-align:center; margin-top:20px;">
+            <p class = "photobooth-p">
               <div class = "large-image-div"><%=image_tag "suede.jpeg", :class =>"img-responsive"%>
             </div></p>
             <div class="caption">
@@ -205,7 +253,7 @@
 
     <div class ="photobooth">
          <div class="cuadro_intro_hover " style="background-color:#cccccc;">
-            <p style="text-align:center; margin-top:20px;">
+            <p class = "photobooth-p">
               <div class = "large-image-div"><%=image_tag "shirt1.jpeg", :class =>"img-responsive"%>
             </div></p>
             <div class="caption">

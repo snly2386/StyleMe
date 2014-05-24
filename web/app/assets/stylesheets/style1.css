@@ -69,6 +69,7 @@ a[href^="tel:"] {
 header {
   padding: 30px 0 29px;
   z-index: 50;
+  background-color: white
 }
 /* navbar */
 .navbar_ {
@@ -273,7 +274,7 @@ p {
   padding: 0 0 40px;
 }
 .bg-content {
-  background: url(/assets/bg-content.jpg) 50% 50%;
+  background: 50% 50%;
   height:1000px;
 }
 .block-slogan {

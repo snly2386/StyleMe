@@ -18,7 +18,6 @@ class PhotoboothsController < ApplicationController
 
   def create
     
-    binding.pry
     result = StyleMe::CreatePhotoBooth.run(:file_name => params[:file_name], :user_id => params[:user_id])  
     @result = result.results.inspect
     @description = result.description
