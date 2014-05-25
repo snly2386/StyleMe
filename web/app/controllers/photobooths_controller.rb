@@ -67,6 +67,8 @@ class PhotoboothsController < ApplicationController
     # render json: StyleMe.db.get_photobooth(params[:id])
 
     @photobooth = StyleMe.db.get_photobooth(params[:id])
+    @results = []
+    @photobooths = StyleMe.db.get_all_photobooths_by_user_id(params[:user_id])
     @original_photo = @photobooth.images
     @search_results = StyleMe.db.get_result_by_photobooth(@photobooth.id)
     @description = @photobooth.tags

@@ -84,13 +84,7 @@ shared_examples 'a database' do
     photobooths = db.get_all_photobooths_by_user_id(@user.id)
     expect(photobooths).to_not be_empty
   end
-
-  # it "updates a photobooth" do
-  #   photobooth =  db.create_photobooth(:tags => nil, :content=> "fun", :images => nil, :user_id=> @user.id)
-  #   db.update_photobooth(photobooth.id, {:tags => "hello"})
-  #   expect(photobooth.tags).to eq("hello")
-  # end
-
+ 
   it "gets a photo by photobooth id" do
     got_photo = db.get_photo_by_photobooth_id(@photobooth.id)
     expect(got_photo.id).to eq(@photo.id)

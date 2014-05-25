@@ -63,109 +63,356 @@
   <div class= "loading"> LOADING ... </div>
 <% else %>
 
-<script type="text/javascript">
-   <%= render 'photobooths/jstuff/jquery.js' %>
-   <%= render 'photobooths/jstuff/superfish.js' %>
-   <%= render 'photobooths/jstuff/jquery.easing.1.3.js' %>
-   <%= render 'photobooths/jstuff/touchTouch.jquery.js' %>
-
-</script>
-
-<script>  
-     jQuery(window).load(function() { 
-     $x = $(window).width();    
-  if($x > 1024)
-  {     
-  jQuery("#content .row").preloader();    }      
-   jQuery('.magnifier').touchTouch();
-     jQuery('.spinner').animate({'opacity':0},1000,'easeOutCubic',function (){jQuery(this).css('display','none')}); 
-        }); 
-</script>
-
-<header>
-      <div class="container clearfix">
-    <div class="row">
-          <div class="span12">
-        <div class="navbar navbar_">
-              <div class="container">
-            <!-- <div class="brand"><%=image_tag('logo.png')%></div> -->
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse_">Menu <span class="icon-bar"></span> </a>
-            <div class="nav-collapse nav-collapse_  collapse">
-                  <ul class="nav sf-menu">
-                <li><%= link_to "StyleMe", '/', :method => :get %></li>
-
-                <li class="sub-menu"><a href="#">About</a>
-                      <ul>
-                    <li><a href="#">StyleMe</a></li>
-                    <li><a href="#">Meet the Developers</a></li>
-                  </ul>
-                    </li>
-                <li class="active">
-
-<%= link_to "Closet", users_path, :method => :get %>
-                  </li>
-                <li><a href="index-3.html">My Profile</a></li>
-                <li><a href="index-4.html">History</a></li>
-              </ul>
-                </div>
-          </div>
-            </div>
-      </div>
+<body class=" ">
+<div class="ಠ_ಠ">
+  <img width="0" height="0" alt="" src="http://essentials.mijlo.com/img/essentials-cover.jpg" />
+</div>
+<header class="head-top">
+    <ul class="clearfix">
+        <li class="mobile-nav">
+            <button class="show-mobile-nav"></button>
+            <ul class="mobile-nav-links" style="display: none">
+                <li class="social"><a href="javascript:void(0)" class="show-bag">See Mijlo's Bag!</a></li>
+                <li class="social twitter"><a href="javascript:void(0)">Share on Twitter</a></li>
+                <li class="social facebook"><a href="javascript:void(0)">Share on Facebook</a></li>
+                <li class="social stumbleupon"><a href="javascript:void(0)">Share on StumbleUpon</a></li>
+            </ul>
+        </li>
+        <li class="social stumbleupon"><a href="javascript:void(0)"></a></li>
+        <li class="social facebook"><a href="javascript:void(0)"></a></li>
+        <li class="social twitter"><a href="javascript:void(0)"></a></li>
+        <li class="nav"><a href="javascript:void(0)" class="show-bag">See Mijlo's Bag!</a></li>
+    </ul>
+</header>
+<div class="mijlo-splash" style="background-image:url('http://essentials.mijlo.com/img/essentials-cover.jpg');"><img src="http://essentials.mijlo.com/img/mijlo-logo.png" alt="MIJLO Essentials" /></div>
+<div class="mijlo-splash-scroll" style="background-image:url('http://essentials.mijlo.com/img/essentials-cover.jpg');"><img src="http://essentials.mijlo.com/img/mijlo-logo.png" alt="MIJLO Essentials" /></div>
+<div class="mijlo-push"></div>
+<div class="mijlo-info">
+    <div class="info-dark">
+        <div class="info-inner">        
+        <p>MIJLO reached out to a select group of global creatives to curate a collection of essential items - with one caveat - their style had to be as timeless as the bag they packed it in.</p>
+        <p>Check out their collections below and MIJLO's simple, sustainable backpack developed for Kickstarter <a href="javascript:void(0)" class="show-bag">here</a>.</p>
         </div>
-  </div>
-    </header>
-<div class="bg-content">       
-  <!--============================== content =================================-->  
+    </div>
+</div>
+<div class="mijlo-wrap">
+<div id="header-wrap">
+<header class="head-stick ">
+    <ul class="clearfix">
+        <li class="logo"><a href="http://essentials.mijlo.com/"></a></li>
+        <li class="title"><a href="http://essentials.mijlo.com/">Essentials</a></li>
+        <li class="mobile-nav">
+            <button class="show-mobile-nav"></button>
+            <ul class="mobile-nav-links" style="display: none">
+                <li class="social"><a href="javascript:void(0)" class="show-bag">See Mijlo's Bag!</a></li>
+                <li class="social twitter"><a href="javascript:void(0)">Share on Twitter</a></li>
+                <li class="social facebook"><a href="javascript:void(0)">Share on Facebook</a></li>
+                <li class="social stumbleupon"><a href="javascript:void(0)">Share on StumbleUpon</a></li>
+            </ul>
+        </li>
+        <li class="social stumbleupon"><a href="javascript:void(0)"></a></li>
+        <li class="social facebook"><a href="javascript:void(0)"></a></li>
+        <li class="social twitter"><a href="javascript:void(0)"></a></li>
+        <li class="nav"><a href="javascript:void(0)" class="show-bag">See Mijlo's Bag!</a></li>
+    </ul>
+</header>
+</div>
+
+ 
+
+<div class="mijlo-posts clearfix"> 
+    <div class="post-left clearfix">
+
+      <% @photobooths.each do |photobooth| %>
+    <div class="post" style="background-image:url(#{photobooth.images})">
+        <div class="post-inner" data-image="" data-name="Joe Perez" data-position="Art Director" data-company="Joe Perez" data-link="http://www.joerperez.com/" data-guest-id="1">
+            <div class="post-name"><a href="results">username</a></div>
+            <div class="post-title">Art Director @ Joe Perez</div>
+        </div>
+    </div>
+<%end%>
+
+
+
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/3-matt-barnes.jpg')">
+        <div class="post-inner" data-image="3-matt-barnes.jpg" data-name="Matt Barnes" data-position="Photographer" data-company="Westside Studio" data-link="http://thatsthespot.com/" data-guest-id="3">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/3/Matt Barnes">Matt Barnes</a></div>
+            <div class="post-title">Photographer @ Westside Studio</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/5-Fabrizio-Querida.jpg')">
+        <div class="post-inner" data-image="5-Fabrizio-Querida.jpg" data-name="Fabrizio Querida" data-position="Designer" data-company="Querida" data-link="http://www.querida.si/" data-guest-id="5">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/5/Fabrizio Querida">Fabrizio Querida</a></div>
+            <div class="post-title">Designer @ Querida</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/7-Leta-Sobierajski.jpg')">
+        <div class="post-inner" data-image="7-Leta-Sobierajski.jpg" data-name="Leta Sobierajski" data-position="Designer" data-company="Leta Sobierajski" data-link="http://letasobierajski.net/" data-guest-id="7">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/7/Leta Sobierajski">Leta Sobierajski</a></div>
+            <div class="post-title">Designer @ Leta Sobierajski</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/9-nicco.jpg')">
+        <div class="post-inner" data-image="9-nicco.jpg" data-name="Nicco" data-position="Founder" data-company="A Summer Shop" data-link="http://www.asummershop.com" data-guest-id="9">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/9/Nicco">Nicco</a></div>
+            <div class="post-title">Founder @ A Summer Shop</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/11-Maciej-Tajber.jpg')">
+        <div class="post-inner" data-image="11-Maciej-Tajber.jpg" data-name="Maciej Tajber" data-position="Art Director" data-company="Flash Art International" data-link="http://www.flashartonline.com/" data-guest-id="11">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/11/Maciej Tajber">Maciej Tajber</a></div>
+            <div class="post-title">Art Director @ Flash Art International</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/13-Thibault-Zimmermann.jpg')">
+        <div class="post-inner" data-image="13-Thibault-Zimmermann.jpg" data-name="Thibault Zimmermann" data-position="Art Director" data-company="Zim & Zou" data-link="http://www.zimandzou.fr/" data-guest-id="13">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/13/Thibault Zimmermann">Thibault Zimmermann</a></div>
+            <div class="post-title">Art Director @ Zim & Zou</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/15-Amanda-Cole.jpg')">
+        <div class="post-inner" data-image="15-Amanda-Cole.jpg" data-name="Amanda Cole" data-position="Designer" data-company="Here Lives Amanda" data-link="http://herelivesamanda.com/" data-guest-id="15">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/15/Amanda Cole">Amanda Cole</a></div>
+            <div class="post-title">Designer @ Here Lives Amanda</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/17-Blanca-de-Balanzo.jpg')">
+        <div class="post-inner" data-image="17-Blanca-de-Balanzo.jpg" data-name="DOIY Design" data-position="Owner" data-company="DOIY Design" data-link="http://www.doiydesign.com/" data-guest-id="17">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/17/DOIY Design">DOIY Design</a></div>
+            <div class="post-title">Owner @ DOIY Design</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/19-Nathalie-Kapagiannidi.jpg')">
+        <div class="post-inner" data-image="19-Nathalie-Kapagiannidi.jpg" data-name="Say What Studio" data-position="Owner" data-company="Say What Studio" data-link="http://www.saywhat-studio.com/" data-guest-id="19">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/19/Say What Studio">Say What Studio</a></div>
+            <div class="post-title">Owner @ Say What Studio</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/21-Jordan-Blyth.jpg')">
+        <div class="post-inner" data-image="21-Jordan-Blyth.jpg" data-name="Jordan Blyth" data-position="Designer" data-company="Jordan Blyth" data-link="http://www.jordanblyth.com/" data-guest-id="21">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/21/Jordan Blyth">Jordan Blyth</a></div>
+            <div class="post-title">Designer @ Jordan Blyth</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/23-Levi-Van-Veluw.jpg')">
+        <div class="post-inner" data-image="23-Levi-Van-Veluw.jpg" data-name="Levi van Veluw" data-position="Artist" data-company="Levi van Veluw" data-link="http://www.levivanveluw.nl/#1" data-guest-id="23">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/23/Levi van Veluw">Levi van Veluw</a></div>
+            <div class="post-title">Artist @ Levi van Veluw</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/25-Daniel-Brokstad.jpg')">
+        <div class="post-inner" data-image="25-Daniel-Brokstad.jpg" data-name="Daniel Brokstad" data-position="Designer" data-company="Daniel Brokstad" data-link="http://www.danielbrokstad.com/" data-guest-id="25">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/25/Daniel Brokstad">Daniel Brokstad</a></div>
+            <div class="post-title">Designer @ Daniel Brokstad</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/27-Ryotatsu-Tanaka.jpg')">
+        <div class="post-inner" data-image="27-Ryotatsu-Tanaka.jpg" data-name="Ryotatsu Tanaka" data-position="Partner" data-company="Studio Newwork" data-link="http://www.studionewwork.com/" data-guest-id="27">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/27/Ryotatsu Tanaka">Ryotatsu Tanaka</a></div>
+            <div class="post-title">Partner @ Studio Newwork</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/Adriana-deBarros.jpg')">
+        <div class="post-inner" data-image="Adriana-deBarros.jpg" data-name="Adriana de Barros" data-position="Founder" data-company="Illusion, Scene 360" data-link="http://illusion.scene360.com/" data-guest-id="31">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/31/Adriana de Barros">Adriana de Barros</a></div>
+            <div class="post-title">Founder @ Illusion, Scene 360</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/Bobby-Valen.jpg')">
+        <div class="post-inner" data-image="Bobby-Valen.jpg" data-name="Bobby Valen" data-position="Owner" data-company="Henhouse" data-link="http://henhousetoronto.com/" data-guest-id="33">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/33/Bobby Valen">Bobby Valen</a></div>
+            <div class="post-title">Owner @ Henhouse</div>
+        </div>
+    </div>
+    </div>
+    <div class="post-right clearfix">
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/2-susana-simonpietri.jpg')">
+        <div class="post-inner" data-image="2-susana-simonpietri.jpg" data-name="Susana Simonpietri" data-position="Creative Director" data-company="Chango & Co." data-link="http://chango.co" data-guest-id="2">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/2/Susana Simonpietri">Susana Simonpietri</a></div>
+            <div class="post-title">Creative Director @ Chango & Co.</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/4-Jiani-Lu.jpg')">
+        <div class="post-inner" data-image="4-Jiani-Lu.jpg" data-name="Jiani Lu" data-position="Designer" data-company="Jiani Lu" data-link="http://www.lujiani.com/" data-guest-id="4">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/4/Jiani Lu">Jiani Lu</a></div>
+            <div class="post-title">Designer @ Jiani Lu</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/6-markus-uran.jpg')">
+        <div class="post-inner" data-image="6-markus-uran.jpg" data-name="Markus Uran" data-position="Founder" data-company="Metsa" data-link="http://www.metsadesign.com" data-guest-id="6">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/6/Markus Uran">Markus Uran</a></div>
+            <div class="post-title">Founder @ Metsa</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/8-Zagreus-Bowery.jpg')">
+        <div class="post-inner" data-image="8-Zagreus-Bowery.jpg" data-name="Zagreus Bowery" data-position="Founder" data-company="Public Illumination" data-link="http://www.mondorondo.com/pim/" data-guest-id="8">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/8/Zagreus Bowery">Zagreus Bowery</a></div>
+            <div class="post-title">Founder @ Public Illumination</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/10-Bryony-Gomez-Palacio.jpg')">
+        <div class="post-inner" data-image="10-Bryony-Gomez-Palacio.jpg" data-name="Bryony Gomez Palacio" data-position="Co-Founder" data-company="Under Consideration" data-link="http://www.underconsideration.com/" data-guest-id="10">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/10/Bryony Gomez Palacio">Bryony Gomez Palacio</a></div>
+            <div class="post-title">Co-Founder @ Under Consideration</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/12-ellen-van-der-laan.jpg')">
+        <div class="post-inner" data-image="12-ellen-van-der-laan.jpg" data-name="Ellen Van Der Laan" data-position="Creative Director" data-company="Baggu" data-link="http://ellenvanderlaan.com/" data-guest-id="12">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/12/Ellen Van Der Laan">Ellen Van Der Laan</a></div>
+            <div class="post-title">Creative Director @ Baggu</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/14-Anja-Verdugo.jpg')">
+        <div class="post-inner" data-image="14-Anja-Verdugo.jpg" data-name="Anja Verdugo" data-position="Photographer" data-company="Anja Verdugo" data-link="http://www.anjaverdugo.com/" data-guest-id="14">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/14/Anja Verdugo">Anja Verdugo</a></div>
+            <div class="post-title">Photographer @ Anja Verdugo</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/16-Yah-Leng.jpg')">
+        <div class="post-inner" data-image="16-Yah-Leng.jpg" data-name="Yah-Leng Yu" data-position="Founder" data-company="Foreign Policy Design" data-link="http://foreignpolicydesign.com/v4/" data-guest-id="16">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/16/Yah-Leng Yu">Yah-Leng Yu</a></div>
+            <div class="post-title">Founder @ Foreign Policy Design</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/18-justin-broadbent.jpg')">
+        <div class="post-inner" data-image="18-justin-broadbent.jpg" data-name="Justin Broadbent" data-position="Artist" data-company="Justin Broadbent" data-link="http://www.justinbroadbent.com" data-guest-id="18">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/18/Justin Broadbent">Justin Broadbent</a></div>
+            <div class="post-title">Artist @ Justin Broadbent</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/20-katie-hagar.jpg')">
+        <div class="post-inner" data-image="20-katie-hagar.jpg" data-name="Katie Hagar" data-position="Editor" data-company="Better Living Through Design" data-link="http://www.betterlivingthroughdesign.com/" data-guest-id="20">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/20/Katie Hagar">Katie Hagar</a></div>
+            <div class="post-title">Editor @ Better Living Through Design</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/22-Kumazaki-Ryo.jpg')">
+        <div class="post-inner" data-image="22-Kumazaki-Ryo.jpg" data-name="Kumazaki Ryo" data-position="Partner" data-company="Studio Newwork" data-link="http://www.studionewwork.com/" data-guest-id="22">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/22/Kumazaki Ryo">Kumazaki Ryo</a></div>
+            <div class="post-title">Partner @ Studio Newwork</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/24-christine-fashnchips.jpg')">
+        <div class="post-inner" data-image="24-christine-fashnchips.jpg" data-name="Christine" data-position="Blogger" data-company="Fash N Chips" data-link="http://fash-n-chips.com/" data-guest-id="24">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/24/Christine">Christine</a></div>
+            <div class="post-title">Blogger @ Fash N Chips</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/26-Soren-Hoj-Thomsen.jpg')">
+        <div class="post-inner" data-image="26-Soren-Hoj-Thomsen.jpg" data-name="Soren Hoj Thomsen" data-position="Sales & Development" data-company="Cote&Ciel" data-link="http://www.coteetciel.com" data-guest-id="26">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/26/Soren Hoj Thomsen">Soren Hoj Thomsen</a></div>
+            <div class="post-title">Sales & Development @ Cote&Ciel</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/28-bryan-espiritu.jpg')">
+        <div class="post-inner" data-image="28-bryan-espiritu.jpg" data-name="Bryan Espiritu" data-position="Founder" data-company="The Legends League" data-link="http://www.thelegendsleague.com/blog/" data-guest-id="28">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/28/Bryan Espiritu">Bryan Espiritu</a></div>
+            <div class="post-title">Founder @ The Legends League</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/ben-dahl.jpg')">
+        <div class="post-inner" data-image="ben-dahl.jpg" data-name="Ben Dahl" data-position="Editor" data-company="Cool Material" data-link="http://thebendahl.com/" data-guest-id="30">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/30/Ben Dahl">Ben Dahl</a></div>
+            <div class="post-title">Editor @ Cool Material</div>
+        </div>
+    </div>
+    <div class="post" style="background-image:url('http://essentials.mijlo.com/img/thumbs/Amy-Woodside.jpg')">
+        <div class="post-inner" data-image="Amy-Woodside.jpg" data-name="Amy Woodside" data-position="Artist" data-company="Amy Woodside" data-link="http://amywoodside.com/" data-guest-id="32">
+            <div class="post-name"><a href="http://essentials.mijlo.com/guest/32/Amy Woodside">Amy Woodside</a></div>
+            <div class="post-title">Artist @ Amy Woodside</div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="post-details clearfix">
+    <div class="post-left">
+        <div class="nav clearfix">
+            <div class="prev-next ">
+                <button class="prev"></button>
+                <button class="next"></button>
+            </div>
+            <button class="close" id="close-details"><span class="mobile-hide">close </span><i class="icon-close"></i></button>
+        </div>
+        <div class="details">
+            <div class="post-name"></div>
+            <div class="post-title">
+                <span class="position"></span> @ <a class="company"></a>
+            </div>
+            <div class="post-links">
+                <a href="" class="post-link-perm" target="_blank" title="Permalink"></a>
+            </div>
+        </div>
+    </div>
+    <div class="post-right">
+        <div class="img-loading"></div>
+        <div class="post-slide"><div class="post-img"></div></div>
+    </div>
+</div>
+<ul class="navigation">
+<li class="active">1</li><li><a href="http://essentials.mijlo.com/page/2">2</a></li><li><a href="http://essentials.mijlo.com/page/3">3</a></li><li class="next"><a href="http://essentials.mijlo.com/page/2">NEXT</a></li></ul>
+<div id="loading" style="display: none;">
+    <div class="spinner spinner-med"></div> Loading...
+</div>
+<div class="mijlo-bag clearfix">
+    <div class="bag-left">
+        <div class="content">
+            <h2 class="bag-title">THE MIJLO BAG</h2>
+            <p>Style + sustainability inform the design of our simple, eco-friendly backpack, because we believe that if you’re going to buy a backpack, you should only buy one. </p>
+            <p>To help us achieve our goal, pre-order a bag on Kickstarter for $39 now.</p>
+            <a href="http://www.kickstarter.com/projects/mijlo/a-better-backpack-sustainable-design-sustainable-f" class="kickstarter"><i class="icon-kickstarter"></i> BACK US NOW!</a>
+        </div>
+    </div>
+    <div class="bag-right">
+        <div class="bag-inner">
+            <button class="close" id="close-bag"><span class="text-close">close </span><i class="icon-close"></i></button>
+            <div id="bag-slider">
+                <img src="http://essentials.mijlo.com/img/bag-1.jpg" alt="THE MIJLO BAG FRONT"/>
+                <img src="http://essentials.mijlo.com/img/bag-2.jpg" alt="THE MIJLO BAG SIDE"/>
+                <img src="http://essentials.mijlo.com/img/bag-3.jpg" alt="THE MIJLO BAG BACK"/>
+            </div>
+            <button id="bag-prev"></button> 
+            <button id="bag-next"></button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://essentials.mijlo.com/js/jquery-1.10.2.min.js">\x3C/script>')</script>
+<script src="http://essentials.mijlo.com/js/jquery.cycle2.min.js"></script>
+<script src="http://essentials.mijlo.com/js/jquery.scrollTo.min.js"></script>
+<script src="http://essentials.mijlo.com/js/jquery.infinitescroll.min.js"></script>
+<script src="http://essentials.mijlo.com/js/jquery.nicescroll.min.js"></script>
+<script> var siteURL = 'http://essentials.mijlo.com/'; var mobile = false;</script>
+
+<script>
+<%= render 'photobooths/jstuff/main.js' %>
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-45688326-1', 'mijlo.com');
+  ga('send', 'pageview');
+</script>
+<% end %>
+
+
+
+
    
       
-    <div class="container">
-          <div class="row">
-        <article class="span12">
-        <h3>Search Results</h3>
-         </article>
-        <div class="clear"></div>
-         <ul class="portfolio clearfix"> 
-               <div class="box"><%= image_tag('result1.jpeg', class: 'magnifier') %></div> 
-               <div class="box"><%= image_tag('result2.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result3.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result4.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result5.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result6.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result7.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result8.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result9.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result10.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result11.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result12.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result13.jpeg', class: 'magnifier') %></div>
-                <div class="box"><%= image_tag('result14.jpeg', class: 'magnifier') %></div>
-        
-         <%@search_results.each do |results| %>         
-          <div class="box"><%=link_to image_tag(results.url, class: 'magnifier'), results.shopping_url%></div>                        
-            </ul> 
-            <% end %>
-      </div>
-        </div>
-  </div>
-    </div>
-    <% end %>
-
-<!--============================== footer =================================-->
-<footer>
-      <div class="container clearfix">
-    <ul class="list-social pull-right">
-          <li><a class="icon-1" href="#"></a></li>
-          <li><a class="icon-2" href="#"></a></li>
-          <li><a class="icon-3" href="#"></a></li>
-          <li><a class="icon-4" href="#"></a></li>
-        </ul>
     
-  </div>
-    </footer>
+     
+            
+   
 
-   <script type="text/javascript">
-    <%= render 'photobooths/jstuff/bootstrap.js' %>
-    </script>
+
+ 
   
   
  

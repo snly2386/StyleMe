@@ -144,6 +144,14 @@ module StyleMe
             ar_photo
           end
 
+           def get_all_photobooths
+            ar_photobooths = Photobooth.all
+            ar_photobooths.each do |photobooth| 
+              StyleMe::Phothobooth.new(photobooth.attributes)
+            end
+              ar_photobooths
+            end
+
           def create_result(attrs)
             ar_result = Result.create(attrs)
             StyleMe::Result.new(ar_result.attributes)

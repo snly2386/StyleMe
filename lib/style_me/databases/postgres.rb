@@ -128,6 +128,14 @@ module StyleMe
         ar_photobooth
       end
 
+      def get_all_photobooths
+        ar_photobooths = Photobooth.all
+        ar_photobooths.each do |photobooth| 
+          StyleMe::Phothobooth.new(photobooth.attributes)
+        end
+        ar_photobooths
+      end
+
       def update_photobooth(id, attrs)
         photobooth = Photobooth.find(id)
         photobooth.update_attributes(attrs)

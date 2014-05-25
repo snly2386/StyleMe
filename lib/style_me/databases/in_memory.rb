@@ -121,6 +121,10 @@ module StyleMe
         photobooth.values
       end
 
+      def get_all_photobooths
+        @photobooths.values
+      end
+
       def create_result(attrs)
         id = @result_id_counter += 1
         attrs[:id] = id

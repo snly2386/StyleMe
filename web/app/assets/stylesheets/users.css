@@ -1,4 +1,4 @@
-.signup-div{
+/*.signup-div{
   background: url('neon-background.jpg') 1410px 700px;
   height: 650px;
 }
@@ -27,17 +27,16 @@
 .input-boxes{
   padding-top: 30px;
   padding-left: 350px
-}
+}*/
 
 
 /*********************************************************************************/
 /* Closet                                                                     */
 /*********************************************************************************/
 
-  .profile-body{
+  /*.profile-body{
     background-color: black;
     height:1500px;
-
   }
   #logo{
     padding-left: 50px;
@@ -85,12 +84,12 @@ h2{
   position: absolute;
   text-align: center;
 
-}
+}*/
 
 
 /* Images */
 
-.image
+/*.image
 {
   display: inline-block;
   border: 0;
@@ -225,5 +224,5 @@ h2{
     text-align: center;
     top:-20px;
     width: 100%;
-  }
+  }*/
 
