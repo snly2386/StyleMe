@@ -38,7 +38,6 @@ module StyleMe
         VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
         validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
         validates :password, length: {minimum: 6}
-        has_secure_password
       end
 
       class Closet < ActiveRecord::Base
@@ -78,11 +77,13 @@ module StyleMe
             return nil if ar_user.nil?
 
             StyleMe::User.new(ar_user.attributes)
+            ar_user
           end
 
           def create_session(attrs)
             ar_session = Session.create(attrs)
             StyleMe::Session.new(ar_session.attributes)
+            ar_session
           end
 
           def get_session(id)

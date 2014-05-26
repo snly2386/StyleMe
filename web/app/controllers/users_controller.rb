@@ -18,6 +18,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def sign_in
+    result = StyleMe::SignIn.run(:username => params[:username], :password => params[:password])
+    # flash[:error] = "Username or Password does not match."
+    if result.success?
+      redirect_to "/users/#{result.user.id}/photobooths"
+    else 
+      flash[:error]
+      redirect_to "/"
+    end
+
+  end
+
 
   def create
 
@@ -27,9 +39,7 @@ class UsersController < ApplicationController
 
     result2 = StyleMe::SignIn.run(:username => @user.username)
 
-    @session = result2.session
-
-    if result2.success?
+    if result.success?
       # UserMailer.signup_confirmation(result.user.id)
       redirect_to "/users/#{@user.id}"
     end

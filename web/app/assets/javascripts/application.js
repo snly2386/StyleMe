@@ -12,3 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require init.js
+//= require jquery.min.js
+//= require jquery.poptrox.min.js
+//= require skel.min.js

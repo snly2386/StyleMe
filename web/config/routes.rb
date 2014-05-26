@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :photobooths, only: [:destroy, :create]
 
   get "results/:id" => "photobooths#results"
+  post "users/signin" => "users#sign_in"
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

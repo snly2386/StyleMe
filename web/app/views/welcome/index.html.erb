@@ -1,10 +1,16 @@
 <body class="hi">
 
-  <script>
-    <%= render "welcome/jstuff/jquery.min.js" %>
-    <%= render "welcome/jstuff/jquery.poptrox.min.js" %>
-    <%= render "welcome/jstuff/skel.min.js" %>
-    <%= render "welcome/jstuff/init.js" %>
+  <script type="text/javascript">
+    <%= render 'welcome/jstuff/jquery.min.js' %>
+    </script>
+    <script type="text/javascript">
+    <%= render 'welcome/jstuff/skel.min.js' %>
+    </script>
+    <script type="text/javascript">
+    <%= render 'welcome/jstuff/init.js' %>
+    </script>
+    <script type="text/javascript">
+    <%= render 'welcome/jstuff/jquery.poptrox.min.js' %>
     </script>
    
   
@@ -23,20 +29,43 @@
             </iframe>
     </div>
           <footer class="footsies">
-            <a href="#one" class="button style2 down"><strong>Sign In</strong></a>
+            <a href="#one" class="button style2 down"><h3 class="sign-title">Sign In</h3></a>
           </footer>
         <!-- </div> -->
       </section>
     
+    <script>
+        $(function(){
+          var $form_inputs =   $('form input');
+          var $rainbow_and_border = $('.rain, .border');
+          /* Used to provide loping animations in fallback mode */
+          $form_inputs.bind('focus', function(){
+            $rainbow_and_border.addClass('end').removeClass('unfocus start');
+          });
+          $form_inputs.bind('blur', function(){
+            $rainbow_and_border.addClass('unfocus start').removeClass('end');
+          });
+          $form_inputs.first().delay(800).queue(function() {
+          $(this).focus();
+          });
+        });
+    </script>
+
+
     <!-- One -->
       <section id="one" class="main style2 right dark fullscreen">
         <div class="content box style2">
-          <header>
-            
-          </header>
-          <input name='username' placeholder='Username' type='text' style="background-color: #46485c"/>
-          <input id='pw' name='password' placeholder='Password' type='password' style="background-color: #46485c"/>
-          <input type='submit' value='Sign in' class="signin"/>
+          <div class="rain">
+            <div class="border start">
+              <%= form_tag 'users/signin', :method => "post", class: "howdy" do %>
+                <%=label_tag :username, nil %>
+                <%=text_field_tag :username%>
+                <%=label_tag :password, nil %>
+                <%=password_field_tag :password %>
+                <%=submit_tag "Sign In", class: "login" %>
+             <%end%>
+            </div>
+          </div>
         </div>
         <a href="#two" class="button style2 down anchored">Next</a>
       </section>
@@ -44,12 +73,27 @@
     <!-- Two -->
       <section id="two" class="main style2 left dark fullscreen">
         <div class="content box style2">
-          <header>
-            <h2>Who I Am</h2>
-          </header>
-          <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
-          Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, 
-          id varius justo euismod in. Curabitur egestas consectetur magna urna.</p>
+              <%= form_tag '/users', :method => "post", class: "howdy"  do%>
+
+                <%=label_tag :username, nil %>
+                <%=text_field_tag :username%>
+
+                <%= label_tag :name, nil %>    
+                <%= text_field_tag :name %>
+
+                <%= label_tag :email, nil %>
+                <%= text_field_tag :email %>
+
+                <%= label_tag :password, nil %>
+                <%= password_field_tag :password,nil %>
+
+                <%= label_tag :password_confirmation, nil %>
+                <%= password_field_tag :password_confirmation,nil %>
+
+                <%= submit_tag "Create my account", class: "login" %>
+              <%end%>
         </div>
         
       </section>
+
+  

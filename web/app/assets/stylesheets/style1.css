@@ -29,12 +29,12 @@ body, html {
     height: 100%;
 }
  .post-name a{
-    color: #ff6400;
+    color: white;
     text-decoration: none;
     outline: 0;
 }
      .link:hover {
-        color: #ff8400;
+        color: white;
     }
 button {
     outline: 0;
@@ -157,13 +157,13 @@ button {
     height: 100%;
 }
 .mijlo-info > .info-dark {
-    background-color: rgba(47, 40, 32, .9);
+    background-color: rgba(53, 69, 255, 0.87);
 }
     .mijlo-info > .info-dark > .info-inner {
         font-family: 'Avenir Book';
         color: #fff;
         margin: 0 auto;
-        padding: 60px 0;
+        padding: 60px 0px 50px;
         overflow: hidden;
         width: 55%;
         -webkit-font-smoothing: antialiased;
@@ -176,7 +176,7 @@ button {
 .info-inner p {
     margin: 0 0 40px 0;
     line-height: 1.6em;
-    font-size: 1.1em;
+    font-size: 20px;
 }
     .info-inner p:last-child {
         margin-bottom: 0;
@@ -211,11 +211,15 @@ header > ul {
     padding: 0;
     height: 95px;
     padding-right: 20px;
-    background-color: #fff;
+    background-color: black;
     overflow: hidden;
 }
     header > ul > li {
         float: left;
+        font-family: 'plaster';
+        font-size: 40px;
+        margin-left: 10px;
+        color:white;
         display: inline-block;
         height: 95px;
         line-height: 95px;
@@ -391,8 +395,9 @@ li.social.stumbleupon a:hover {
     width: 50%;
   height: 200px;
     overflow: hidden;
-  background-size: cover;
+/*  background-size: cover;*/
   background-position: center center;
+  background-repeat: no-repeat;
 }
     .post .post-img {
         width: 100%;
@@ -405,7 +410,7 @@ li.social.stumbleupon a:hover {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(47, 40, 32, .9);
+        background-color: rgba(0, 0, 0, 0.65);
         padding: 19% 10%;
         opacity: 0;
     }
@@ -417,15 +422,17 @@ li.social.stumbleupon a:hover {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 27px;
-        font-family: 'Avenir Black';
+      font-family: 'Raleway', sans-serif;
+        
         line-height: 27px;
         padding-bottom: 5px;
         letter-spacing: 1px;
     }
     .post .post-title {
-        color: #c4b4a6;
+        color: white;
         font-size: 15px;
-        font-family: 'Avenir Medium';
+      font-family: 'Raleway', sans-serif;
+    
     }
 .post-details {
     display: none;
@@ -778,6 +785,8 @@ li.social.stumbleupon a:hover {
         overflow: visible;
         padding-right: 8px;
     }
+
+    
         header > ul > li {
             height: 50px;
             line-height: 50px;
