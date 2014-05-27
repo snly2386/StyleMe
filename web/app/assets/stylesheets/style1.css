@@ -2,21 +2,82 @@
 .à² _à² {
   display: none !important;
 }
-/* FONTS */
-@font-face {
-    font-family: 'Avenir Black';
-    src: url('../font/Avenir-Black.eot');
-    src: url('../font/Avenir-Black.eot') format('embedded-opentype'), url('../font/Avenir-Black.woff') format('woff'), url('../font/Avenir-Black.ttf') format('truetype'), url('../font/avenirltstd-black.svg#AvenirLTStd95Black') format('svg');
+
+
+
+
+
+ .howdoes, .itwork {
+      text-align: center;
+      font-family:'Raleway', sans-serif;
+      font-size: 20px;
+      color:rgb(214, 255, 0);
+      margin-bottom: 30px
+    }
+
+    .styletitle {
+      width: 60%;
+      margin: auto;
+      text-align: center;
+      margin-top: 250px;
+      font-family: 'Plaster', cursive;
+      font-size: 100px;
+      letter-spacing: 30px;
+      color: black;
+    }
+
+    .welc {
+      width: 50%;
+      margin: auto;
+      text-align: center;
+      font-family: 'Raleway', sans-serif;
+      font-size: 50px;
+      padding-top: 20px;
+
+    }
+
+    .namecol, .welc{
+      color: black;
+
+    }
+
+.uploadbutton,.subtag{
+  width: 40%;
+  border: 5px solid yellow;
+  background-color: yellow;
+  color:rgb(0, 0, 204);
+  display: block;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  padding-top: 18px;
+  text-align: center;
+  letter-spacing: 5px;
+  height: 65px;
+  line-height: 1em;
+  position: relative;
+  margin: 20px;
+  margin-left: 210px
 }
-@font-face {
-    font-family: 'Avenir Book';
-    src: url('../font/Avenir-Book.eot');
-    src: url('../font/Avenir-Book.eot') format('embedded-opentype'), url('../font/Avenir-Book.woff') format('woff'), url('../font/Avenir-Book.ttf') format('truetype'), url('../font/avenirltstd-book.svg#AvenirLTStd45Book') format('svg');
+
+
+.submitphoto {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color:rgb(0, 0, 204);
+  letter-spacing: 5px;
 }
-@font-face {
-    font-family: 'Avenir Medium';
-    src: url('../font/Avenir-Medium.eot');
-    src: url('../font/Avenir-Medium.eot') format('embedded-opentype'), url('../font/Avenir-Medium.woff') format('woff'), url('../font/Avenir-Medium.ttf') format('truetype'), url('../font/avenirltstd-medium.svg#AvenirLTStd65Medium') format('svg');
+   
+.upload{
+  top: 0;
+  right:0;
+  margin:0;
+  padding:0;
+  opacity:0;
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%
 }
 
 /* RESETS and UTILITY */
@@ -336,41 +397,7 @@ li.social.stumbleupon a:hover {
 .head-top > ul {
     background-color: transparent;
 }
-/*
-.head-top > ul > li a {
-  color: #fff;
-  text-shadow: 1px 1px 0px #000;
-}
-.head-top > ul > li a:hover{
-  color: #fff;
-}
-.head-top li.mobile-nav .show-mobile-nav{
-  background-position: -284px -87px;
-}
 
-.head-top > ul > li.social a {
-  width: 27px;
-    height: 27px;
-}
-.head-top li.social.twitter a{
-  background-position: -325px -56px;
-}
-.head-top li.social.facebook a {
-  background-position: -366px -56px;
-}
-.head-top li.social.stumbleupon a {
-    background-position: -407px -56px;
-}
-.head-top li.social.twitter a:hover {
-    background-position: -325px -56px;
-}
-.head-top li.social.facebook a:hover {
-    background-position: -366px -56px;
-}
-.head-top li.social.stumbleupon a:hover {
-    background-position: -407px -56px;
-}
-*/
 
 .mijlo-posts {
     width: 100%;

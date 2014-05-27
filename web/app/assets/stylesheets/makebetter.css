@@ -83,11 +83,11 @@ body {
 
 
   #head #headContent {
-    padding: 40px 0px;
+    padding: 43px 0px;
     font-family: 'plaster';
-    font-size: 35px;
-    color:white;
-    background-color: black
+    font-size: 30px;
+    color:black;
+    background-color: rgb(250, 213, 65)
 
   }
 
@@ -113,7 +113,8 @@ body {
   width: 200px;
   float: left;
   padding: 0 0 4700px 0;
-  background-color: rgb(255, 45, 230)
+  background-color: black;
+  background: url('gra1.jpg');
 }
 
   #sidebar h1 {
@@ -465,6 +466,7 @@ body {
       width: 100%;
       float: left;
       clear: none;
+      background-color: black
     }
 
       #content #gallery li,
@@ -475,6 +477,7 @@ body {
         clear: none;
         position: relative;
         overflow: hidden;
+        border: 20px solid black;
       }
 
       #content #gallery li.headline {
@@ -595,20 +598,7 @@ body {
         #content #gallery li .options ,
         #content #galleryDetails li .optionsDetails {
           visibility: hidden;
- /*         width: 240px;
-          height: 40px;
-          padding: 0 20px;
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          z-index: 20;
-          display: none;
-          color: #222;
-          font:bold 13px/42px Arial, Helvetica, sans-serif;
-          text-transform: uppercase;
-          letter-spacing: normal;
-          background: #fff;*/
-        }
+
 
         #content #galleryDetails li .optionsDetails {
           display: block;
@@ -1119,7 +1109,7 @@ body {
   /* Head */
   #wrapper #head {
     max-width: 2040px;
-    height:120px;
+    height:80px;
   }
   
   #sidebar h1 .widescreen,
@@ -1145,6 +1135,9 @@ body {
   /* Head */
   #wrapper #head {
     max-width: 760px;
+    height:150px;
+    background-color: rgb(255, 103, 103);
+    border-bottom: 30px solid rgb(148, 255, 191)
   }
 
   #content #comments li .autor,
@@ -1462,79 +1455,6 @@ body {
       cursor: pointer;
     }
 
-    .howdoes, .itwork {
-      text-align: center;
-      /*font-size: 20px;*/
-      font-family:'Raleway', sans-serif;
-      font-size: 20px;
-      color:rgb(214, 255, 0);
-      margin-bottom: 30px
-    }
-
-    .styletitle {
-      width: 60%;
-      margin: auto;
-      text-align: center;
-      margin-top: 250px;
-      font-family: 'Plaster', cursive;
-      font-size: 100px;
-      letter-spacing: 30px;
-      color: black;
-    }
-
-    .welc {
-      width: 50%;
-      margin: auto;
-      text-align: center;
-      font-family: 'Raleway', sans-serif;
-      font-size: 50px;
-      padding-top: 20px;
-
-    }
-
-    .namecol, .welc{
-      color: black;
-
-    }
-
-.uploadbutton,.subtag{
-  width: 40%;
-  border: 5px solid yellow;
-  background-color: yellow;
-  color:rgb(0, 0, 204);
-  display: block;
-  font-size: 20px;
-  font-family: 'Raleway', sans-serif;
-  padding-top: 18px;
-  text-align: center;
-  letter-spacing: 5px;
-  height: 65px;
-  line-height: 1em;
-  position: relative;
-  margin: 20px;
-  margin-left: 210px
-}
-
-
-.submitphoto {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  color:rgb(0, 0, 204);
-  letter-spacing: 5px;
-}
-   
-.upload{
-  top: 0;
-  right:0;
-  margin:0;
-  padding:0;
-  opacity:0;
-  cursor: pointer;
-  position: absolute;
-  width: 100%;
-  height: 100%
-}
 
 
 

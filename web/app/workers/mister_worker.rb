@@ -9,11 +9,12 @@ class MisterWorker
     logger.info "it works~"
     logger.info token
 
-   
 
     result = StyleMe::LoadPhotoBooth.run(:token => token, :photobooth_id => photobooth_id)
     if result.photobooth.tags == nil 
-        MisterWorker.perform_in(5.seconds, result.response.body['token'], result.photobooth.id)
+        
+        logger.info "restarting in 5 seconds"
+        MisterWorker.perform_in(5.seconds, token, photobooth_id)
      end
 
     
