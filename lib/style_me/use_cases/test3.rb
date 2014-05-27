@@ -10,7 +10,7 @@ Amazon::Ecs.options = {
   :AWS_secret_key => ENV['AWS_SECRET_ACCESS_KEY']
 }
 
-res = Amazon::Ecs.item_search('', :search_index => 'Apparel', :response_group => "Images")
+res = Amazon::Ecs.item_search('blazer', :search_index => 'Apparel', :response_group => "Images")
 # res.total_results
 
 

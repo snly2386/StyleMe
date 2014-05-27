@@ -27,9 +27,10 @@
 }
 
 a, a:link {
-  color: #222;
+  color: white;
   font-weight: bold;
 }
+/*  background: red */
 
 a:hover {
   color: #000;
@@ -75,6 +76,7 @@ body {
 /* Head */
 #wrapper #head {
   background: #222;
+  height: 130px;
   max-width: 2440px;
   min-width: 480px;
   width: 100%;
@@ -83,12 +85,12 @@ body {
 
 
   #head #headContent {
-    padding: 43px 0px;
+    padding: 35px 0px;
     font-family: 'plaster';
-    font-size: 30px;
-    color:black;
-    background-color: rgb(250, 213, 65)
-
+    font-size: 40px;
+    color:rgb(45, 0, 87);
+    background-color: rgb(250, 213, 65);
+    border-bottom: 20px solid orangered;
   }
 
   #head #headContentSmall {
@@ -112,7 +114,7 @@ body {
 #sidebar {
   width: 200px;
   float: left;
-  padding: 0 0 4700px 0;
+  padding: 0 0 4599px 0;
   background-color: black;
   background: url('gra1.jpg');
 }

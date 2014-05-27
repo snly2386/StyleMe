@@ -3,9 +3,13 @@
   display: none !important;
 }
 
+.ws_next, .ws_prev{
+  visibility:hidden;  
+}
 
-
-
+.love{
+    background:red;
+}
 
  .howdoes, .itwork {
       text-align: center;

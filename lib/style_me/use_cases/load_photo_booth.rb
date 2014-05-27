@@ -74,6 +74,8 @@ module StyleMe
       first_ten_urls = newray2[0..10]
       first_ten_shopping = newray3[0..10]
 
+      
+
       first_ten_urls.each do |urls|
         5.times{urls[0] = ""}
         symbol = urls.index('<')
@@ -102,9 +104,9 @@ module StyleMe
 
       results = StyleMe.db.get_result_by_photobooth(@photobooth.id)
       puts "RESULTS HERE 123: "
-      puts results.inspect
+      puts results
       puts "REAL RESULTS HERE:"
-      puts newray2.inspect
+      puts newray2
       results
     end
   end
