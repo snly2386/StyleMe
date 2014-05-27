@@ -67,7 +67,8 @@
 
       <% @photobooths.each do |photobooth| %>
     <div class="post" style="background-image:url(<%=photobooth.images%>)">
-        <div class="post-inner" data-image="" data-name=<%=@user.name%> data-position="" data-company=<%=@user.username%> data-link= "users/<%=@user.id%>/photobooths/<%=photobooth.id%>" data-guest-id="1">
+        
+        <div class="post-inner" data-image="" data-name=<%=@user.name%> data-position="" data-company=<%=@user.username%> data-link="photobooths/<%=photobooth.id%>"  data-guest-id="1">
             <div class="post-name"><%=link_to @username, "/photobooths/#{photobooth.id}" %></div>
             <div class="post-title"><%=@user.email%></div>
         </div>
