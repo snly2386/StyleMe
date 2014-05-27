@@ -59,9 +59,9 @@ module StyleMe
     parsed_urls = []
     parsed_descriptions = []
     parsed_shopping = []
-    first_ten_descriptions = newray[0..1]
-    first_ten_urls = newray2[0..1]
-    first_ten_shopping = newray3[0..1]
+    first_ten_descriptions = newray[0..5]
+    first_ten_urls = newray2[0..5]
+    first_ten_shopping = newray3[0..5]
 
 
     first_ten_urls.each do |urls|
@@ -92,6 +92,8 @@ module StyleMe
     results = StyleMe.db.get_result_by_photobooth(@photobooth.id)
     puts "RESULTS HEREE: "
     puts results
+    puts "REAL RESULTS HERE:"
+    puts newray2
 
 
 

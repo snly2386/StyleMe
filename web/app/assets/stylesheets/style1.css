@@ -398,6 +398,7 @@ li.social.stumbleupon a:hover {
 /*  background-size: cover;*/
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: 61%
 }
     .post .post-img {
         width: 100%;
@@ -452,12 +453,12 @@ li.social.stumbleupon a:hover {
         position: relative;
     }
     .post-details .post-left {
-        background-color: #ff6400;
+        background-color: black;
         width: 30%;
         overflow: hidden;
     }
     .post-details .post-right {
-        background-color: #c4b4a6;
+        background: url('gra3.jpg');
         width: 70%;
     }
   .post-details .nav{
@@ -479,14 +480,14 @@ li.social.stumbleupon a:hover {
         float: left;
     }
     .post-details .nav .prev {
-        background-color: #371d05;
+        background-color: white;
         background-position: -102px 3px;
     }
         .post-details .nav .prev:hover {
             --background-position: -104px 3px;
         }
     .post-details .nav .next {
-        background-color: #371d05;
+        background-color: #FF30FF;
         background-position: -148px 3px;
     }
         .post-details .nav .next:hover {
@@ -502,6 +503,7 @@ li.social.stumbleupon a:hover {
         .post-details .nav .close .mobile-hide {
             position: relative;
             top: -2px;
+            font-family: 'railway' sans-serif
         }
         .post-details .nav .close .icon-close {
             margin-left: 5px;
@@ -515,19 +517,20 @@ li.social.stumbleupon a:hover {
         padding: 0 10%;
     }
         .post-details .details .post-name {
-            font-family: 'Avenir Black';
+            font-family: 'Railway' sans-serif;
             color: #fff;
             text-transform: uppercase;
             font-size: 3em;
             line-height: 1em;
         }
         .post-details .details .post-title {
-            font-family: 'Avenir Medium';
+            font-family: 'Railway' sans-serif;
             color: #fff;
             margin: 15px 0 10px;
+            padding-bottom: 500px
         }
             .post-details .details .post-title .company {
-                color: #371d05;
+                color: #FF37F7;
             }
     .post-details .post-links a {
         display: inline-block;
@@ -786,7 +789,7 @@ li.social.stumbleupon a:hover {
         padding-right: 8px;
     }
 
-    
+
         header > ul > li {
             height: 50px;
             line-height: 50px;

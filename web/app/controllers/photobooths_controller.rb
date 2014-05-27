@@ -44,7 +44,7 @@ class PhotoboothsController < ApplicationController
       redirect_to "/users/#{@user.id}/photobooths/#{result.photobooth.id}"
     else
 
-      @error = result.error
+      redirect_to '/'
     end
   end
 

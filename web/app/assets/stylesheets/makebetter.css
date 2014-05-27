@@ -83,15 +83,16 @@ body {
 
 
   #head #headContent {
-    margin: 0 0 0 200px;
-    padding: 11px 20px;
-    font-style: italic;
+    padding: 40px 0px;
+    font-family: 'plaster';
+    font-size: 35px;
+    color:white;
+    background-color: black
+
   }
 
   #head #headContentSmall {
-    margin: 0 0 0 200px;
     padding: 11px 20px;
-    font-style: italic;
     display: none;
   }
 
@@ -111,7 +112,8 @@ body {
 #sidebar {
   width: 200px;
   float: left;
-  padding: 0 0 40px 0;
+  padding: 0 0 4700px 0;
+  background-color: rgb(255, 45, 230)
 }
 
   #sidebar h1 {
@@ -485,7 +487,7 @@ body {
         #content #gallery li img,
         #content #galleryDetails li img {
           width: 280px;
-          height: 400px;
+          height: 450px;
           position: absolute;
           left: 0;
           top: 0;
@@ -495,8 +497,8 @@ body {
 
         #content #gallery li .overlay,
         #content #galleryDetails li .overlayDetails {
-          width: 240px;
-          height: 320px;
+          width: 280px;
+          height: 420px;
           padding:20px;
           position: absolute;
           left: 0;
@@ -592,7 +594,8 @@ body {
 
         #content #gallery li .options ,
         #content #galleryDetails li .optionsDetails {
-          width: 240px;
+          visibility: hidden;
+ /*         width: 240px;
           height: 40px;
           padding: 0 20px;
           position: absolute;
@@ -604,7 +607,7 @@ body {
           font:bold 13px/42px Arial, Helvetica, sans-serif;
           text-transform: uppercase;
           letter-spacing: normal;
-          background: #fff;
+          background: #fff;*/
         }
 
         #content #galleryDetails li .optionsDetails {
@@ -1110,12 +1113,13 @@ body {
 @media screen and (max-width:1319px) {
 
   #wrapper {
-    max-width: 1040px;
+    max-width: 2040px;
   }
 
   /* Head */
   #wrapper #head {
-    max-width: 1040px;
+    max-width: 2040px;
+    height:120px;
   }
   
   #sidebar h1 .widescreen,
