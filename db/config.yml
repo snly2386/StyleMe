@@ -15,5 +15,3 @@ production:
   database: StyleMe_dev
   pool: 5
   timeout: 5000
-  user: styleme
-  password: <%= ENV['DB_PASS'] %>
