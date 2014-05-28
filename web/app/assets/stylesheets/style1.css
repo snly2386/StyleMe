@@ -515,14 +515,14 @@ li.social.stumbleupon a:hover {
         background-position: -102px 3px;
     }
         .post-details .nav .prev:hover {
-            --background-position: -104px 3px;
+            background-position: -104px 3px;
         }
     .post-details .nav .next {
         background-color: #FF30FF;
         background-position: -148px 3px;
     }
         .post-details .nav .next:hover {
-            --background-position: -146px 3px;
+            background-position: -146px 3px;
         }
     .post-details .nav .close {
         position: absolute;
