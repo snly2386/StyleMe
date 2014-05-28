@@ -11,7 +11,7 @@ gem 'aws-sdk'
 gem 'unirest'
 gem 'paperclip'
 gem 'activerecord', '~> 4.1.0'
-gem 'active_record_tasks', '~> 1.0.4'
+gem 'active_record_tasks', '~> 1.1.0'
 
 gem 'webmock', :groups => [:test]
 gem 'vcr'
