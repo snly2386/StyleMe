@@ -581,8 +581,7 @@ body {
         #content #gallery li .options ,
         #content #galleryDetails li .optionsDetails {
           visibility: hidden;
-
-
+          }
         #content #galleryDetails li .optionsDetails {
           display: block;
         }

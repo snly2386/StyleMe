@@ -10,7 +10,6 @@
   padding:0;
   border-spacing:0;
   overflow: visible;
-  /*table-layout:fixed;*/
 }
 #wowslider-container1 .ws_images ul li{
   width:1%;
@@ -96,7 +95,6 @@
 } 
 #wowslider-container1 a.ws_next, #wowslider-container1 a.ws_prev {
   background-size: 200%;
-
   position:absolute;
   display:none;
   top:50%;
@@ -174,12 +172,11 @@
   line-height: 1.8em;
   text-transform: uppercase;
   color: #FFFFFF;
-  
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 0.1em solid #FFFFFF;
-    border-radius: 1em;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0.1em solid #FFFFFF;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
 }
 #wowslider-container1 .ws-title div{
   margin-top: 0.3em;
@@ -207,8 +204,7 @@
   visibility:hidden;
   position:absolute;
     border: 1px solid rgba(220, 220, 220, 0.6);
-  border-radius:1px;
-  
+  border-radius:1px; 
   -moz-border-radius:2px;
   -webkit-border-radius:2px;
   max-width:none;
@@ -223,18 +219,13 @@
   position:relative;
 }
 #wowslider-container1 .ws_bulframe div {
-  
   left:0;
   overflow:hidden;
   position:relative;
   width:64px;
   background-color:#FFFFFF;
-  
- 
-  
 }
-#wowslider-container1  .ws_bullets .ws_bulframe{
-  
+#wowslider-container1  .ws_bullets .ws_bulframe{  
   display:none;
   bottom:29px;
   overflow:visible;

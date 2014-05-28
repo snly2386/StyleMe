@@ -1,5 +1,4 @@
 #wowslider-container1 .ws_hovershow {
-    /*display: none !important; */
     opacity: 0;
     -webkit-transition:opacity 0.2s ease-in;
     -moz-transition:opacity 0.2s ease-in;
@@ -8,7 +7,6 @@
 }
 
 #wowslider-container1:hover .ws_hovershow {
-    /*display: block !important;*/
     opacity: 1;
     -webkit-transition:opacity 0.2s ease-in;
     -moz-transition:opacity 0.2s ease-in;

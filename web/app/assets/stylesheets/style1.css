@@ -93,14 +93,14 @@
 body, html {
     height: 100%;
 }
- .post-name a{
+.post-name a{
     color: white;
     text-decoration: none;
     outline: 0;
 }
-     .link:hover {
+.link:hover {
         color: white;
-    }
+}
 button {
     outline: 0;
 }
@@ -419,6 +419,7 @@ li.social.stumbleupon a:hover {
      -o-transform:translate3d(0,0,0);
     transform:translate3d(0,0,0);
     }
+
 .post {
   float: left;
     position: relative;
@@ -426,7 +427,6 @@ li.social.stumbleupon a:hover {
     width: 50%;
   height: 200px;
     overflow: hidden;
-/*  background-size: cover;*/
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100%
@@ -455,7 +455,6 @@ li.social.stumbleupon a:hover {
         font-weight: bold;
         font-size: 27px;
       font-family: 'Raleway', sans-serif;
-        
         line-height: 27px;
         padding-bottom: 5px;
         letter-spacing: 1px;
@@ -588,9 +587,9 @@ li.social.stumbleupon a:hover {
     position: relative;
     width: 200%;
   }
-  .post-details .post-img .next-img, .post-details .prev-img{
+/*  .post-details .post-img .next-img, .post-details .prev-img{
     
-  }
+  }*/
   .post-details .post-img img {
         display: inline-block;
     vertical-align: top;
@@ -657,7 +656,9 @@ li.social.stumbleupon a:hover {
     max-width: 600px;
     margin: 0 auto;
   }
-  .mijlo-bag  #bag-slider img { width: 100%; height: auto }
+  .mijlo-bag  #bag-slider img { 
+    width: 100%; height: auto 
+  }
   
     .mijlo-bag #bag-next, .mijlo-bag #bag-prev {
         width: 35px;
@@ -683,8 +684,8 @@ li.social.stumbleupon a:hover {
         }
     .mijlo-bag .close {
     color: #371d06;
-        font-size: 11px;
-        background-image: none;
+    font-size: 11px;
+    background-image: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -764,9 +765,9 @@ li.social.stumbleupon a:hover {
   z-index: 1;
   overflow: visible;
 }
- .guest-wrap{
+/* .guest-wrap{
   
- }
+ }*/
 
 /* RESPONSIVE */ 
 /* Large desktop */
