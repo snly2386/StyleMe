@@ -1,23 +1,4 @@
-/* ================================================================================ * 
-* ### Wordpress ### 
-* Theme Name:makebettershirts
-* Theme URI:http://www.makebetterwebsites.com 
-* Description:Make Better Websites - Clean Theme 
-* Version:1.0 * Author:David Hellmann 
-* Author URI:http://www.davidhellmann.com 
-* 
-* 
-* @project Make Better Shirts 
-* @version 1.0 
-*@author David Hellmann 
-* @copyright 2009 by David Hellmann - Grafikdesign,Webdesign,Webentwicklung 
-* 
-* 
-* @colordef #000 Farbton/Beschreibung (Einsatzort) 
-*================================================================================ */
 
-  
-/* ================================================================================   CSS Reset================================================================================ */
 * {
   padding:0;
   margin:0;
