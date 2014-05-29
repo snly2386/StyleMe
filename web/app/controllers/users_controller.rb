@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def create
 
-    result = StyleMe::SignUp.run(:username => params[:username], :name => params[:name], :gender => params[:gender],:about_me => params[:about_me], :email => params[:email], :password => params[:password], :password_confirmation => params[:password_confirmation])
+    result = StyleMe::SignUp.run(:username => params[:username], :name => params[:name], :gender => params[:gender],:about_me => params[:about_me], :email => params[:email], :password => params[:password])
     @user = result.user
     @username = @user.username
 
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
     if result.success?
       # UserMailer.signup_confirmation(result.user.id)
-      redirect_to "/users/#{@user.id}"
+      redirect_to "/users/#{result.user.id}/photobooths"
     end
   end
 
