@@ -1,11 +1,4 @@
-
-
-
-
-<!-- <h1> THIS IS THE PHOTOBOOTHS SHOW PAGE </h1> -->
-
 <% if @description == nil %>
-  <!-- Start WOWSlider.com BODY section -->
   <div id="wowslider-container1">
   <div class="ws_images"><ul>
     <li><%=image_tag("fashion8.jpg", alt:'fashion8', id:"wows1_0", title:"fashion8")%> </li>
@@ -16,29 +9,21 @@
     <li><%=image_tag("real4.jpg", alt:'real4', id:"wows1_5", title:"real4")%> </li>
     <li><%=image_tag("real5.jpg", alt:'real5', id:"wows1_6", title:"real5")%> </li>
     <li><%=image_tag("real6.jpg", alt:'real6', id:"wows1_7", title:"real6")%> </li>
-<!-- <li><img src="data1/images/fashion8.jpg" alt="fashion8" title="fashion8" id="wows1_0"/></li> -->
-<!-- <li><img src="data1/images/fashion10.jpg" alt="fashion10" title="fashion10" id="wows1_1"/></li>
-<li><img src="data1/images/real1.jpg" alt="real1" title="real1" id="wows1_2"/></li>
-<li><img src="data1/images/real2.jpg" alt="real2" title="real2" id="wows1_3"/></li>
-<li><img src="data1/images/real3.jpg" alt="real3" title="real3" id="wows1_4"/></li>
-<li><img src="data1/images/real4.jpg" alt="real4" title="real4" id="wows1_5"/></li>
-<li><img src="data1/images/real5.jpg" alt="real5" title="real5" id="wows1_6"/></li>
-<li><img src="data1/images/real6.jpg" alt="real6" title="real6" id="wows1_7"/></li> -->
-</ul></div>
-<div class="ws_bullets"><div>
-<a href="#" title="fashion8"><%=image_tag("fashion8.jpg", alt:"fashion8")%>/></a>
-<a href="#" title="fashion10"><%=image_tag("fashion10.jpg", alt:"fashion10")%>/></a>
-<a href="#" title="real1"><%=image_tag("real1.jpg", alt:"real1")%>/></a>
-<a href="#" title="real2"><%=image_tag("real2.jpg", alt:"real2")%>/></a>
-<a href="#" title="real3"><%=image_tag("real3.jpg", alt:"real3")%>/></a>
-<a href="#" title="real4"><%=image_tag("real4.jpg", alt:"real4")%>/></a>
-<a href="#" title="real5"><%=image_tag("real5.jpg", alt:"real5")%>/></a>
-<a href="#" title="real6"><%=image_tag("real6.jpg", alt:"real6")%>/></a>
-</div></div>
+
+    </ul></div>
+    <div class="ws_bullets"><div>
+    <a href="#" title="fashion8"><%=image_tag("fashion8.jpg", alt:"fashion8")%>/></a>
+    <a href="#" title="fashion10"><%=image_tag("fashion10.jpg", alt:"fashion10")%>/></a>
+    <a href="#" title="real1"><%=image_tag("real1.jpg", alt:"real1")%>/></a>
+    <a href="#" title="real2"><%=image_tag("real2.jpg", alt:"real2")%>/></a>
+    <a href="#" title="real3"><%=image_tag("real3.jpg", alt:"real3")%>/></a>
+    <a href="#" title="real4"><%=image_tag("real4.jpg", alt:"real4")%>/></a>
+    <a href="#" title="real5"><%=image_tag("real5.jpg", alt:"real5")%>/></a>
+    <a href="#" title="real6"><%=image_tag("real6.jpg", alt:"real6")%>/></a>
+    </div></div>
 
   <div class="ws_shadow"></div>
   </div>
-  <!-- End WOWSlider.com BODY section -->
 
  <script type="text/javascript">
     <%= render 'photobooths/slider/wowslider.js' %>
@@ -59,7 +44,7 @@
           document.location.reload(true);
         }
 
-      }, 'json'); 
+      }, 'json');
     }
     check();
   </script>
@@ -73,98 +58,49 @@
 
   <link rel="author" href="https://plus.google.com/102668895799575126128?rel=author" />
 
-
-
-
-  <meta name="generator" content="WordPress" /> <!-- leave this for stats -->
-
-
-  <!-- Feeds -->
+  <meta name="generator" content="WordPress" />
   <link rel="alternate" type="application/rss+xml" title="Make Better Shirts - RSS Feed" href="http://makebettershirts.com/feed/" />
   <link rel="alternate" type="application/rss+xml" title="Make Better Shirts - Comment Feed" href="http://makebettershirts.com/comments/feed/" />
+  <body id="top">
+  <script type="text/javascript">
+  window.google_analytics_uacct = "UA-1817569-12";
+  </script>
 
-  <!-- Dieses Tag in den Head-Bereich oder direkt vor dem schließenden Body-Tag einfügen -->
+  <div id="wrapper">
+    <div id="head">
+      <div id="headContent">
+       Search Results for <%=@user.username%>
+      </div>
 
-<body id="top">
-<script type="text/javascript">
-window.google_analytics_uacct = "UA-1817569-12";
-</script>
-
-<div id="wrapper">
-
-  <div id="head">
-    <div id="headContent">
-     Search Results for <%=@user.username%>
+      <div id="headContentSmall">
+      </div>
     </div>
-
-    <div id="headContentSmall">
-    </div>
-  </div>
-<div id="sidebar">
-    
-
-      
-        <!-- <li><%=link_to "Home", "/"%></li> -->
-        <li style="
-    font-size: 28px;
-     margin: 70px 15px;
-    font-family: 'railway' sans-serif;
-"><%=link_to "Photobooths","/users/#{@user.id}/photobooths", class: "love"%></li>
-        <li style="
-    font-size: 28px;
-     margin: 0px 15px;
-    font-family: 'railway' sans-serif;
-"><%=link_to "Home", "/", class: "love"%></li>
-        
-               <!--  <div style="float:left; margin:0 0 5px 0;">
-                  <a href="https://twitter.com/styleme" class="twitter-follow-button" data-show-count="false">Follow @StyleMe</a>
-                  <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-                </div> -->
-
-                   
-                   <div style="float:left; margin:5px 0 0 0;">
-                    <g:plusone></g:plusone>
-                   </div>
-                </li>
-    </ul>
+      <div id="sidebar">
+        <li style="font-size: 28px; margin: 70px 15px;font-family: 'railway' sans-serif;"><%=link_to "Photobooths","/users/#{@user.id}/photobooths", class: "love"%></li>
+        <li style="font-size: 28px; margin: 0px 15px; font-family: 'railway' sans-serif; "><%=link_to "Home", "/", class: "love"%></li>
+      <div style="float:left; margin:5px 0 0 0;">
+        <g:plusone></g:plusone>
+        </div></li>
+      </ul>
   </div><div id="contentWrap">
   <div id="content">
-
         <ul id="gallery">
-
-
     <%@search_results.each do |results| %>
-    
-   
           <li id="post-621">
        <%= image_tag(results.url, class:"attachment-thumbnail wp-post-image", width: "280", height: "400", alt: "_MG_5139")%>
-       
             <a class="allover" rel="bookmark" href=<%="#{results.shopping_url}"%>>
                 <div class="overlay">
-
                     <h2><%=results.description%></h2>
-                    <div class="subline">
-                                            
-                                      found on <strong>Amazon</strong>                                            </div>
-
-        
-
-                </div>
-                </a>
-                <div class="options">
-                    <a href="#" class="likeThis" id="like-621" data-post-id="621"></a>          <a href="" class="comment"  title="Comment on Wolf Inkblot">7</a>                </div>
+                    <div class="subline">found on <strong>Amazon</strong> </div>
+                </div></a>
+      <div class="options"><a href="#" class="likeThis" id="like-621" data-post-id="621"></a> <a href="" class="comment"  title="Comment on Wolf Inkblot">7</a></div>
       </li>
       <%end%>
           <li id="post-618">
-
         <img width="280" height="400" src="/assets/powmia.jpg" class="attachment-thumbnail wp-post-image" alt="pow_blk" />                <a class="allover" href="http://www.amazon.com/POW-MIA-T-Shirt-Available-Various-Sizes/dp/B001GMD56M" rel="bookmark" title="">
                 <div class="overlay">
-
                     <h2>POW</h2>
-                    <div class="subline">
-                                            
-                                      found on <strong>Amazon</strong>                                          
-
+                    <div class="subline">found on <strong>Amazon</strong>
                 </div>
                 </a>
                 <div class="options">
@@ -177,8 +113,8 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Beardy Man</h2>
                     <div class="subline">
-                                            
-                                      found on <strong>Amazon</strong>                                          
+
+                                      found on <strong>Amazon</strong>
                 </div>
                 </a>
                 <div class="options">
@@ -191,9 +127,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Known pleasures</h2>
                     <div class="subline">
-                                            
-                                      found on <strong>African Apparel</strong>  
-                    </div>                            
+
+                                      found on <strong>African Apparel</strong>
+                    </div>
 
                 </div>
                 </a>
@@ -207,8 +143,8 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Icons 010</h2>
                     <div class="subline">
-                                            
-                                      found on <strong>Silence Television</strong>                        
+
+                                      found on <strong>Silence Television</strong>
                     </div>
 
                 </div>
@@ -223,7 +159,7 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Stu Hoots!</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>WLDWLVS</strong>                                          </div>
 
                 </div>
@@ -238,9 +174,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Eye of Triangle</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Ahoi</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -254,7 +190,7 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Cross Keys</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>WLDWLVS</strong>                                            </div>
           <div class="subline">posted by <strong>Jan</strong></div>
           <div class="subline">Dec 10th, 2012</div>
@@ -271,7 +207,7 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>IT&#8217;S THE LITTLE THINGS</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>ugmonk</strong>                                            </div>
           <div class="subline">posted by <strong>David</strong></div>
           <div class="subline">Nov 30th, 2012</div>
@@ -288,7 +224,7 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>D-Rag Tee</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Drmtm</strong>                                            </div>
           <div class="subline">posted by <strong>Jan</strong></div>
           <div class="subline">Aug 13th, 2012</div>
@@ -305,9 +241,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>ベーコン</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Tee Party</strong>                                            </div>
-          
+
 
                 </div>
                 </a>
@@ -321,9 +257,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Twitcher</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Lazy Oaf</strong>                                            </div>
-          
+
 
                 </div>
                 </a>
@@ -337,9 +273,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Got Beef</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Lazy Oaf</strong>                                            </div>
-          
+
 
                 </div>
                 </a>
@@ -353,9 +289,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Bat Repeat</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Lazy Oaf</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -369,9 +305,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>KICK-OUT</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Olow Shop</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -385,9 +321,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Sanduhr</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>The Blackjack Project</strong>                                            </div>
-        
+
                 </div>
                 </a>
                 <div class="options">
@@ -400,9 +336,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Slice</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Inkefx</strong>                                            </div>
-          
+
 
                 </div>
                 </a>
@@ -416,9 +352,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Sharp Stripes</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Dope Clothing</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -432,9 +368,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Italic</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Saturdays Surf NYC</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -448,9 +384,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>8-bit Avengers</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>80s Tees</strong>                                            </div>
-          
+
 
                 </div>
                 </a>
@@ -464,9 +400,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Shimmer</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Enclave Apparel</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -480,10 +416,8 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Tools of the Trade</h2>
                     <div class="subline">
-                                            
-                                      found on <strong>Sock Monkee</strong>                                            </div>
-          
 
+                                      found on <strong>Sock Monkee</strong>                                            </div>
                 </div>
                 </a>
                 <div class="options">
@@ -496,9 +430,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Sanduhr</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>The Blackjack Project</strong>                                            </div>
-          
+
 
                 </div>
                 </a>
@@ -512,9 +446,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>FROZEN WATER</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Dauerfeuer</strong>                                            </div>
-       
+
 
                 </div>
                 </a>
@@ -528,9 +462,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Erebus V2</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Glorious Nightmare</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -544,9 +478,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Boy is my Toy</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Müde Shirts</strong>                                            </div>
-         
+
                 </div>
                 </a>
                 <div class="options">
@@ -559,9 +493,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Untitled No. 1</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Druckwelle</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -575,9 +509,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>King of Clubs</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>House of Hoxshore</strong>                                            </div>
-      
+
 
                 </div>
                 </a>
@@ -591,9 +525,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Bruised Bear</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Bruised Bear</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -607,9 +541,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Battlecat</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Dauerfeuer</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -623,9 +557,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Tough Love</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Black Heartz</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -639,9 +573,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Uwe Tee</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Uberfresh</strong>                                            </div>
-        
+
 
                 </div>
                 </a>
@@ -655,9 +589,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Pyramid</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Ucon</strong>                                            </div>
-          
+
 
                 </div>
                 </a>
@@ -671,9 +605,9 @@ window.google_analytics_uacct = "UA-1817569-12";
 
                     <h2>Ciclope</h2>
                     <div class="subline">
-                                            
+
                                       found on <strong>Ucon</strong>                                            </div>
-         
+
 
                 </div>
                 </a>
@@ -683,14 +617,8 @@ window.google_analytics_uacct = "UA-1817569-12";
           <li id="post-515">
 
         <img width="280" height="400" src="http://makebettershirts.com/wordpress/wp-content/uploads/LIGHTS-OFF-280x400.jpg" class="attachment-thumbnail wp-post-image" alt="LIGHTS OFF" />                <a class="allover" href="#" rel="bookmark" title="">
-                <div class="overlay">
-
-                    <h2>LIGHTS OFF</h2>
-                    <div class="subline">
-                                            
-                                      found on <strong>ZRKS</strong>                                            </div>
-          
-
+        <div class="overlay"><h2>LIGHTS OFF</h2>
+        <div class="subline">found on <strong>ZRKS</strong></div>
                 </div>
                 </a>
                 <div class="options">
@@ -699,8 +627,6 @@ window.google_analytics_uacct = "UA-1817569-12";
         </ul>
       </div>
 </div>
-
-
 
 </div>
 <script type="text/javascript">
@@ -714,33 +640,27 @@ window.google_analytics_uacct = "UA-1817569-12";
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201421'></script>
+      <script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201421'></script>
 
-  <script src="http://stats.wordpress.com/e-201421.js" type="text/javascript"></script>
-  <script type="text/javascript">
-  st_go({v:'ext',j:'1:2.7.2',blog:'17532507',post:'0',tz:'2'});
-  var load_cmc = function(){linktracker_init(17532507,0,2);};
-  if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
-  else load_cmc();
-  </script>
-<script type="text/javascript" src="http://makebettershirts.com/wordpress/wp-content/themes/makebettershirts/js/functions.js"></script>
+        <script src="http://stats.wordpress.com/e-201421.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        st_go({v:'ext',j:'1:2.7.2',blog:'17532507',post:'0',tz:'2'});
+        var load_cmc = function(){linktracker_init(17532507,0,2);};
+        if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+        else load_cmc();
+        </script>
+      <script type="text/javascript" src="http://makebettershirts.com/wordpress/wp-content/themes/makebettershirts/js/functions.js"></script>
 
-<script type="text/javascript" src="http://include.reinvigorate.net/re_.js"></script>
-<script type="text/javascript">
-try {
-reinvigorate.track("200y1-m132op9hhi");
-} catch(err) {}
-</script>
-</body>
-</html>
+      <script type="text/javascript" src="http://include.reinvigorate.net/re_.js"></script>
+      <script type="text/javascript">
+      try {
+      reinvigorate.track("200y1-m132op9hhi");
+      } catch(err) {}
+      </script>
+      </body>
+      </html>
 
-
-
-
-
-
- 
-<%end%>
+      <%end%>
 
 
 
