@@ -1,11 +1,11 @@
 require 'dotenv'
-Dotenv.load 
+Dotenv.load
 require 'unirest'
 
 module StyleMe
-  class LoadPhotoBooth < UseCase 
+  class LoadPhotoBooth < UseCase
     def run(params)
-  
+
 
       puts "AMAZON KEYS:"
       puts ENV['AWS_ACCESS_KEY_ID']
@@ -13,7 +13,7 @@ module StyleMe
       puts "USING TEKON: #{params[:token]}"
 
       @response = Unirest::get("https://camfind.p.mashape.com/image_responses/" + params[:token],
-        headers: { 
+        headers: {
           "X-Mashape-Authorization" => ENV["NEW_CAMFIND_KEY"]
         }
       )
@@ -21,7 +21,7 @@ module StyleMe
        puts @response.body["status"]
       # if response is still pending, redo this job later
       # otherwise, update photobooth
-      
+
       # logger.debug "#{@response}"
 
       @photobooth = StyleMe.db.get_photobooth(params[:photobooth_id])
@@ -34,7 +34,7 @@ module StyleMe
       # StyleMe.db.update_photobooth(@photobooth.id, { tags: @photobooth.tags }, "NA")
 
       puts "photobooth tags"
-      puts @photobooth.tags 
+      puts @photobooth.tags
 
 
 
@@ -43,17 +43,13 @@ module StyleMe
         amazon_results = get_amazon_results
         @photobooth.save
       end
-
-
-
-
       success :search_results => amazon_results, :photobooth => @photobooth
     end
 
     def get_amazon_results
        Amazon::Ecs.options = {
         :associate_tag => 'sty09-20',
-        :AWS_access_key_id => ENV['AWS_ACCESS_KEY_ID'],       
+        :AWS_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
         :AWS_secret_key => ENV['AWS_SECRET_ACCESS_KEY']
       }
       res =  Amazon::Ecs.item_search(@photobooth.tags, :search_index => 'Apparel')
@@ -74,7 +70,7 @@ module StyleMe
       first_ten_urls = newray2[0..10]
       first_ten_shopping = newray3[0..10]
 
-      
+
 
       first_ten_urls.each do |urls|
         5.times{urls[0] = ""}
@@ -98,7 +94,7 @@ module StyleMe
 
       # binding.pry
 
-      parsed_descriptions.each_with_index do |description, i| 
+      parsed_descriptions.each_with_index do |description, i|
           StyleMe.db.create_result(:description => description, :url => parsed_urls[i], :shopping_url => first_ten_shopping[i], :photobooth_id => @photobooth.id)
       end
 
