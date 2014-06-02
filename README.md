@@ -10,7 +10,7 @@ A user is able to take a photo of any arbitrary piece of clothing, upload it int
 How does it work?
 =======
 
-![alt text](https://github.com/snly2386/StyleMe/blob/master/web/app/assets/images/styleme_dia.jpg)
+![alt text](https://raw.githubusercontent.com/snly2386/StyleMe/master/web/app/assets/images/styleme_dia.jpg)
 
 Summary
 =======
