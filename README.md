@@ -12,6 +12,39 @@ How does it work?
 
 ![alt text](https://raw.githubusercontent.com/snly2386/StyleMe/master/web/app/assets/images/styleme_dia.jpg)
 
+
+How does it look?
+=======
+
+Landing Page
+=======
+![alt text](https://raw.githubusercontent.com/snly2386/StyleMe/master/web/app/assets/images/landing.png)
+
+Sign In
+=======
+![alt text](https://raw.githubusercontent.com/snly2386/StyleMe/master/web/app/assets/images/signin.png)
+
+Personalized Photobooth
+=======
+Users get a personalized "photobooths page". You have access to other users' search results and are able to upload images on this page.
+
+![alt text](https://raw.githubusercontent.com/snly2386/StyleMe/master/web/app/assets/images/photobooth.png)
+
+Upload Photo
+=======
+This is where users are able to upload a photo and run a shopping search. 
+![alt text](https://raw.githubusercontent.com/snly2386/StyleMe/master/web/app/assets/images/upload.png)
+
+Photobooth History
+=======
+This shows the most recent search results from other users.
+![alt text](https://raw.githubusercontent.com/snly2386/StyleMe/master/web/app/assets/images/search%20results.png)
+
+Profile Page 
+=======
+This is the user's profile page. 
+![alt text](https://raw.githubusercontent.com/snly2386/StyleMe/master/web/app/assets/images/profile.png)
+
 Summary
 =======
 
